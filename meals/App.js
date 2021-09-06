@@ -3,6 +3,10 @@ import * as Font from "expo-font";
 import AppLoading from "expo-app-loading";
 import MealsNavigator from "./navigation/MealsNavigator";
 import { enableScreens } from "react-native-screens";
+import { SafeAreaView, Platform } from "react-native";
+import Constants from "expo-constants";
+
+const statusBarHeight = Constants.statusBarHeight;
 
 enableScreens();
 
@@ -26,5 +30,14 @@ export default function App() {
     );
   }
 
-  return <MealsNavigator />;
+  return (
+    <SafeAreaView
+      style={{
+        flex: 1,
+        paddingTop: Platform.OS === "android" ? statusBarHeight : 0,
+      }}
+    >
+      <MealsNavigator />
+    </SafeAreaView>
+  );
 }
