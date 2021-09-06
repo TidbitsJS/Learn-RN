@@ -1,11 +1,23 @@
 import React from "react";
-import { View, Text, StyleSheet, Platform, FlatList } from "react-native";
+import { View, StyleSheet, FlatList } from "react-native";
 import MealItem from "../components/MealItem";
 import { CATEGORIES, MEALS } from "../data/dummy-data";
 
 const CategoryMealsScreen = (props) => {
   const renderMealItem = (itemData) => {
-    return <MealItem item={itemData.item} onSelectMeal={() => {}} />;
+    return (
+      <MealItem
+        item={itemData.item}
+        onSelectMeal={() => {
+          props.navigation.navigate({
+            routeName: "MealDetail",
+            params: {
+              mealId: itemData.item.id,
+            },
+          });
+        }}
+      />
+    );
   };
 
   const catId = props.navigation.getParam("categoryId");
