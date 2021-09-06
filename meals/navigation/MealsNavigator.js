@@ -8,7 +8,17 @@ import CategoriesScreen from "../screens/CategoriesScreen";
 import CategoryMealsScreen from "../screens/CategoryMealsScreen";
 import MealDetailScreen from "../screens/MealDetailScreen";
 import FavoritesScreen from "../screens/FavoritesScreen";
+import { createMaterialBottomTabNavigator } from "react-navigation-material-bottom-tabs";
 import Colors from "../constants/Colors";
+
+const defaultConfig = {
+  defaultNavigationOptions: {
+    headerStyle: {
+      backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
+    },
+    headerTintColor: Platform.OS === "android" ? "white" : Colors.primaryColor,
+  },
+};
 
 const MealsNavigator = createStackNavigator(
   {
@@ -23,49 +33,55 @@ const MealsNavigator = createStackNavigator(
     },
     MealDetail: MealDetailScreen,
   },
-  {
-    defaultNavigationOptions: {
-      headerStyle: {
-        backgroundColor: Platform.OS === "android" ? Colors.primaryColor : "",
-      },
-      headerTintColor:
-        Platform.OS === "android" ? "white" : Colors.primaryColor,
-    },
-  }
+  defaultConfig
 );
 
-const MealsTabNavigator = createBottomTabNavigator(
+const FavoritesNavigator = createStackNavigator(
   {
-    Meals: {
-      screen: MealsNavigator,
-      navigationOptions: {
-        tabBarIcon: (tabInfo) => {
-          return (
-            <Ionicons
-              name="fast-food-outline"
-              size={25}
-              color={tabInfo.tintColor}
-            />
-          );
-        },
-      },
-    },
-    Favorites: {
-      screen: FavoritesScreen,
-      navigationOptions: {
-        tabBarIcon: (tabInfo) => {
-          return (
-            <FontAwesome5 name="star" size={20} color={tabInfo.tintColor} />
-          );
-        },
+    Favorites: FavoritesScreen,
+    MealDetail: MealDetailScreen,
+  },
+  defaultConfig
+);
+
+const tabScreenConfig = {
+  Meals: {
+    screen: MealsNavigator,
+    navigationOptions: {
+      tabBarIcon: (tabInfo) => {
+        return (
+          <Ionicons
+            name="fast-food-outline"
+            size={25}
+            color={tabInfo.tintColor}
+          />
+        );
       },
     },
   },
-  {
-    tabBarOptions: {
-      activeTintColor: Colors.accentColor,
+  Favorites: {
+    screen: FavoritesNavigator,
+    navigationOptions: {
+      tabBarIcon: (tabInfo) => {
+        return <FontAwesome5 name="star" size={20} color={tabInfo.tintColor} />;
+      },
     },
-  }
-);
+  },
+};
+
+const MealsTabNavigator =
+  Platform.OS === "android"
+    ? createMaterialBottomTabNavigator(tabScreenConfig, {
+        activeColor: Colors.accentColor,
+        shifting: true,
+        barStyle: {
+          backgroundColor: "#fff",
+        },
+      })
+    : createBottomTabNavigator(tabScreenConfig, {
+        tabBarOptions: {
+          activeTintColor: Colors.accentColor,
+        },
+      });
 
 export default createAppContainer(MealsTabNavigator);
