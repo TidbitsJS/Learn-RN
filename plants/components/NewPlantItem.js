@@ -9,6 +9,7 @@ const NewPlantItem = ({ item, index }) => {
         alignItems: "center",
         justifyContent: "center",
         marginHorizontal: SIZES.base,
+        marginVertical: SIZES.base * 2,
       }}
     >
       <Image
@@ -16,8 +17,8 @@ const NewPlantItem = ({ item, index }) => {
         resizeMode="cover"
         style={{
           width: SIZES.width * 0.23,
-          height: "82%",
           borderRadius: 15,
+          height: 120,
         }}
       />
 
@@ -41,8 +42,8 @@ const NewPlantItem = ({ item, index }) => {
       <TouchableOpacity
         style={{
           position: "absolute",
-          top: "15%",
-          left: 7,
+          top: "5%",
+          left: 10,
         }}
         onPress={() => {
           console.log("Focus on pressed");

@@ -4,7 +4,11 @@ import { COLORS, FONTS, images, SIZES } from "../constants";
 
 const TodayShare = ({ navigation }) => {
   return (
-    <View style={{ height: "60%", backgroundColor: COLORS.lightGray }}>
+    <View
+      style={{
+        backgroundColor: COLORS.lightGray,
+      }}
+    >
       <View
         style={{
           flex: 1,
@@ -38,8 +42,7 @@ const TodayShare = ({ navigation }) => {
           <View
             style={{
               flexDirection: "row",
-              height: "88%",
-              marginTop: SIZES.base,
+              marginVertical: SIZES.base * 2,
               paddingVertical: 10,
             }}
           >
@@ -55,7 +58,7 @@ const TodayShare = ({ navigation }) => {
                   resizeMode="cover"
                   style={{
                     width: "100%",
-                    height: "100%",
+                    height: 120,
                     borderRadius: 20,
                   }}
                 />
@@ -70,7 +73,7 @@ const TodayShare = ({ navigation }) => {
                   resizeMode="cover"
                   style={{
                     width: "100%",
-                    height: "100%",
+                    height: 120,
                     borderRadius: 20,
                   }}
                 />
