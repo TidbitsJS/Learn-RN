@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import NewPlantItem from "../components/NewPlantItem";
+import TodayShare from "../components/TodayShare";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import { plants, friends } from "../data/dummy";
 
@@ -75,6 +76,8 @@ const Home = ({ navigation }) => {
           </View>
         </View>
       </View>
+
+      <TodayShare navigation={navigation} />
     </View>
   );
 };
