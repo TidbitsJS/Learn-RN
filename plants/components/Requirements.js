@@ -42,7 +42,7 @@ const Requirements = () => {
     <View
       style={{
         flex: 2.5,
-        marginTop: SIZES.padding,
+        marginTop: SIZES.padding * 1.7,
         paddingHorizontal: SIZES.padding,
         justifyContent: "space-around",
       }}

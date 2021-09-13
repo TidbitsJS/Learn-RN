@@ -21,6 +21,7 @@ export const SIZES = {
 
   // font sizes
   largeTitle: 50,
+  longTitle: 40,
   h1: 30,
   h2: 22,
   h3: 16,
@@ -40,6 +41,11 @@ export const FONTS = {
     fontFamily: "Roboto-Black",
     fontSize: SIZES.largeTitle,
     lineHeight: 55,
+  },
+  longTitle: {
+    fontFamily: "Roboto-Black",
+    fontSize: SIZES.longTitle,
+    lineHeight: 45,
   },
   h1: { fontFamily: "Roboto-Black", fontSize: SIZES.h1, lineHeight: 36 },
   h2: { fontFamily: "Roboto-Bold", fontSize: SIZES.h2, lineHeight: 30 },

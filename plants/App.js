@@ -40,7 +40,7 @@ const App = () => {
         >
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen
-            name="PlantDetail"
+            name="PlantDetails"
             component={PlantDetail}
             options={{ headerShown: false }}
           />
