@@ -50,7 +50,7 @@ const TodayShare = ({ navigation }) => {
               <TouchableOpacity
                 style={{ flex: 1 }}
                 onPress={() => {
-                  navigation.navigate("PlantDetail");
+                  navigation.navigate("PlantDetails");
                 }}
               >
                 <Image
@@ -84,7 +84,7 @@ const TodayShare = ({ navigation }) => {
               <TouchableOpacity
                 style={{ flex: 1, marginLeft: SIZES.font }}
                 onPress={() => {
-                  navigation.navigate("PlantDetail");
+                  navigation.navigate("PlantDetails");
                 }}
               >
                 <Image

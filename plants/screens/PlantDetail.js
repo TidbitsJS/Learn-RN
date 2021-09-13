@@ -1,6 +1,7 @@
 import React from "react";
 import { ScrollView, StyleSheet, View, Image, Text } from "react-native";
 import Requirements from "../components/Requirements";
+import RequirementsBar from "../components/RequirementsBar";
 import { COLORS, FONTS, images, SIZES } from "../constants";
 
 const PlantDetail = () => {
@@ -38,6 +39,7 @@ const PlantDetail = () => {
             Requirements
           </Text>
 
+          <RequirementsBar />
           <Requirements />
         </View>
       </View>
