@@ -5,6 +5,7 @@ import Tabs from "./navigation/tabs";
 import { useFonts } from "expo-font";
 import { SafeAreaView, StatusBar } from "react-native";
 import { COLORS } from "./constants";
+import PlantDetail from "./screens/PlantDetail";
 
 const theme = {
   ...DefaultTheme,
@@ -38,6 +39,11 @@ const App = () => {
           initialRouteName={"Home"}
         >
           <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen
+            name="PlantDetail"
+            component={PlantDetail}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaView>
