@@ -1,8 +1,9 @@
 import React from "react";
-import { StyleSheet, Image, View } from "react-native";
+import { Image, View } from "react-native";
 import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
 import { COLORS } from "../constants";
+import Explore from "../screens/Explore";
 
 const Tab = createBottomTabNavigator();
 
@@ -58,7 +59,7 @@ const Tabs = () => {
                   }}
                 />
               );
-            case "Box":
+            case "Explore":
               return (
                 <Image
                   source={require("../assets/icons/cube_icon.png")}
@@ -101,7 +102,7 @@ const Tabs = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Box" component={Home} />
+      <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Camera" component={Home} />
       <Tab.Screen name="Search" component={Home} />
       <Tab.Screen name="Favorite" component={Home} />
