@@ -11,6 +11,7 @@ export const COLORS = {
   white: "#FFFFFF",
   lightGray: "#eff2f5",
   gray: "#BEC1D2",
+  darkGreen: "#0E5F13",
 };
 export const SIZES = {
   // global sizes

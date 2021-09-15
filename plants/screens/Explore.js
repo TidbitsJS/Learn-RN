@@ -1,7 +1,7 @@
 import React from "react";
-import { Image, StyleSheet, Text, View, FlatList } from "react-native";
-import { ScrollView, TouchableOpacity } from "react-native-gesture-handler";
-import { images, SIZES } from "../constants";
+import { Image, Text, View, FlatList, TouchableOpacity } from "react-native";
+import { TextInput } from "react-native-gesture-handler";
+import { COLORS, FONTS, images, SIZES } from "../constants";
 
 const plantsData = [
   {
@@ -49,8 +49,8 @@ const renderPlantsGrid = (itemData) => {
         style={{
           width: 160,
           margin: 10,
-          borderRadius: SIZES.base,
-          padding: SIZES.font - 4,
+          borderRadius: SIZES.font + 5,
+          padding: SIZES.font,
           backgroundColor: "#E9F5EF",
         }}
         key={"plant-" + itemData.item.name}
@@ -61,13 +61,13 @@ const renderPlantsGrid = (itemData) => {
           style={{
             width: "100%",
             height: 170,
-            borderRadius: SIZES.base,
+            borderRadius: SIZES.font,
           }}
         />
         <Text
           style={{
             paddingHorizontal: SIZES.base,
-            paddingTop: SIZES.base,
+            paddingTop: SIZES.font - 2,
             fontFamily: "Roboto-Regular",
             color: "#0E5F13",
             textAlign: "left",
@@ -88,7 +88,6 @@ const Explore = () => {
         backgroundColor: "#fff",
         justifyContent: "center",
         alignItems: "center",
-        marginVertical: SIZES.base,
       }}
     >
       <FlatList
@@ -96,6 +95,57 @@ const Explore = () => {
         keyExtractor={(item, index) => "plant-" + item.name}
         renderItem={renderPlantsGrid}
         numColumns={2}
+        ListHeaderComponent={
+          <View
+            style={{
+              flex: 1,
+              flexDirection: "column",
+              backgroundColor: COLORS.primary,
+              paddingBottom: SIZES.font,
+              borderBottomRightRadius: SIZES.padding,
+              marginBottom: SIZES.font,
+            }}
+          >
+            <View
+              style={{
+                width: "100%",
+                paddingHorizontal: SIZES.base,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text
+                style={{
+                  marginVertical: SIZES.base,
+                  color: COLORS.white,
+                  ...FONTS.h2,
+                }}
+              >
+                Explore
+              </Text>
+            </View>
+            <View
+              style={{
+                marginVertical: SIZES.base,
+                flex: 1,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <TextInput
+                placeholder="Search"
+                style={{
+                  width: "90%",
+                  height: 40,
+                  backgroundColor: "#f6f6f6",
+                  paddingHorizontal: SIZES.font,
+                  fontFamily: "Roboto-Regular",
+                  borderRadius: SIZES.font,
+                }}
+              />
+            </View>
+          </View>
+        }
       />
     </View>
   );
