@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { Image, Text, View, FlatList, TouchableOpacity } from "react-native";
 import { TextInput } from "react-native-gesture-handler";
 import { COLORS, FONTS, images, SIZES } from "../constants";
@@ -82,6 +82,8 @@ const renderPlantsGrid = (itemData) => {
 };
 
 const Explore = () => {
+  const [textFilter, setTextFilter] = useState({ active: "natural" });
+
   return (
     <View
       style={{
@@ -96,52 +98,98 @@ const Explore = () => {
         renderItem={renderPlantsGrid}
         numColumns={2}
         ListHeaderComponent={
-          <View
-            style={{
-              flex: 1,
-              flexDirection: "column",
-              backgroundColor: COLORS.primary,
-              paddingBottom: SIZES.font,
-              borderBottomRightRadius: SIZES.padding,
-              marginBottom: SIZES.font,
-            }}
-          >
+          <View style={{ flex: 1, flexDirection: "column" }}>
             <View
               style={{
-                width: "100%",
-                paddingHorizontal: SIZES.base,
-                justifyContent: "center",
-                alignItems: "center",
+                flex: 1,
+                flexDirection: "column",
+                backgroundColor: COLORS.primary,
+                paddingBottom: SIZES.font,
+                borderBottomRightRadius: SIZES.padding,
+                marginBottom: SIZES.font,
               }}
             >
-              <Text
+              <View
                 style={{
-                  marginVertical: SIZES.base,
-                  color: COLORS.white,
-                  ...FONTS.h2,
+                  width: "100%",
+                  paddingHorizontal: SIZES.base,
+                  justifyContent: "center",
+                  alignItems: "center",
                 }}
               >
-                Explore
-              </Text>
+                <Text
+                  style={{
+                    marginVertical: SIZES.base,
+                    color: COLORS.white,
+                    ...FONTS.h2,
+                  }}
+                >
+                  Explore
+                </Text>
+              </View>
+              <View
+                style={{
+                  marginVertical: SIZES.base,
+                  flex: 1,
+                  justifyContent: "center",
+                  alignItems: "center",
+                }}
+              >
+                <TextInput
+                  placeholder="Search"
+                  style={{
+                    width: "90%",
+                    height: 40,
+                    backgroundColor: "#f6f6f6",
+                    paddingHorizontal: SIZES.font,
+                    fontFamily: "Roboto-Regular",
+                    borderRadius: SIZES.font,
+                  }}
+                />
+              </View>
             </View>
             <View
               style={{
-                marginVertical: SIZES.base,
+                marginBottom: SIZES.base,
+                paddingHorizontal: SIZES.padding,
                 flex: 1,
-                justifyContent: "center",
-                alignItems: "center",
               }}
             >
-              <TextInput
-                placeholder="Search"
-                style={{
-                  width: "90%",
-                  height: 40,
-                  backgroundColor: "#f6f6f6",
-                  paddingHorizontal: SIZES.font,
-                  fontFamily: "Roboto-Regular",
-                  borderRadius: SIZES.font,
-                }}
+              <FlatList
+                horizontal
+                showsHorizontalScrollIndicator={false}
+                data={[
+                  "indoor",
+                  "outdoor",
+                  "natural",
+                  "artificial",
+                  "office",
+                  "decor",
+                ]}
+                keyExtractor={(item) => item}
+                renderItem={({ item, index }) => (
+                  <TouchableOpacity
+                    onPress={() => {
+                      setTextFilter({ active: item });
+                    }}
+                  >
+                    <Text
+                      style={{
+                        marginRight: SIZES.padding,
+                        textTransform: "capitalize",
+                        color:
+                          textFilter.active === item
+                            ? COLORS.darkGreen
+                            : COLORS.gray,
+                        ...FONTS.body4,
+                        fontWeight:
+                          textFilter.active === item ? "bold" : "normal",
+                      }}
+                    >
+                      {item}
+                    </Text>
+                  </TouchableOpacity>
+                )}
               />
             </View>
           </View>
