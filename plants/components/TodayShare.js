@@ -50,7 +50,9 @@ const TodayShare = ({ navigation }) => {
               <TouchableOpacity
                 style={{ flex: 1 }}
                 onPress={() => {
-                  navigation.navigate("PlantDetails");
+                  navigation.navigate("PlantDetails", {
+                    plantId: 5,
+                  });
                 }}
               >
                 <Image
@@ -66,7 +68,11 @@ const TodayShare = ({ navigation }) => {
 
               <TouchableOpacity
                 style={{ flex: 1, marginTop: SIZES.font }}
-                onPress={() => navigation.navigate("PlantDetails")}
+                onPress={() =>
+                  navigation.navigate("PlantDetails", {
+                    plantId: 6,
+                  })
+                }
               >
                 <Image
                   source={images.plant6}
@@ -84,7 +90,9 @@ const TodayShare = ({ navigation }) => {
               <TouchableOpacity
                 style={{ flex: 1, marginLeft: SIZES.font }}
                 onPress={() => {
-                  navigation.navigate("PlantDetails");
+                  navigation.navigate("PlantDetails", {
+                    plantId: 7,
+                  });
                 }}
               >
                 <Image

@@ -3,9 +3,14 @@ import { ScrollView, StyleSheet, View, Image, Text } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import Requirements from "../components/Requirements";
 import RequirementsBar from "../components/RequirementsBar";
-import { COLORS, FONTS, icons, images, SIZES } from "../constants";
+import { COLORS, FONTS, icons, images, plantsData, SIZES } from "../constants";
 
-const PlantDetail = ({ navigation }) => {
+const PlantDetail = ({ route, navigation }) => {
+  const { plantId } = route.params;
+  const displayPlant = plantsData.filter((plant) => plant.id === plantId);
+
+  console.log(displayPlant);
+
   return (
     <ScrollView>
       <View style={styles.container}>
@@ -86,7 +91,7 @@ const PlantDetail = ({ navigation }) => {
               style={{ color: COLORS.white, ...FONTS.longTitle }}
               numberOfLines={2}
             >
-              Glory Mantas
+              {displayPlant[0].name}
             </Text>
           </View>
         </View>
