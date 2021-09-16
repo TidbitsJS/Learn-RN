@@ -12,10 +12,10 @@ import AddFriends from "../components/AddFriends";
 import NewPlantItem from "../components/NewPlantItem";
 import TodayShare from "../components/TodayShare";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
-import { plants, friends } from "../data/dummy";
+import { plantsData, friends } from "../data/dummy";
 
 const Home = ({ navigation }) => {
-  const [newPlants, setNewPlants] = React.useState(plants);
+  const [newPlants, setNewPlants] = React.useState(plantsData.slice(0, 4));
   const [friendList, setFriendList] = React.useState(friends);
 
   React.useEffect(() => {}, []);
@@ -71,8 +71,8 @@ const Home = ({ navigation }) => {
                   showsHorizontalScrollIndicator={false}
                   data={newPlants}
                   keyExtractor={(item) => item.id.toString()}
-                  renderItem={({ item, index }) => (
-                    <NewPlantItem item={item} index={index} />
+                  renderItem={({ item }) => (
+                    <NewPlantItem item={item} navigation={navigation} />
                   )}
                 />
               </View>

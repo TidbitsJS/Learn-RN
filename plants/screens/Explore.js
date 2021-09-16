@@ -2,7 +2,8 @@ import React from "react";
 import { View, FlatList } from "react-native";
 import ExploreHeader from "../components/ExploreHeader";
 import PlantGridItem from "../components/PlantGridItem";
-import { plantsData, SIZES } from "../constants";
+import { SIZES } from "../constants";
+import { plantsData } from "../data/dummy";
 
 const Explore = ({ navigation }) => {
   return (

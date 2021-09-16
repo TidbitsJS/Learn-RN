@@ -6,6 +6,7 @@ const PlantGridItem = ({ item, navigation }) => {
   return (
     <TouchableOpacity
       activeOpacity={0.5}
+      style={{ flex: 1 }}
       onPress={() => {
         navigation.navigate("PlantDetails", {
           plantId: item.id,
@@ -14,7 +15,6 @@ const PlantGridItem = ({ item, navigation }) => {
     >
       <View
         style={{
-          width: 160,
           margin: 10,
           borderRadius: SIZES.font + 5,
           padding: SIZES.font,
