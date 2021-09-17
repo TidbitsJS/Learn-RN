@@ -15,23 +15,25 @@ export const seed = require("../assets/icons/seed.png");
 export const chevron = require("../assets/icons/chevron.png");
 export const downArrow = require("../assets/icons/down-arrow.png");
 export const back = require("../assets/icons/back.png");
+export const verified = require("../assets/icons/verified.png");
 
 export default {
-    camera,
-    cube,
-    flash,
-    heart,
-    heartGreenOutline,
-    heartRed,
-    search,
-    focus,
-    plus,
-    sun,
-    drop,
-    temperature,
-    garden,
-    seed,
-    chevron,
-    downArrow,
-    back
-}
+  camera,
+  cube,
+  flash,
+  heart,
+  heartGreenOutline,
+  heartRed,
+  search,
+  focus,
+  plus,
+  sun,
+  drop,
+  temperature,
+  garden,
+  seed,
+  chevron,
+  downArrow,
+  back,
+  verified,
+};

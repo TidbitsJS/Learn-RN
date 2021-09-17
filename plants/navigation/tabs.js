@@ -4,6 +4,7 @@ import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Home from "../screens/Home";
 import { COLORS } from "../constants";
 import Explore from "../screens/Explore";
+import Shop from "../screens/Shop";
 
 const Tab = createBottomTabNavigator();
 
@@ -73,27 +74,27 @@ const Tabs = () => {
               );
             case "Camera":
               return <CameraButton />;
-            case "Search":
+            case "Cart":
               return (
                 <Image
-                  source={require("../assets/icons/search_icon.png")}
+                  source={require("../assets/icons/bag.png")}
                   resizeMode="contain"
                   style={{
                     tintColor: tintColor,
-                    width: 20,
-                    height: 20,
+                    width: 23,
+                    height: 23,
                   }}
                 />
               );
-            case "Favorite":
+            case "Profile":
               return (
                 <Image
-                  source={require("../assets/icons/heart_icon.png")}
+                  source={require("../assets/icons/settings.png")}
                   resizeMode="contain"
                   style={{
                     tintColor: tintColor,
-                    width: 20,
-                    height: 20,
+                    width: 23,
+                    height: 23,
                   }}
                 />
               );
@@ -104,8 +105,8 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Camera" component={Home} />
-      <Tab.Screen name="Search" component={Home} />
-      <Tab.Screen name="Favorite" component={Home} />
+      <Tab.Screen name="Cart" component={Shop} />
+      <Tab.Screen name="Profile" component={Home} />
     </Tab.Navigator>
   );
 };

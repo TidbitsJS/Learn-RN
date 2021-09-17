@@ -7,6 +7,7 @@ export const plantsData = [
     imgUrl: images.plant1,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 340,
   },
   {
     id: 2,
@@ -14,6 +15,7 @@ export const plantsData = [
     imgUrl: images.plant2,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 180,
   },
   {
     id: 3,
@@ -21,6 +23,7 @@ export const plantsData = [
     imgUrl: images.plant3,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 200,
   },
   {
     id: 4,
@@ -28,6 +31,7 @@ export const plantsData = [
     imgUrl: images.plant4,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 530,
   },
   {
     id: 5,
@@ -35,6 +39,7 @@ export const plantsData = [
     imgUrl: images.plant5,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 410,
   },
   {
     id: 6,
@@ -42,6 +47,7 @@ export const plantsData = [
     imgUrl: images.plant6,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 320,
   },
   {
     id: 7,
@@ -49,6 +55,7 @@ export const plantsData = [
     imgUrl: images.plant7,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 120,
   },
   {
     id: 8,
@@ -56,27 +63,31 @@ export const plantsData = [
     imgUrl: images.anthurium,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 270,
   },
   {
     id: 9,
-    name: "Croton",
+    name: "Croton Mammy",
     imgUrl: images.croton,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 512,
   },
   {
     id: 10,
-    name: "Fruit Tree",
+    name: "The Great Sequoia",
     imgUrl: images.fruittree,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 230,
   },
   {
     id: 11,
-    name: "Home Decor",
+    name: "Milky White",
     imgUrl: images.homedecor,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 111,
   },
   {
     id: 12,
@@ -84,13 +95,15 @@ export const plantsData = [
     imgUrl: images.monstera,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 413,
   },
   {
     id: 13,
-    name: "Olive",
+    name: "Faux Olive",
     imgUrl: images.olive,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 534,
   },
   {
     id: 14,
@@ -98,6 +111,7 @@ export const plantsData = [
     imgUrl: images.orchid,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 452,
   },
   {
     id: 15,
@@ -105,6 +119,7 @@ export const plantsData = [
     imgUrl: images.palm,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 265,
   },
   {
     id: 16,
@@ -112,6 +127,7 @@ export const plantsData = [
     imgUrl: images.philodendron,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 712,
   },
   {
     id: 17,
@@ -119,6 +135,7 @@ export const plantsData = [
     imgUrl: images.pilea,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: false,
+    price: 390,
   },
   {
     id: 18,
@@ -126,6 +143,7 @@ export const plantsData = [
     imgUrl: images.redbonsai,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 576,
   },
   {
     id: 19,
@@ -133,6 +151,7 @@ export const plantsData = [
     imgUrl: images.rubbertree,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 455,
   },
   {
     id: 20,
@@ -140,6 +159,7 @@ export const plantsData = [
     imgUrl: images.scheffleraAlpine,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 290,
   },
   {
     id: 21,
@@ -147,6 +167,7 @@ export const plantsData = [
     imgUrl: images.umbellata,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 555,
   },
   {
     id: 22,
@@ -154,6 +175,7 @@ export const plantsData = [
     imgUrl: images.zzplant,
     desc: "Plants are mainly multicellular organisms, predominantly photosynthetic eukaryotes of the kingdom Plantae.Historically, plants were treated as one of two kingdoms including all living things that were not animals, and all algae and fungi were treated as plants. \n\nThere are about 320,000 species of plants, of which the great majority, some 260–290 thousand, produce seeds. Green plants provide a substantial proportion of the world's molecular oxygen and are the basis of most of Earth's ecosystems.",
     favourite: true,
+    price: 350,
   },
 ];
 
