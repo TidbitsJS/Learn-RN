@@ -19,6 +19,14 @@ export const verified = require("../assets/icons/verified.png");
 export const trash = require("../assets/icons/delete.png");
 export const cameraFilled = require("../assets/icons/cameraFilled.png");
 export const edit = require("../assets/icons/edit.png");
+export const coin = require("../assets/icons/coin.png");
+export const coupon = require("../assets/icons/coupon.png");
+export const customer = require("../assets/icons/customer.png");
+export const gift = require("../assets/icons/gift.png");
+export const help = require("../assets/icons/help.png");
+export const logout = require("../assets/icons/logout.png");
+export const notification = require("../assets/icons/notification.png");
+export const orders = require("../assets/icons/orders.png");
 
 export default {
   camera,
@@ -42,4 +50,12 @@ export default {
   trash,
   cameraFilled,
   edit,
+  coin,
+  coupon,
+  customer,
+  gift,
+  help,
+  logout,
+  notification,
+  orders,
 };

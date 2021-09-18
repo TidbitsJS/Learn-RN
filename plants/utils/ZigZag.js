@@ -1,6 +1,7 @@
 import React from "react";
 import { Dimensions, Text, View } from "react-native";
 import Svg, { Polygon } from "react-native-svg";
+import { SIZES } from "../constants";
 const { width } = Dimensions.get("window");
 
 const renderZigZagView = () => {
@@ -26,6 +27,7 @@ const ZigZag = () => {
       style={{
         width,
         alignItems: "center",
+        paddingBottom: SIZES.base,
       }}
     >
       <Svg height={10} width={width}>

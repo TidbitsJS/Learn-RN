@@ -1,5 +1,8 @@
 import React from "react";
-import { Image, SafeAreaView, Text, View } from "react-native";
+import { SafeAreaView, Text, View } from "react-native";
+import { ScrollView } from "react-native-gesture-handler";
+import ProfileItem from "../components/ProfileItem";
+import ProfileOptionItem from "../components/ProfileOptionItem";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import ZigZag from "../utils/ZigZag";
@@ -16,7 +19,7 @@ const Profile = () => {
         <View
           style={{
             width: "100%",
-            height: 150,
+            height: 170,
             justifyContent: "flex-start",
             alignItems: "flex-start",
             padding: SIZES.padding,
@@ -24,7 +27,7 @@ const Profile = () => {
           }}
         >
           <Text
-            style={{ ...FONTS.h1, color: COLORS.white }}
+            style={{ ...FONTS.h1, color: COLORS.white, marginTop: SIZES.font }}
           >{`My \nProfile`}</Text>
         </View>
         <View
@@ -43,97 +46,32 @@ const Profile = () => {
               paddingHorizontal: SIZES.padding,
             }}
           >
-            <View
-              style={{
-                width: 50,
-                height: 50,
-                borderRadius: 25,
-              }}
-            >
-              <View
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 25,
-                  padding: 5,
-                  backgroundColor: COLORS.white,
-                  borderWidth: 2,
-                  borderColor: COLORS.secondary,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={icons.cameraFilled}
-                  resizeMode="contain"
-                  style={{
-                    width: "95%",
-                    height: "95%",
-                  }}
-                />
-              </View>
-            </View>
-            <View
-              style={{
-                width: 120,
-                height: 120,
-                borderRadius: 60,
-                marginTop: -40,
-              }}
-            >
-              <View
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 60,
-                  padding: 5,
-                  backgroundColor: COLORS.white,
-                  borderWidth: 4,
-                  borderColor: COLORS.secondary,
-                }}
-              >
-                <Image
-                  source={images.profile5}
-                  resizeMode="cover"
-                  style={{
-                    width: "100%",
-                    height: "100%",
-                    borderRadius: 60,
-                  }}
-                />
-              </View>
-            </View>
+            <ProfileItem
+              containerWidthHeight={50}
+              borderRadius={25}
+              borderWidth={2}
+              imgUrl={icons.cameraFilled}
+              iconWidthHeight="95%"
+              isProfileImg={false}
+            />
 
-            <View
-              style={{
-                width: 50,
-                height: 50,
-                borderRadius: 25,
-              }}
-            >
-              <View
-                style={{
-                  width: "100%",
-                  height: "100%",
-                  borderRadius: 25,
-                  padding: 5,
-                  backgroundColor: COLORS.white,
-                  borderWidth: 2,
-                  borderColor: COLORS.secondary,
-                  justifyContent: "center",
-                  alignItems: "center",
-                }}
-              >
-                <Image
-                  source={icons.edit}
-                  resizeMode="cover"
-                  style={{
-                    width: "80%",
-                    height: "80%",
-                  }}
-                />
-              </View>
-            </View>
+            <ProfileItem
+              containerWidthHeight={120}
+              borderRadius={60}
+              borderWidth={4}
+              imgUrl={images.profile5}
+              iconWidthHeight="100%"
+              isProfileImg={true}
+            />
+
+            <ProfileItem
+              containerWidthHeight={50}
+              borderRadius={25}
+              borderWidth={2}
+              imgUrl={icons.edit}
+              iconWidthHeight="80%"
+              isProfileImg={false}
+            />
           </View>
 
           <View
@@ -157,6 +95,21 @@ const Profile = () => {
           </View>
         </View>
         <ZigZag />
+        <ScrollView>
+          <View style={{ flex: 1, padding: SIZES.padding }}>
+            <ProfileOptionItem iconUrl={icons.customer} title="My Account" />
+            <ProfileOptionItem
+              iconUrl={icons.notification}
+              title="Notifications"
+            />
+            <ProfileOptionItem iconUrl={icons.orders} title="Transactions" />
+            <ProfileOptionItem iconUrl={icons.coupon} title="coupons" />
+            <ProfileOptionItem iconUrl={icons.coin} title="Supercoins Zone" />
+            <ProfileOptionItem iconUrl={icons.gift} title="Gift Cards" />
+            <ProfileOptionItem iconUrl={icons.help} title="Help Center" />
+            <ProfileOptionItem iconUrl={icons.logout} title="Log out" />
+          </View>
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
