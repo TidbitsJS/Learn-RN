@@ -5,6 +5,7 @@ import Home from "../screens/Home";
 import { COLORS } from "../constants";
 import Explore from "../screens/Explore";
 import Shop from "../screens/Shop";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -106,7 +107,7 @@ const Tabs = () => {
       <Tab.Screen name="Explore" component={Explore} />
       <Tab.Screen name="Camera" component={Home} />
       <Tab.Screen name="Cart" component={Shop} />
-      <Tab.Screen name="Profile" component={Home} />
+      <Tab.Screen name="Profile" component={Profile} />
     </Tab.Navigator>
   );
 };
