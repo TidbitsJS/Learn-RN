@@ -50,7 +50,7 @@ const ExploreHeader = () => {
           }}
         >
           <TextInput
-            placeholder="Search"
+            placeholder="Bitkileri keşfedin..."
             style={{
               width: "90%",
               height: 40,

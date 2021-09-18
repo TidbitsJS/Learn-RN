@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View, Image } from "react-native";
-import { COLORS, FONTS, images, SIZES } from "../constants";
+import { Text, View, Image, TouchableOpacity } from "react-native";
+import { COLORS, FONTS, SIZES } from "../constants";
 
-const ShopItem = ({ item }) => {
+const ShopItem = ({ item, navigation }) => {
   return (
     <View
       style={{
@@ -15,27 +15,41 @@ const ShopItem = ({ item }) => {
         backgroundColor: COLORS.lightGreen,
       }}
     >
-      <View
+      <TouchableOpacity
+        activeOpacity={0.45}
+        onPress={() => {
+          navigation.navigate("PlantDetails", {
+            plantId: item.id,
+          });
+        }}
         style={{
           flex: 1.2,
-          borderRadius: SIZES.base,
-          marginHorizontal: SIZES.font,
           width: 100,
           height: 90,
-          justifyContent: "center",
-          alignItems: "center",
+          marginHorizontal: SIZES.font,
         }}
       >
-        <Image
-          source={item.imgUrl}
-          resizeMode="cover"
+        <View
           style={{
-            width: "90%",
-            height: "90%",
+            width: "100%",
+            height: "100%",
             borderRadius: SIZES.base,
+            justifyContent: "center",
+            alignItems: "center",
           }}
-        />
-      </View>
+        >
+          <Image
+            source={item.imgUrl}
+            resizeMode="cover"
+            style={{
+              width: "90%",
+              height: "90%",
+              borderRadius: SIZES.base,
+            }}
+          />
+        </View>
+      </TouchableOpacity>
+
       <View style={{ flex: 2, paddingRight: SIZES.font }}>
         <Text
           style={{

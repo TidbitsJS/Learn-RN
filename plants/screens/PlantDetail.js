@@ -141,9 +141,35 @@ const PlantDetail = ({ route, navigation }) => {
               </Text>
             </View>
 
+            <View
+              style={{
+                width: "100%",
+                marginVertical: SIZES.base,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Image
+                source={displayPlant[0].imgUrl}
+                resizeMode="cover"
+                style={{ width: "90%", height: 250, borderRadius: SIZES.base }}
+              />
+              <Text
+                style={{
+                  ...FONTS.body4,
+                  textAlign: "center",
+                  marginTop: SIZES.base,
+                  paddingHorizontal: SIZES.padding,
+                }}
+              >
+                {displayPlant[0].name}
+              </Text>
+            </View>
+
             <Text
               style={{
                 paddingHorizontal: SIZES.padding,
+                marginTop: SIZES.padding,
                 color: COLORS.secondary,
                 ...FONTS.h2,
               }}

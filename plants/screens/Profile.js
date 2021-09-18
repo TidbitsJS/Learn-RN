@@ -15,87 +15,91 @@ const Profile = () => {
         backgroundColor={COLORS.primary}
         barStyle="dark-content"
       />
-      <View style={{ flex: 1 }}>
-        <View
-          style={{
-            width: "100%",
-            height: 170,
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-            padding: SIZES.padding,
-            backgroundColor: COLORS.primary,
-          }}
-        >
-          <Text
-            style={{ ...FONTS.h1, color: COLORS.white, marginTop: SIZES.font }}
-          >{`My \nProfile`}</Text>
-        </View>
-        <View
-          style={{
-            backgroundColor: COLORS.white,
-            justifyContent: "flex-start",
-            alignItems: "flex-start",
-          }}
-        >
+      <ScrollView>
+        <View style={{ flex: 1 }}>
           <View
             style={{
               width: "100%",
-              flexDirection: "row",
-              alignItems: "center",
-              justifyContent: "space-between",
-              paddingHorizontal: SIZES.padding,
-            }}
-          >
-            <ProfileItem
-              containerWidthHeight={50}
-              borderRadius={25}
-              borderWidth={2}
-              imgUrl={icons.cameraFilled}
-              iconWidthHeight="95%"
-              isProfileImg={false}
-            />
-
-            <ProfileItem
-              containerWidthHeight={120}
-              borderRadius={60}
-              borderWidth={4}
-              imgUrl={images.profile5}
-              iconWidthHeight="100%"
-              isProfileImg={true}
-            />
-
-            <ProfileItem
-              containerWidthHeight={50}
-              borderRadius={25}
-              borderWidth={2}
-              imgUrl={icons.edit}
-              iconWidthHeight="80%"
-              isProfileImg={false}
-            />
-          </View>
-
-          <View
-            style={{
-              width: "100%",
-              margin: SIZES.base,
-              marginBottom: SIZES.font,
+              minHeight: 170,
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+              padding: SIZES.padding,
+              backgroundColor: COLORS.primary,
             }}
           >
             <Text
               style={{
-                ...FONTS.h2,
-                textAlign: "center",
-                paddingHorizontal: SIZES.font,
-                paddingVertical: SIZES.base,
-                color: COLORS.secondary,
+                ...FONTS.h1,
+                color: COLORS.white,
+                marginTop: SIZES.font,
+              }}
+            >{`My \nProfile`}</Text>
+          </View>
+          <View
+            style={{
+              backgroundColor: COLORS.white,
+              justifyContent: "flex-start",
+              alignItems: "flex-start",
+            }}
+          >
+            <View
+              style={{
+                width: "100%",
+                flexDirection: "row",
+                alignItems: "center",
+                justifyContent: "space-between",
+                paddingHorizontal: SIZES.padding,
               }}
             >
-              John The Doe
-            </Text>
+              <ProfileItem
+                containerWidthHeight={50}
+                borderRadius={25}
+                borderWidth={2}
+                imgUrl={icons.cameraFilled}
+                iconWidthHeight="95%"
+                isProfileImg={false}
+              />
+
+              <ProfileItem
+                containerWidthHeight={120}
+                borderRadius={60}
+                borderWidth={4}
+                imgUrl={images.profile5}
+                iconWidthHeight="100%"
+                isProfileImg={true}
+              />
+
+              <ProfileItem
+                containerWidthHeight={50}
+                borderRadius={25}
+                borderWidth={2}
+                imgUrl={icons.edit}
+                iconWidthHeight="80%"
+                isProfileImg={false}
+              />
+            </View>
+
+            <View
+              style={{
+                width: "100%",
+                margin: SIZES.base,
+                marginBottom: SIZES.font,
+              }}
+            >
+              <Text
+                style={{
+                  ...FONTS.h2,
+                  textAlign: "center",
+                  paddingHorizontal: SIZES.font,
+                  paddingVertical: SIZES.base,
+                  color: COLORS.secondary,
+                }}
+              >
+                John The Doe
+              </Text>
+            </View>
           </View>
-        </View>
-        <ZigZag />
-        <ScrollView>
+          <ZigZag />
           <View style={{ flex: 1, padding: SIZES.padding }}>
             <ProfileOptionItem iconUrl={icons.customer} title="My Account" />
             <ProfileOptionItem
@@ -109,8 +113,8 @@ const Profile = () => {
             <ProfileOptionItem iconUrl={icons.help} title="Help Center" />
             <ProfileOptionItem iconUrl={icons.logout} title="Log out" />
           </View>
-        </ScrollView>
-      </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

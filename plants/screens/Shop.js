@@ -7,13 +7,13 @@ import {
   SafeAreaView,
 } from "react-native";
 import { plantsData } from "../data/dummy";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import ShopFooterItem from "../components/ShopFooterItem";
 import ShopItem from "../components/ShopItem";
 import { SwipeListView } from "react-native-swipe-list-view";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Shop = () => {
+const Shop = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGreen }}>
       <FocusedStatusBar
@@ -26,7 +26,9 @@ const Shop = () => {
           <SwipeListView
             data={plantsData.slice(7, 13)}
             keyExtractor={(item) => "shop-" + item.name}
-            renderItem={({ item }) => <ShopItem item={item} />}
+            renderItem={({ item }) => (
+              <ShopItem item={item} navigation={navigation} />
+            )}
             renderHiddenItem={(data, rowMap) => (
               <View
                 style={{
@@ -72,14 +74,33 @@ const Shop = () => {
               <View
                 style={{
                   flex: 1,
-                  justifyContent: "flex-start",
-                  alignItems: "flex-start",
+                  flexDirection: "row",
+                  justifyContent: "space-between",
+                  alignItems: "center",
                   padding: SIZES.padding,
                 }}
               >
                 <Text
                   style={{ ...FONTS.h1, color: COLORS.secondary }}
                 >{`My \nCart`}</Text>
+                <View
+                  style={{
+                    width: 60,
+                    height: 60,
+                    borderRadius: 30,
+                    padding: 5,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    borderWidth: 2,
+                    borderColor: COLORS.primary,
+                  }}
+                >
+                  <Image
+                    source={images.profile5}
+                    resizeMode="cover"
+                    style={{ width: "100%", height: "100%", borderRadius: 30 }}
+                  />
+                </View>
               </View>
             )}
             ListFooterComponent={() => (
