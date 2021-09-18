@@ -1,18 +1,60 @@
 import React from "react";
-import { TouchableOpacity, Text, View, FlatList } from "react-native";
+import { TouchableOpacity, Text, View, Image } from "react-native";
 import { plantsData } from "../data/dummy";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 import ShopFooterItem from "../components/ShopFooterItem";
 import ShopItem from "../components/ShopItem";
+import { SwipeListView } from "react-native-swipe-list-view";
 
 const Shop = () => {
   return (
     <View style={{ flex: 1, backgroundColor: COLORS.lightGreen }}>
       <View style={{ flex: 1, marginTop: SIZES.font }}>
-        <FlatList
+        <SwipeListView
           data={plantsData.slice(7, 13)}
           keyExtractor={(item) => "shop-" + item.name}
           renderItem={({ item }) => <ShopItem item={item} />}
+          renderHiddenItem={(data, rowMap) => (
+            <View
+              style={{
+                flex: 1,
+                height: "100%",
+                justifyContent: "center",
+                alignItems: "flex-end",
+                padding: SIZES.base,
+              }}
+            >
+              <View
+                style={{
+                  position: "absolute",
+                  right: 0,
+                  height: "100%",
+                  backgroundColor: COLORS.white,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  textAlign: "center",
+                  padding: SIZES.font,
+                  width: 90,
+                  borderTopRightRadius: SIZES.base,
+                  borderBottomRightRadius: SIZES.base,
+                }}
+              >
+                <Image
+                  source={icons.trash}
+                  resizeMode="cover"
+                  style={{
+                    width: 30,
+                    height: 30,
+                  }}
+                />
+              </View>
+            </View>
+          )}
+          rightOpenValue={-100}
+          previewRowKey={"0"}
+          previewOpenValue={-40}
+          previewOpenDelay={3000}
+          onRowDidOpen={() => {}}
           ListHeaderComponent={() => (
             <View
               style={{

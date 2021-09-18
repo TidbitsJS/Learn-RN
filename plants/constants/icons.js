@@ -16,6 +16,7 @@ export const chevron = require("../assets/icons/chevron.png");
 export const downArrow = require("../assets/icons/down-arrow.png");
 export const back = require("../assets/icons/back.png");
 export const verified = require("../assets/icons/verified.png");
+export const trash = require("../assets/icons/delete.png");
 
 export default {
   camera,
@@ -36,4 +37,5 @@ export default {
   downArrow,
   back,
   verified,
+  trash,
 };

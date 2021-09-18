@@ -12,6 +12,7 @@ const ShopItem = ({ item }) => {
         justifyContent: "center",
         alignItems: "center",
         marginVertical: SIZES.base,
+        backgroundColor: COLORS.lightGreen,
       }}
     >
       <View
