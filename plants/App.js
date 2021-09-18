@@ -4,6 +4,7 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import Tabs from "./navigation/tabs";
 import { useFonts } from "expo-font";
 import { SafeAreaView, StatusBar } from "react-native";
+import { SafeAreaProvider } from "react-native-safe-area-context";
 import { COLORS } from "./constants";
 import PlantDetail from "./screens/PlantDetail";
 
@@ -29,8 +30,7 @@ const App = () => {
   }
 
   return (
-    <SafeAreaView style={{ flex: 1 }}>
-      <StatusBar animated={true} backgroundColor={COLORS.primary} />
+    <SafeAreaProvider style={{ flex: 1 }}>
       <NavigationContainer theme={theme}>
         <Stack.Navigator
           screenOptions={{
@@ -46,7 +46,7 @@ const App = () => {
           />
         </Stack.Navigator>
       </NavigationContainer>
-    </SafeAreaView>
+    </SafeAreaProvider>
   );
 };
 

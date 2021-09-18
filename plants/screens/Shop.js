@@ -1,124 +1,138 @@
 import React from "react";
-import { TouchableOpacity, Text, View, Image } from "react-native";
+import {
+  TouchableOpacity,
+  Text,
+  View,
+  Image,
+  SafeAreaView,
+} from "react-native";
 import { plantsData } from "../data/dummy";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import ShopFooterItem from "../components/ShopFooterItem";
 import ShopItem from "../components/ShopItem";
 import { SwipeListView } from "react-native-swipe-list-view";
+import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Shop = () => {
   return (
-    <View style={{ flex: 1, backgroundColor: COLORS.lightGreen }}>
-      <View style={{ flex: 1, marginTop: SIZES.font }}>
-        <SwipeListView
-          data={plantsData.slice(7, 13)}
-          keyExtractor={(item) => "shop-" + item.name}
-          renderItem={({ item }) => <ShopItem item={item} />}
-          renderHiddenItem={(data, rowMap) => (
-            <View
-              style={{
-                flex: 1,
-                height: "100%",
-                justifyContent: "center",
-                alignItems: "flex-end",
-                padding: SIZES.base,
-              }}
-            >
+    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGreen }}>
+      <FocusedStatusBar
+        animated={true}
+        backgroundColor={COLORS.lightGreen}
+        barStyle="dark-content"
+      />
+      <View style={{ flex: 1, backgroundColor: COLORS.lightGreen }}>
+        <View style={{ flex: 1, marginTop: SIZES.font }}>
+          <SwipeListView
+            data={plantsData.slice(7, 13)}
+            keyExtractor={(item) => "shop-" + item.name}
+            renderItem={({ item }) => <ShopItem item={item} />}
+            renderHiddenItem={(data, rowMap) => (
               <View
                 style={{
-                  position: "absolute",
-                  right: 0,
-                  height: "100%",
-                  backgroundColor: COLORS.white,
-                  justifyContent: "center",
-                  alignItems: "center",
-                  textAlign: "center",
-                  padding: SIZES.font,
-                  width: 90,
-                  borderTopRightRadius: SIZES.base,
-                  borderBottomRightRadius: SIZES.base,
-                }}
-              >
-                <Image
-                  source={icons.trash}
-                  resizeMode="cover"
-                  style={{
-                    width: 30,
-                    height: 30,
-                  }}
-                />
-              </View>
-            </View>
-          )}
-          rightOpenValue={-100}
-          previewRowKey={"0"}
-          previewOpenValue={-40}
-          previewOpenDelay={3000}
-          onRowDidOpen={() => {}}
-          ListHeaderComponent={() => (
-            <View
-              style={{
-                flex: 1,
-                justifyContent: "flex-start",
-                alignItems: "flex-start",
-                padding: SIZES.padding,
-              }}
-            >
-              <Text
-                style={{ ...FONTS.h1, color: COLORS.secondary }}
-              >{`My \nCart`}</Text>
-            </View>
-          )}
-          ListFooterComponent={() => (
-            <View style={{ flex: 1, margin: SIZES.padding }}>
-              <ShopFooterItem
-                isImage={true}
-                title="coupon"
-                subtitle="ecofriendly"
-                titleColor={COLORS.blackShed}
-                subtitleColor="#2ECC71"
-                bgColor={COLORS.white}
-                bold={false}
-                font={FONTS.body5}
-              />
-
-              <ShopFooterItem
-                isImage={false}
-                title="total"
-                subtitle="$2451"
-                titleColor={COLORS.white}
-                subtitleColor={COLORS.white}
-                bgColor={COLORS.primary}
-                bold={true}
-                font={FONTS.body2}
-              />
-
-              <TouchableOpacity
-                style={{
                   flex: 1,
+                  height: "100%",
                   justifyContent: "center",
-                  alignItems: "center",
-                  marginTop: SIZES.base,
+                  alignItems: "flex-end",
+                  padding: SIZES.base,
                 }}
-                activeOpacity={0.5}
               >
-                <Text
+                <View
                   style={{
-                    ...FONTS.body3,
+                    position: "absolute",
+                    right: 0,
+                    height: "100%",
+                    backgroundColor: COLORS.white,
+                    justifyContent: "center",
+                    alignItems: "center",
                     textAlign: "center",
-                    paddingHorizontal: SIZES.base,
-                    color: COLORS.secondary,
-                    fontWeight: "bold",
+                    padding: SIZES.font,
+                    width: 90,
+                    borderTopRightRadius: SIZES.base,
+                    borderBottomRightRadius: SIZES.base,
                   }}
                 >
-                  Checkout
-                </Text>
-              </TouchableOpacity>
-            </View>
-          )}
-        />
+                  <Image
+                    source={icons.trash}
+                    resizeMode="cover"
+                    style={{
+                      width: 30,
+                      height: 30,
+                    }}
+                  />
+                </View>
+              </View>
+            )}
+            rightOpenValue={-100}
+            previewRowKey={"0"}
+            previewOpenValue={-40}
+            previewOpenDelay={3000}
+            onRowDidOpen={() => {}}
+            ListHeaderComponent={() => (
+              <View
+                style={{
+                  flex: 1,
+                  justifyContent: "flex-start",
+                  alignItems: "flex-start",
+                  padding: SIZES.padding,
+                }}
+              >
+                <Text
+                  style={{ ...FONTS.h1, color: COLORS.secondary }}
+                >{`My \nCart`}</Text>
+              </View>
+            )}
+            ListFooterComponent={() => (
+              <View style={{ flex: 1, margin: SIZES.padding }}>
+                <ShopFooterItem
+                  isImage={true}
+                  title="coupon"
+                  subtitle="ecofriendly"
+                  titleColor={COLORS.blackShed}
+                  subtitleColor="#2ECC71"
+                  bgColor={COLORS.white}
+                  bold={false}
+                  font={FONTS.body5}
+                />
+
+                <ShopFooterItem
+                  isImage={false}
+                  title="total"
+                  subtitle="$2451"
+                  titleColor={COLORS.white}
+                  subtitleColor={COLORS.white}
+                  bgColor={COLORS.primary}
+                  bold={true}
+                  font={FONTS.body2}
+                />
+
+                <TouchableOpacity
+                  style={{
+                    flex: 1,
+                    justifyContent: "center",
+                    alignItems: "center",
+                    marginTop: SIZES.base,
+                  }}
+                  activeOpacity={0.5}
+                >
+                  <Text
+                    style={{
+                      ...FONTS.body3,
+                      textAlign: "center",
+                      paddingHorizontal: SIZES.base,
+                      color: COLORS.secondary,
+                      fontWeight: "bold",
+                    }}
+                  >
+                    Checkout
+                  </Text>
+                </TouchableOpacity>
+              </View>
+            )}
+          />
+        </View>
       </View>
-    </View>
+    </SafeAreaView>
   );
 };
 
