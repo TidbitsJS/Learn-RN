@@ -3,10 +3,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import Tabs from "./navigation/tabs";
 import { useFonts } from "expo-font";
-import { SafeAreaView, StatusBar } from "react-native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
-import { COLORS } from "./constants";
 import PlantDetail from "./screens/PlantDetail";
+import Signup from "./screens/Signup";
 
 const theme = {
   ...DefaultTheme,
@@ -36,8 +35,9 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName={"Home"}
+          initialRouteName={"Signup"}
         >
+          <Stack.Screen name="Signup" component={Signup} />
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen
             name="PlantDetails"

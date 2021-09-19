@@ -27,6 +27,9 @@ export const help = require("../assets/icons/help.png");
 export const logout = require("../assets/icons/logout.png");
 export const notification = require("../assets/icons/notification.png");
 export const orders = require("../assets/icons/orders.png");
+export const google = require("../assets/icons/google.png");
+export const twitter = require("../assets/icons/twitter.png");
+export const instagram = require("../assets/icons/instagram.png");
 
 export default {
   camera,
@@ -58,4 +61,7 @@ export default {
   logout,
   notification,
   orders,
+  google,
+  twitter,
+  instagram,
 };
