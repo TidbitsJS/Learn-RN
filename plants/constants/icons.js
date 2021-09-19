@@ -30,6 +30,7 @@ export const orders = require("../assets/icons/orders.png");
 export const google = require("../assets/icons/google.png");
 export const twitter = require("../assets/icons/twitter.png");
 export const instagram = require("../assets/icons/instagram.png");
+export const leftArrow = require("../assets/icons/leftArrow.png");
 
 export default {
   camera,
@@ -64,4 +65,5 @@ export default {
   google,
   twitter,
   instagram,
+  leftArrow,
 };

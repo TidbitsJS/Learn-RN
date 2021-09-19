@@ -1,12 +1,12 @@
 import React from "react";
-import { SafeAreaView, Text, View, ScrollView, Image } from "react-native";
+import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import IconButton from "../components/IconButton";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Signup = () => {
+const Login = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
@@ -20,21 +20,11 @@ const Signup = () => {
         barStyle="dark-content"
       />
       <ScrollView>
-        <View style={{ flex: 1 }}>
-          <View
-            style={{
-              width: "100%",
-              justifyContent: "flex-start",
-              margin: SIZES.padding,
-              marginBottom: 0,
-            }}
-          >
-            <Image
-              source={icons.leftArrow}
-              resizeMode="cover"
-              style={{ width: 30, height: 30 }}
-            />
-          </View>
+        <View
+          style={{
+            flex: 1,
+          }}
+        >
           <View
             style={{
               width: "100%",
@@ -43,7 +33,13 @@ const Signup = () => {
               alignItems: "center",
             }}
           >
-            <Text style={{ ...FONTS.longTitle, color: COLORS.primary }}>
+            <Text
+              style={{
+                ...FONTS.longTitle,
+                color: COLORS.primary,
+                marginTop: SIZES.padding,
+              }}
+            >
               Bitki
             </Text>
           </View>
@@ -63,13 +59,11 @@ const Signup = () => {
                 fontFamily: "Roboto-Bold",
               }}
             >
-              Create your Account
+              Login to your Account
             </Text>
 
-            <CustomTextInput title="Name" type="name" />
             <CustomTextInput title="Email" type="email" />
             <CustomTextInput title="Password" type="password" />
-            <CustomTextInput title="Confirm Password" type="password" />
 
             <View
               style={{
@@ -78,7 +72,7 @@ const Signup = () => {
                 paddingHorizontal: SIZES.base,
               }}
             >
-              <CustomButton title="Sign Up" />
+              <CustomButton title="Log In" />
 
               <Text
                 style={{
@@ -87,7 +81,7 @@ const Signup = () => {
                   color: COLORS.secondary,
                 }}
               >
-                - Or Sign up with -
+                - Or Sign in with -
               </Text>
             </View>
 
@@ -106,6 +100,28 @@ const Signup = () => {
               <IconButton iconUrl={icons.instagram} />
               <IconButton iconUrl={icons.twitter} />
             </View>
+
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "center",
+                alignItems: "center",
+                marginVertical: SIZES.padding,
+              }}
+            >
+              <Text style={{ ...FONTS.body4, color: COLORS.secondary }}>
+                Don't have an Account?
+                <Text
+                  style={{
+                    ...FONTS.body4,
+                    color: COLORS.darkGreen,
+                    fontWeight: "bold",
+                  }}
+                >
+                  Sign Up
+                </Text>
+              </Text>
+            </View>
           </View>
         </View>
       </ScrollView>
@@ -113,4 +129,4 @@ const Signup = () => {
   );
 };
 
-export default Signup;
+export default Login;

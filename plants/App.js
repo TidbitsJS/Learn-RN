@@ -6,6 +6,7 @@ import { useFonts } from "expo-font";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import PlantDetail from "./screens/PlantDetail";
 import Signup from "./screens/Signup";
+import Login from "./screens/Login";
 
 const theme = {
   ...DefaultTheme,
@@ -35,9 +36,10 @@ const App = () => {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName={"Signup"}
+          initialRouteName={"Login"}
         >
           <Stack.Screen name="Signup" component={Signup} />
+          <Stack.Screen name="Login" component={Login} />
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen
             name="PlantDetails"
