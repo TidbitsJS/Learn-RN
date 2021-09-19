@@ -19,10 +19,12 @@ const Login = ({ navigation }) => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
-      <ScrollView>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
         <View
           style={{
             flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
           }}
         >
           <View
@@ -37,7 +39,6 @@ const Login = ({ navigation }) => {
               style={{
                 ...FONTS.longTitle,
                 color: COLORS.primary,
-                marginTop: SIZES.padding,
               }}
             >
               Bitki
@@ -103,19 +104,26 @@ const Login = ({ navigation }) => {
 
             <View
               style={{
-                width: "100%",
                 justifyContent: "center",
                 alignItems: "center",
                 marginVertical: SIZES.padding,
               }}
             >
-              <Text style={{ ...FONTS.body4, color: COLORS.secondary }}>
-                Don't have an Account?
+              <Text
+                style={{
+                  ...FONTS.body4,
+                  color: COLORS.secondary,
+                }}
+              >
+                Don't have an Account?{" "}
                 <Text
                   style={{
                     ...FONTS.body4,
                     color: COLORS.darkGreen,
                     fontWeight: "bold",
+                  }}
+                  onPress={() => {
+                    navigation.navigate("Signup");
                   }}
                 >
                   Sign Up

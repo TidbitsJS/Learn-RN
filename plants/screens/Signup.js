@@ -1,12 +1,19 @@
 import React from "react";
-import { SafeAreaView, Text, View, ScrollView, Image } from "react-native";
+import {
+  SafeAreaView,
+  Text,
+  View,
+  ScrollView,
+  Image,
+  TouchableOpacity,
+} from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import IconButton from "../components/IconButton";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Signup = () => {
+const Signup = ({ navigation }) => {
   return (
     <SafeAreaView
       style={{
@@ -19,22 +26,31 @@ const Signup = () => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
-      <ScrollView>
-        <View style={{ flex: 1 }}>
-          <View
-            style={{
-              width: "100%",
-              justifyContent: "flex-start",
-              margin: SIZES.padding,
-              marginBottom: 0,
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View
+          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+        >
+          <TouchableOpacity
+            style={{ width: "100%" }}
+            onPress={() => {
+              navigation.navigate("Login");
             }}
           >
-            <Image
-              source={icons.leftArrow}
-              resizeMode="cover"
-              style={{ width: 30, height: 30 }}
-            />
-          </View>
+            <View
+              style={{
+                width: "100%",
+                justifyContent: "flex-start",
+                marginHorizontal: SIZES.padding,
+              }}
+            >
+              <Image
+                source={icons.leftArrow}
+                resizeMode="cover"
+                style={{ width: 30, height: 30 }}
+              />
+            </View>
+          </TouchableOpacity>
+
           <View
             style={{
               width: "100%",
