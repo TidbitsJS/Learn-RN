@@ -29,7 +29,6 @@ const Login = ({ navigation }) => {
         email: "",
         password: "",
       });
-      setError(false);
     }
   };
 
@@ -55,7 +54,12 @@ const Login = ({ navigation }) => {
         barStyle="dark-content"
       />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
-        {error && <AlertSnackBar onHandleClose={handleCloseSnackbar} />}
+        {error && (
+          <AlertSnackBar
+            message="Please fill the fields properly"
+            onHandleClose={handleCloseSnackbar}
+          />
+        )}
         <View
           style={{
             flex: 1,

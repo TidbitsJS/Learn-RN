@@ -2,7 +2,7 @@ import React, { useEffect, useRef } from "react";
 import { Text, View, Image, TouchableOpacity, Animated } from "react-native";
 import { COLORS, SIZES, FONTS, icons } from "../constants";
 
-const AlertSnackBar = ({ onHandleClose }) => {
+const AlertSnackBar = ({ onHandleClose, message }) => {
   const showAnim = useRef(new Animated.Value(-100)).current;
 
   useEffect(() => {
@@ -81,7 +81,7 @@ const AlertSnackBar = ({ onHandleClose }) => {
                 color: "red",
               }}
             >
-              Please fill the fields properly
+              {message}
             </Text>
           </View>
         </View>

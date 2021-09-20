@@ -7,6 +7,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
+import AlertSnackBar from "../components/AlertSnackBar";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import IconButton from "../components/IconButton";
@@ -14,6 +15,8 @@ import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Signup = ({ navigation }) => {
+  const [error, setError] = useState(false);
+  const [alertText, setAlertText] = useState("Please fill the fields properly");
   const [signupcredential, setSignupCredential] = useState({
     name: "",
     email: "",
@@ -28,7 +31,12 @@ const Signup = ({ navigation }) => {
       signupcredential.name.trim() === "" ||
       signupcredential.confirmPassword.trim() === "";
     if (validate) {
-      console.log("Please Provide proper credentials");
+      setError(true);
+      setTimeout(() => setError(false), 5000);
+    } else if (signupcredential.password !== signupcredential.confirmPassword) {
+      setAlertText("Password did not match!");
+      setError(true);
+      setTimeout(() => setError(false), 5000);
     } else {
       navigation.navigate("Home");
       setSignupCredential({
@@ -47,6 +55,8 @@ const Signup = ({ navigation }) => {
     });
   };
 
+  const handleCloseSnackbar = () => setError(false);
+
   return (
     <SafeAreaView
       style={{
@@ -60,6 +70,12 @@ const Signup = ({ navigation }) => {
         barStyle="dark-content"
       />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        {error && (
+          <AlertSnackBar
+            message={alertText}
+            onHandleClose={handleCloseSnackbar}
+          />
+        )}
         <View
           style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
         >
