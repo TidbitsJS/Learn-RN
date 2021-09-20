@@ -2,7 +2,7 @@ import React from "react";
 import { TextInput, View } from "react-native";
 import { FONTS, COLORS, SIZES } from "../constants";
 
-const CustomTextInput = ({ title, type }) => {
+const CustomTextInput = ({ title, type, value, onHandleInputClick }) => {
   return (
     <View
       style={{
@@ -13,8 +13,13 @@ const CustomTextInput = ({ title, type }) => {
     >
       <TextInput
         placeholder={title}
-        autoCompleteType={type}
+        secureTextEntry={type === "password" || type === "confirmpassword"}
+        autoCompleteType={type === "confirmpassword" ? "password" : type}
         keyboardType={type === "email" ? "email-address" : "default"}
+        onChangeText={(value) => {
+          onHandleInputClick(type, value);
+        }}
+        value={value}
         placeholderTextColor={COLORS.black}
         style={{
           width: "100%",

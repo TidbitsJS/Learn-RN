@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   SafeAreaView,
   Text,
@@ -14,6 +14,39 @@ import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Signup = ({ navigation }) => {
+  const [signupcredential, setSignupCredential] = useState({
+    name: "",
+    email: "",
+    password: "",
+    confirmPassword: "",
+  });
+
+  const handleClick = (signupcredential) => {
+    let validate =
+      signupcredential.email.trim() === "" ||
+      signupcredential.password.trim() === "" ||
+      signupcredential.name.trim() === "" ||
+      signupcredential.confirmPassword.trim() === "";
+    if (validate) {
+      console.log("Please Provide proper credentials");
+    } else {
+      navigation.navigate("Home");
+      setSignupCredential({
+        name: "",
+        email: "",
+        password: "",
+        confirmPassword: "",
+      });
+    }
+  };
+
+  const handleInputText = (type, value) => {
+    setSignupCredential({
+      ...signupcredential,
+      [type]: value,
+    });
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -82,10 +115,30 @@ const Signup = ({ navigation }) => {
               Create your Account
             </Text>
 
-            <CustomTextInput title="Name" type="name" />
-            <CustomTextInput title="Email" type="email" />
-            <CustomTextInput title="Password" type="password" />
-            <CustomTextInput title="Confirm Password" type="password" />
+            <CustomTextInput
+              title="Name"
+              type="name"
+              value={signupcredential.name}
+              onHandleInputClick={handleInputText}
+            />
+            <CustomTextInput
+              title="Email"
+              type="email"
+              value={signupcredential.email}
+              onHandleInputClick={handleInputText}
+            />
+            <CustomTextInput
+              title="Password"
+              type="password"
+              value={signupcredential.password}
+              onHandleInputClick={handleInputText}
+            />
+            <CustomTextInput
+              title="Confirm Password"
+              type="confirmpassword"
+              value={signupcredential.confirmPassword}
+              onHandleInputClick={handleInputText}
+            />
 
             <View
               style={{
@@ -94,7 +147,10 @@ const Signup = ({ navigation }) => {
                 paddingHorizontal: SIZES.base,
               }}
             >
-              <CustomButton title="Sign Up" />
+              <CustomButton
+                title="Sign Up"
+                onHandleClick={() => handleClick(signupcredential)}
+              />
 
               <Text
                 style={{

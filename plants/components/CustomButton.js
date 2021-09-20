@@ -1,38 +1,43 @@
 import React from "react";
-import { Text, View } from "react-native";
+import { Text, TouchableOpacity, View } from "react-native";
 import { FONTS, COLORS, SIZES } from "../constants";
 
-const CustomButton = ({ title }) => {
+const CustomButton = ({ title, onHandleClick }) => {
   return (
-    <View
-      style={{
-        width: "100%",
-        height: 45,
-        marginTop: SIZES.padding + 5,
-        backgroundColor: COLORS.primary,
-        justifyContent: "center",
-        alignItems: "center",
-        borderRadius: 5,
-        shadowColor: COLORS.primary,
-        shadowOffset: {
-          width: 0,
-          height: 1,
-        },
-        shadowOpacity: 0.3,
-        shadowRadius: 1.41,
-        elevation: 3,
-      }}
+    <TouchableOpacity
+      style={{ width: "100%" }}
+      activeOpacity={0.95}
+      onPress={() => onHandleClick()}
     >
-      <Text
+      <View
         style={{
-          ...FONTS.body3,
-          color: COLORS.white,
-          textAlign: "center",
+          height: 45,
+          marginTop: SIZES.padding + 5,
+          backgroundColor: COLORS.primary,
+          justifyContent: "center",
+          alignItems: "center",
+          borderRadius: 5,
+          shadowColor: COLORS.primary,
+          shadowOffset: {
+            width: 0,
+            height: 1,
+          },
+          shadowOpacity: 0.3,
+          shadowRadius: 1.41,
+          elevation: 3,
         }}
       >
-        {title}
-      </Text>
-    </View>
+        <Text
+          style={{
+            ...FONTS.body3,
+            color: COLORS.white,
+            textAlign: "center",
+          }}
+        >
+          {title}
+        </Text>
+      </View>
+    </TouchableOpacity>
   );
 };
 

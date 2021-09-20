@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
@@ -7,6 +7,33 @@ import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Login = ({ navigation }) => {
+  const [logincredential, setLoginCredential] = useState({
+    email: "",
+    password: "",
+  });
+
+  const handleClick = (logincredential) => {
+    let validate =
+      logincredential.email.trim() === "" ||
+      logincredential.password.trim() === "";
+    if (validate) {
+      console.log("Please Provide proper credentials");
+    } else {
+      navigation.navigate("Home");
+      setLoginCredential({
+        email: "",
+        password: "",
+      });
+    }
+  };
+
+  const handleInputText = (type, value) => {
+    setLoginCredential({
+      ...logincredential,
+      [type]: value,
+    });
+  };
+
   return (
     <SafeAreaView
       style={{
@@ -63,8 +90,18 @@ const Login = ({ navigation }) => {
               Login to your Account
             </Text>
 
-            <CustomTextInput title="Email" type="email" />
-            <CustomTextInput title="Password" type="password" />
+            <CustomTextInput
+              title="Email"
+              type="email"
+              value={logincredential.email}
+              onHandleInputClick={handleInputText}
+            />
+            <CustomTextInput
+              title="Password"
+              type="password"
+              value={logincredential.password}
+              onHandleInputClick={handleInputText}
+            />
 
             <View
               style={{
@@ -73,8 +110,10 @@ const Login = ({ navigation }) => {
                 paddingHorizontal: SIZES.base,
               }}
             >
-              <CustomButton title="Log In" />
-
+              <CustomButton
+                title="Log In"
+                onHandleClick={() => handleClick(logincredential)}
+              />
               <Text
                 style={{
                   ...FONTS.body4,
