@@ -1,5 +1,6 @@
 import React, { useState } from "react";
 import { SafeAreaView, Text, View, ScrollView } from "react-native";
+import AlertSnackBar from "../components/AlertSnackBar";
 import CustomButton from "../components/CustomButton";
 import CustomTextInput from "../components/CustomTextInput";
 import IconButton from "../components/IconButton";
@@ -7,6 +8,7 @@ import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Login = ({ navigation }) => {
+  const [error, setError] = useState(false);
   const [logincredential, setLoginCredential] = useState({
     email: "",
     password: "",
@@ -16,14 +18,18 @@ const Login = ({ navigation }) => {
     let validate =
       logincredential.email.trim() === "" ||
       logincredential.password.trim() === "";
+
     if (validate) {
-      console.log("Please Provide proper credentials");
+      setError(true);
+
+      setTimeout(() => setError(false), 5000);
     } else {
       navigation.navigate("Home");
       setLoginCredential({
         email: "",
         password: "",
       });
+      setError(false);
     }
   };
 
@@ -33,6 +39,8 @@ const Login = ({ navigation }) => {
       [type]: value,
     });
   };
+
+  const handleCloseSnackbar = () => setError(false);
 
   return (
     <SafeAreaView
@@ -47,11 +55,13 @@ const Login = ({ navigation }) => {
         barStyle="dark-content"
       />
       <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        {error && <AlertSnackBar onHandleClose={handleCloseSnackbar} />}
         <View
           style={{
             flex: 1,
             justifyContent: "center",
             alignItems: "center",
+            zIndex: 0,
           }}
         >
           <View

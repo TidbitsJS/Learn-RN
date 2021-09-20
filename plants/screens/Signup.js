@@ -135,7 +135,7 @@ const Signup = ({ navigation }) => {
             />
             <CustomTextInput
               title="Confirm Password"
-              type="confirmpassword"
+              type="confirmPassword"
               value={signupcredential.confirmPassword}
               onHandleInputClick={handleInputText}
             />

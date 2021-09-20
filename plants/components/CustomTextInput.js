@@ -13,8 +13,8 @@ const CustomTextInput = ({ title, type, value, onHandleInputClick }) => {
     >
       <TextInput
         placeholder={title}
-        secureTextEntry={type === "password" || type === "confirmpassword"}
-        autoCompleteType={type === "confirmpassword" ? "password" : type}
+        secureTextEntry={type === "password" || type === "confirmPassword"}
+        autoCompleteType={type === "confirmPassword" ? "password" : type}
         keyboardType={type === "email" ? "email-address" : "default"}
         onChangeText={(value) => {
           onHandleInputClick(type, value);

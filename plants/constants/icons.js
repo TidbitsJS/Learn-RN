@@ -31,6 +31,8 @@ export const google = require("../assets/icons/google.png");
 export const twitter = require("../assets/icons/twitter.png");
 export const instagram = require("../assets/icons/instagram.png");
 export const leftArrow = require("../assets/icons/leftArrow.png");
+export const alert = require("../assets/icons/alert.png");
+export const close = require("../assets/icons/close.png");
 
 export default {
   camera,
@@ -66,4 +68,6 @@ export default {
   twitter,
   instagram,
   leftArrow,
+  alert,
+  close,
 };
