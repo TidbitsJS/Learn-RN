@@ -18,7 +18,6 @@ const AlertSnackBar = ({ onHandleClose, message }) => {
       style={{
         flex: 1,
         width: "100%",
-        height: "100%",
         justifyContent: "flex-start",
         alignItems: "center",
         position: "absolute",

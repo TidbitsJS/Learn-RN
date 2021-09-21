@@ -2,7 +2,13 @@ import React from "react";
 import { TextInput, View } from "react-native";
 import { FONTS, COLORS, SIZES } from "../constants";
 
-const CustomTextInput = ({ title, type, value, onHandleInputClick }) => {
+const CustomTextInput = ({
+  title,
+  type,
+  value,
+  onHandleInputClick,
+  onHandleClose,
+}) => {
   return (
     <View
       style={{
@@ -19,6 +25,7 @@ const CustomTextInput = ({ title, type, value, onHandleInputClick }) => {
         onChangeText={(value) => {
           onHandleInputClick(type, value);
         }}
+        onFocus={() => onHandleClose()}
         value={value}
         placeholderTextColor={COLORS.black}
         style={{

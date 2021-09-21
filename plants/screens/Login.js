@@ -21,8 +21,6 @@ const Login = ({ navigation }) => {
 
     if (validate) {
       setError(true);
-
-      setTimeout(() => setError(false), 5000);
     } else {
       navigation.navigate("Home");
       setLoginCredential({
@@ -39,7 +37,11 @@ const Login = ({ navigation }) => {
     });
   };
 
-  const handleCloseSnackbar = () => setError(false);
+  const handleCloseSnackbar = () => {
+    if (error) {
+      setError(false);
+    }
+  };
 
   return (
     <SafeAreaView
@@ -109,12 +111,14 @@ const Login = ({ navigation }) => {
               type="email"
               value={logincredential.email}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
             <CustomTextInput
               title="Password"
               type="password"
               value={logincredential.password}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
 
             <View

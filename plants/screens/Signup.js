@@ -32,7 +32,6 @@ const Signup = ({ navigation }) => {
       signupcredential.confirmPassword.trim() === "";
     if (validate) {
       setError(true);
-      setTimeout(() => setError(false), 5000);
     } else if (signupcredential.password !== signupcredential.confirmPassword) {
       setAlertText("Password did not match!");
       setError(true);
@@ -55,7 +54,11 @@ const Signup = ({ navigation }) => {
     });
   };
 
-  const handleCloseSnackbar = () => setError(false);
+  const handleCloseSnackbar = () => {
+    if (error) {
+      setError(false);
+    }
+  };
 
   return (
     <SafeAreaView
@@ -136,24 +139,28 @@ const Signup = ({ navigation }) => {
               type="name"
               value={signupcredential.name}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
             <CustomTextInput
               title="Email"
               type="email"
               value={signupcredential.email}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
             <CustomTextInput
               title="Password"
               type="password"
               value={signupcredential.password}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
             <CustomTextInput
               title="Confirm Password"
               type="confirmPassword"
               value={signupcredential.confirmPassword}
               onHandleInputClick={handleInputText}
+              onHandleClose={handleCloseSnackbar}
             />
 
             <View
