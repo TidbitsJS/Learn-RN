@@ -144,6 +144,7 @@ const Shop = ({ navigation }) => {
                       color: COLORS.secondary,
                       fontWeight: "bold",
                     }}
+                    onPress={() => navigation.navigate("PaymentMethod")}
                   >
                     Checkout
                   </Text>

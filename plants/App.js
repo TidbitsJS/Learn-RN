@@ -7,6 +7,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import PlantDetail from "./screens/PlantDetail";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
+import PaymentMethod from "./screens/PaymentMethod";
 
 const theme = {
   ...DefaultTheme,
@@ -46,6 +47,7 @@ const App = () => {
             component={PlantDetail}
             options={{ headerShown: false }}
           />
+          <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

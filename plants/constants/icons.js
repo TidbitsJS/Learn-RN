@@ -33,6 +33,9 @@ export const instagram = require("../assets/icons/instagram.png");
 export const leftArrow = require("../assets/icons/leftArrow.png");
 export const alert = require("../assets/icons/alert.png");
 export const close = require("../assets/icons/close.png");
+export const mastercard = require("../assets/icons/mastercard.png");
+export const paypal = require("../assets/icons/paypal.png");
+export const promo = require("../assets/icons/promo.png");
 
 export default {
   camera,
@@ -70,4 +73,7 @@ export default {
   leftArrow,
   alert,
   close,
+  mastercard,
+  paypal,
+  promo,
 };
