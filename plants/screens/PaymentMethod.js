@@ -1,67 +1,114 @@
-import React from "react";
-import { SafeAreaView, Text, View, Image, ScrollView } from "react-native";
+import React, { useState } from "react";
+import {
+  SafeAreaView,
+  Text,
+  View,
+  Image,
+  ScrollView,
+  TouchableOpacity,
+} from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
+import Dash from "../utils/Dash";
 
-const PaymentMethodItem = ({ iconUrl, title, subtitle }) => {
+const PaymentMethodItem = ({
+  iconUrl,
+  title,
+  subtitle,
+  type,
+  onHandleSelect,
+  selectedCard,
+}) => {
+  return (
+    <TouchableOpacity activeOpacity={0.5} onPress={() => onHandleSelect(type)}>
+      <View
+        style={{
+          width: "90%",
+          padding: SIZES.font,
+          flexDirection: "row",
+          justifyContent: "center",
+          alignItems: "center",
+          backgroundColor: COLORS.white,
+          borderRadius: SIZES.base,
+          marginBottom: SIZES.font,
+        }}
+      >
+        <Image
+          source={iconUrl}
+          style={{ width: 30, height: 30, marginRight: SIZES.font }}
+        />
+        <View
+          style={{
+            paddingLeft: SIZES.font,
+            justifyContent: "flex-start",
+            alignItems: "flex-start",
+            flex: 1,
+            borderLeftWidth: 1,
+            borderLeftColor: COLORS.lightGray,
+          }}
+        >
+          <Text style={{ ...FONTS.h3 }}>{title}</Text>
+          <Text style={{ ...FONTS.body5, color: COLORS.secondary }}>
+            {subtitle}
+          </Text>
+        </View>
+        <View
+          style={{
+            width: 20,
+            height: 20,
+            backgroundColor: COLORS.lightGreen,
+            borderWidth: 1,
+            borderColor:
+              type === selectedCard ? COLORS.blackShed : COLORS.secondary,
+            borderRadius: 10,
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <View
+            style={{
+              width: "80%",
+              height: "80%",
+              backgroundColor:
+                type === selectedCard ? COLORS.blackShed : COLORS.white,
+              borderRadius: 10,
+            }}
+          />
+        </View>
+      </View>
+    </TouchableOpacity>
+  );
+};
+
+const PaymentMethodTextItem = ({ title, amount }) => {
   return (
     <View
       style={{
-        width: "90%",
-        padding: SIZES.font,
-        flexDirection: "row",
-        justifyContent: "center",
+        paddingHorizontal: SIZES.padding,
+        justifyContent: "space-between",
         alignItems: "center",
-        backgroundColor: COLORS.white,
-        borderRadius: SIZES.base,
-        marginBottom: SIZES.font,
+        flexDirection: "row",
+        width: "100%",
+        marginVertical: SIZES.base,
       }}
     >
-      <Image
-        source={iconUrl}
-        style={{ width: 30, height: 30, marginRight: SIZES.font }}
-      />
-      <View
+      <Text
         style={{
-          paddingLeft: SIZES.font,
-          justifyContent: "flex-start",
-          alignItems: "flex-start",
-          flex: 1,
-          borderLeftWidth: 1,
-          borderLeftColor: COLORS.lightGray,
+          ...FONTS.body3,
+          textAlign: "left",
+          color: COLORS.secondary,
         }}
       >
-        <Text style={{ ...FONTS.h3 }}>{title}</Text>
-        <Text style={{ ...FONTS.body5, color: COLORS.secondary }}>
-          {subtitle}
-        </Text>
-      </View>
-      <View
-        style={{
-          width: 20,
-          height: 20,
-          backgroundColor: COLORS.lightGreen,
-          borderWidth: 1,
-          borderColor: COLORS.blackShed,
-          borderRadius: 10,
-          justifyContent: "center",
-          alignItems: "center",
-        }}
-      >
-        <View
-          style={{
-            width: "80%",
-            height: "80%",
-            backgroundColor: COLORS.blackShed,
-            borderRadius: 10,
-          }}
-        />
-      </View>
+        {title}
+      </Text>
+      <Text style={{ ...FONTS.h3, textAlign: "right" }}>${amount}</Text>
     </View>
   );
 };
 
 const PaymentMethod = () => {
+  const [selectCard, setSelectCard] = useState("creditcard");
+
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
@@ -95,16 +142,25 @@ const PaymentMethod = () => {
               iconUrl={icons.mastercard}
               title="Credit Card"
               subtitle="+1 6006****24"
+              type="creditcard"
+              onHandleSelect={(type) => setSelectCard(type)}
+              selectedCard={selectCard}
             />
             <PaymentMethodItem
               iconUrl={icons.paypal}
               title="Paypal"
               subtitle="5221****2465"
+              type="paypal"
+              onHandleSelect={(type) => setSelectCard(type)}
+              selectedCard={selectCard}
             />
             <PaymentMethodItem
               iconUrl={icons.google}
               title="Google Pay"
               subtitle="4142****7667"
+              type="googlepay"
+              onHandleSelect={(type) => setSelectCard(type)}
+              selectedCard={selectCard}
             />
           </View>
 
@@ -175,90 +231,11 @@ const PaymentMethod = () => {
               marginTop: SIZES.padding,
             }}
           >
-            <View
-              style={{
-                paddingHorizontal: SIZES.padding,
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexDirection: "row",
-                width: "100%",
-                marginVertical: SIZES.base,
-              }}
-            >
-              <Text
-                style={{
-                  ...FONTS.body3,
-                  textAlign: "left",
-                  color: COLORS.secondary,
-                }}
-              >
-                Transfer Amount
-              </Text>
-              <Text style={{ ...FONTS.h3, textAlign: "right" }}>$2531</Text>
-            </View>
-            <View
-              style={{
-                paddingHorizontal: SIZES.padding,
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexDirection: "row",
-                width: "100%",
-                marginVertical: SIZES.base,
-              }}
-            >
-              <Text
-                style={{
-                  ...FONTS.body3,
-                  textAlign: "left",
-                  color: COLORS.secondary,
-                }}
-              >
-                Additional Cost
-              </Text>
-              <Text style={{ ...FONTS.h3, textAlign: "right" }}>$0.75</Text>
-            </View>
-            <View
-              style={{
-                paddingHorizontal: SIZES.padding,
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexDirection: "row",
-                width: "100%",
-                marginVertical: SIZES.base,
-              }}
-            >
-              <Text
-                style={{
-                  ...FONTS.body3,
-                  textAlign: "left",
-                  color: COLORS.secondary,
-                }}
-              >
-                Shipping
-              </Text>
-              <Text style={{ ...FONTS.h3, textAlign: "right" }}>$21.50</Text>
-            </View>
-            <View
-              style={{
-                paddingHorizontal: SIZES.padding,
-                justifyContent: "space-between",
-                alignItems: "center",
-                flexDirection: "row",
-                width: "100%",
-                marginVertical: SIZES.base,
-              }}
-            >
-              <Text
-                style={{
-                  ...FONTS.body3,
-                  textAlign: "left",
-                  color: COLORS.secondary,
-                }}
-              >
-                Total
-              </Text>
-              <Text style={{ ...FONTS.h3, textAlign: "right" }}>$2563.05</Text>
-            </View>
+            <PaymentMethodTextItem title="Transfer Amount" amount={2351.15} />
+            <PaymentMethodTextItem title="Additional Cost" amount={0.75} />
+            <PaymentMethodTextItem title="Shipping" amount={21.5} />
+            <Dash marginTop={SIZES.font} marginBottom={SIZES.base} />
+            <PaymentMethodTextItem title="Total" amount={2563.05} />
           </View>
           <View
             style={{
@@ -266,6 +243,7 @@ const PaymentMethod = () => {
               justifyContent: "center",
               alignItems: "center",
               marginTop: SIZES.padding * 2,
+              marginBottom: SIZES.padding,
             }}
           >
             <View
