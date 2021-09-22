@@ -37,6 +37,7 @@ export const mastercard = require("../assets/icons/mastercard.png");
 export const paypal = require("../assets/icons/paypal.png");
 export const promo = require("../assets/icons/promo.png");
 export const info = require("../assets/icons/info.png");
+export const closewindow = require("../assets/icons/closewindow.png");
 
 export default {
   camera,
@@ -78,4 +79,5 @@ export default {
   paypal,
   promo,
   info,
+  closewindow,
 };

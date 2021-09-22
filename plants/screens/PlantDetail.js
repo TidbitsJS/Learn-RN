@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useState } from "react";
 import {
   ScrollView,
   StyleSheet,
@@ -8,6 +8,7 @@ import {
   SafeAreaView,
 } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
+import PlantView from "../components/PlantView";
 import Requirements from "../components/Requirements";
 import RequirementsBar from "../components/RequirementsBar";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
@@ -15,6 +16,7 @@ import { plantsData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const PlantDetail = ({ route, navigation }) => {
+  const [showPlant, setShowPlant] = useState(false);
   const { plantId } = route.params;
   const displayPlant = plantsData.filter((plant) => plant.id === plantId);
 
@@ -25,100 +27,106 @@ const PlantDetail = ({ route, navigation }) => {
         translucent={true}
         backgroundColor="transparent"
       />
-      <ScrollView>
-        <View style={styles.container}>
-          <View>
-            <Image
-              source={images.bannerBg}
-              resizeMode="cover"
-              style={{
-                width: "100%",
-                height: 270,
-              }}
-            />
-          </View>
-
-          <View
+      <View style={styles.container}>
+        <View>
+          <Image
+            source={images.bannerBg}
+            resizeMode="cover"
             style={{
-              position: "absolute",
-              top: 40,
-              left: SIZES.padding,
-              right: SIZES.padding,
+              width: "100%",
+              height: 270,
             }}
-          >
-            <View style={{ flexDirection: "row" }}>
-              <View style={{ flex: 1 }}>
-                <TouchableOpacity
-                  style={{
-                    width: 30,
-                    height: 30,
-                    alignItems: "center",
-                    justifyContent: "center",
-                    borderRadius: 20,
-                    backgroundColor: "rgba(255, 255, 255, 0.5)",
-                  }}
-                  onPress={() => {
-                    navigation.navigate("Home");
-                  }}
-                >
-                  <Image
-                    source={icons.back}
-                    resizeMode="contain"
-                    style={{
-                      width: 15,
-                      height: 15,
-                    }}
-                  />
-                </TouchableOpacity>
-              </View>
+          />
+        </View>
+
+        <View
+          style={{
+            position: "absolute",
+            top: 40,
+            left: SIZES.padding,
+            right: SIZES.padding,
+          }}
+        >
+          <View style={{ flexDirection: "row" }}>
+            <View style={{ flex: 1 }}>
               <TouchableOpacity
                 style={{
-                  flex: 1,
-                  alignItems: "flex-end",
+                  width: 30,
+                  height: 30,
+                  alignItems: "center",
                   justifyContent: "center",
+                  borderRadius: 20,
+                  backgroundColor: "rgba(255, 255, 255, 0.5)",
                 }}
-                onPress={() => console.log("Focus on pressed")}
+                onPress={() => {
+                  navigation.navigate("Home");
+                }}
               >
                 <Image
-                  source={icons.focus}
+                  source={icons.back}
                   resizeMode="contain"
                   style={{
-                    width: 20,
-                    height: 20,
+                    width: 15,
+                    height: 15,
                   }}
                 />
               </TouchableOpacity>
             </View>
-
-            <View
+            <TouchableOpacity
               style={{
-                flexDirection: "row",
-                marginTop: "5%",
-                height: 130,
                 flex: 1,
-                justifyContent: "flex-start",
-                alignItems: "center",
+                alignItems: "flex-end",
+                justifyContent: "center",
               }}
+              onPress={() => console.log("Focus on pressed")}
             >
-              <Text
-                style={{ color: COLORS.white, ...FONTS.longTitle }}
-                numberOfLines={2}
-              >
-                {displayPlant[0].name}
-              </Text>
-            </View>
+              <Image
+                source={icons.focus}
+                resizeMode="contain"
+                style={{
+                  width: 20,
+                  height: 20,
+                }}
+              />
+            </TouchableOpacity>
           </View>
 
           <View
             style={{
+              flexDirection: "row",
+              marginTop: "5%",
+              height: 130,
               flex: 1,
-              marginTop: -40,
-              backgroundColor: COLORS.lightGray,
-              borderTopLeftRadius: 40,
-              borderTopRightRadius: 40,
-              paddingVertical: SIZES.padding,
+              justifyContent: "flex-start",
+              alignItems: "center",
             }}
           >
+            <Text
+              style={{ color: COLORS.white, ...FONTS.longTitle }}
+              numberOfLines={2}
+            >
+              {displayPlant[0].name}
+            </Text>
+          </View>
+        </View>
+
+        {showPlant && (
+          <PlantView
+            imgUrl={displayPlant[0].imgUrl}
+            onHandleClose={() => setShowPlant(false)}
+          />
+        )}
+        <View
+          style={{
+            flex: 1,
+            marginTop: -40,
+            backgroundColor: COLORS.lightGray,
+            borderTopLeftRadius: 40,
+            borderTopRightRadius: 40,
+            paddingVertical: SIZES.padding,
+          }}
+        >
+          <ScrollView>
             <View style={{ flex: 1, marginVertical: SIZES.base }}>
               <Text
                 style={{
@@ -141,7 +149,9 @@ const PlantDetail = ({ route, navigation }) => {
               </Text>
             </View>
 
-            <View
+            <TouchableOpacity
+              activeOpacity={0.5}
+              onPress={() => setShowPlant(true)}
               style={{
                 width: "100%",
                 marginVertical: SIZES.base,
@@ -164,7 +174,7 @@ const PlantDetail = ({ route, navigation }) => {
               >
                 {displayPlant[0].name}
               </Text>
-            </View>
+            </TouchableOpacity>
 
             <Text
               style={{
@@ -239,9 +249,9 @@ const PlantDetail = ({ route, navigation }) => {
                 />
               </View>
             </View>
-          </View>
+          </ScrollView>
         </View>
-      </ScrollView>
+      </View>
     </SafeAreaView>
   );
 };
