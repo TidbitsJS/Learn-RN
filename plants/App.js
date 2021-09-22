@@ -8,6 +8,7 @@ import PlantDetail from "./screens/PlantDetail";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
 import PaymentMethod from "./screens/PaymentMethod";
+import PaymentStatus from "./screens/PaymentStatus";
 
 const theme = {
   ...DefaultTheme,
@@ -48,6 +49,7 @@ const App = () => {
             options={{ headerShown: false }}
           />
           <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+          <Stack.Screen name="PaymentStatus" component={PaymentStatus} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>

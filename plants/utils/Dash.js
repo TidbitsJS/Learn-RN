@@ -15,12 +15,12 @@ const Dash = (props) => {
         ...props,
       }}
     >
-      <Svg height={1} width={width}>
+      <Svg height={1} width={"100%"}>
         <Line
           strokeDasharray="7, 5"
-          x1={SIZES.padding}
+          x1={0}
           y1={0}
-          x2={width - SIZES.padding}
+          x2={"100%"}
           strokeLinecap="butt"
           y2={0}
           style={{

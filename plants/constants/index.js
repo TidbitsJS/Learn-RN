@@ -1,5 +1,6 @@
 import icons from "./icons";
+import lotties from "./lottie";
 import images from "./images";
 import theme, { COLORS, SIZES, FONTS } from "./theme";
 
-export { icons, images, theme, COLORS, SIZES, FONTS };
+export { icons, lotties, images, theme, COLORS, SIZES, FONTS };

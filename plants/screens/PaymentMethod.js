@@ -10,6 +10,7 @@ import {
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import Dash from "../utils/Dash";
+import PaymentInfoItem from "../components/PaymentInfoItem";
 
 const PaymentMethodItem = ({
   iconUrl,
@@ -80,33 +81,7 @@ const PaymentMethodItem = ({
   );
 };
 
-const PaymentMethodTextItem = ({ title, amount }) => {
-  return (
-    <View
-      style={{
-        paddingHorizontal: SIZES.padding,
-        justifyContent: "space-between",
-        alignItems: "center",
-        flexDirection: "row",
-        width: "100%",
-        marginVertical: SIZES.base,
-      }}
-    >
-      <Text
-        style={{
-          ...FONTS.body3,
-          textAlign: "left",
-          color: COLORS.secondary,
-        }}
-      >
-        {title}
-      </Text>
-      <Text style={{ ...FONTS.h3, textAlign: "right" }}>${amount}</Text>
-    </View>
-  );
-};
-
-const PaymentMethod = () => {
+const PaymentMethod = ({ navigation }) => {
   const [selectCard, setSelectCard] = useState("creditcard");
 
   return (
@@ -231,11 +206,15 @@ const PaymentMethod = () => {
               marginTop: SIZES.padding,
             }}
           >
-            <PaymentMethodTextItem title="Transfer Amount" amount={2351.15} />
-            <PaymentMethodTextItem title="Additional Cost" amount={0.75} />
-            <PaymentMethodTextItem title="Shipping" amount={21.5} />
-            <Dash marginTop={SIZES.font} marginBottom={SIZES.base} />
-            <PaymentMethodTextItem title="Total" amount={2563.05} />
+            <PaymentInfoItem title="Transfer Amount" subtitle={"$2351.15"} />
+            <PaymentInfoItem title="Additional Cost" subtitle="$0.75" />
+            <PaymentInfoItem title="Shipping" subtitle="$21.5" />
+            <Dash
+              marginTop={SIZES.font}
+              marginBottom={SIZES.base}
+              width={"100%"}
+            />
+            <PaymentInfoItem title="Total" subtitle="$2563.05" />
           </View>
           <View
             style={{
@@ -246,24 +225,30 @@ const PaymentMethod = () => {
               marginBottom: SIZES.padding,
             }}
           >
-            <View
-              style={{
-                width: "90%",
-                padding: SIZES.font,
-                borderRadius: SIZES.font,
-                backgroundColor: COLORS.blackShed,
-              }}
+            <TouchableOpacity
+              activeOpacity={0.5}
+              style={{ width: "90%" }}
+              onPress={() => navigation.navigate("PaymentStatus")}
             >
-              <Text
+              <View
                 style={{
-                  ...FONTS.h3,
-                  color: COLORS.white,
-                  textAlign: "center",
+                  width: "100%",
+                  padding: SIZES.font,
+                  borderRadius: SIZES.font,
+                  backgroundColor: COLORS.blackShed,
                 }}
               >
-                Pay
-              </Text>
-            </View>
+                <Text
+                  style={{
+                    ...FONTS.h3,
+                    color: COLORS.white,
+                    textAlign: "center",
+                  }}
+                >
+                  Pay
+                </Text>
+              </View>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>
