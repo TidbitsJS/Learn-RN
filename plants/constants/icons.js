@@ -38,6 +38,8 @@ export const paypal = require("../assets/icons/paypal.png");
 export const promo = require("../assets/icons/promo.png");
 export const info = require("../assets/icons/info.png");
 export const closewindow = require("../assets/icons/closewindow.png");
+export const plusblack = require("../assets/icons/plusblack.png");
+export const minus = require("../assets/icons/minus.png");
 
 export default {
   camera,
@@ -80,4 +82,6 @@ export default {
   promo,
   info,
   closewindow,
+  plusblack,
+  minus,
 };

@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import { Text, View, Image, TouchableOpacity } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 
 const ShopItem = ({ item, navigation }) => {
+  const [quantity, setQuantity] = useState(1);
+
   return (
     <View
       style={{
@@ -62,13 +64,71 @@ const ShopItem = ({ item, navigation }) => {
         >
           {item.name}
         </Text>
-        <Text style={{ ...FONTS.body5, color: COLORS.secondary }}>
-          Quantity: 1
-        </Text>
+        <View
+          style={{
+            flexDirection: "row",
+            justifyContent: "flex-start",
+            alignItems: "center",
+            marginTop: SIZES.base,
+          }}
+        >
+          <TouchableOpacity
+            style={{
+              width: 25,
+              height: 25,
+              borderRadius: 15,
+              borderWidth: 1,
+              borderColor: COLORS.gray,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            activeOpacity={0.45}
+            onPress={() => {
+              if (quantity > 0) {
+                setQuantity((quantity) => quantity - 1);
+              }
+            }}
+          >
+            <Image
+              source={icons.minus}
+              style={{ width: "50%", height: "50%" }}
+            />
+          </TouchableOpacity>
+          <Text
+            style={{
+              ...FONTS.body4,
+              marginHorizontal: SIZES.base,
+              fontFamily: "Roboto-Bold",
+              color: COLORS.secondary,
+            }}
+          >
+            {quantity}
+          </Text>
+          <TouchableOpacity
+            style={{
+              width: 25,
+              height: 25,
+              borderRadius: 15,
+              borderWidth: 1,
+              borderColor: COLORS.gray,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+            activeOpacity={0.45}
+            onPress={() => {
+              setQuantity((quantity) => quantity + 1);
+            }}
+          >
+            <Image
+              source={icons.plusblack}
+              style={{ width: "50%", height: "50%" }}
+            />
+          </TouchableOpacity>
+        </View>
       </View>
       <View style={{ flex: 1 }}>
         <Text style={{ ...FONTS.body4, color: COLORS.secondary }}>
-          ${item.price}
+          ${item.price * quantity}
         </Text>
       </View>
     </View>
