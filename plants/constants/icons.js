@@ -40,6 +40,7 @@ export const info = require("../assets/icons/info.png");
 export const closewindow = require("../assets/icons/closewindow.png");
 export const plusblack = require("../assets/icons/plusblack.png");
 export const minus = require("../assets/icons/minus.png");
+export const settings = require("../assets/icons/settings.png");
 
 export default {
   camera,
@@ -84,4 +85,5 @@ export default {
   closewindow,
   plusblack,
   minus,
+  settings,
 };

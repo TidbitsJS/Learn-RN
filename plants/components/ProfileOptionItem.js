@@ -3,9 +3,12 @@ import { Image, Text, View } from "react-native";
 import { TouchableOpacity } from "react-native-gesture-handler";
 import { FONTS, SIZES, COLORS } from "../constants";
 
-const ProfileOptionItem = ({ iconUrl, title }) => {
+const ProfileOptionItem = ({ iconUrl, title, navigate }) => {
   return (
-    <TouchableOpacity activeOpacity={0.45}>
+    <TouchableOpacity
+      activeOpacity={0.45}
+      onPress={() => (navigate ? navigate() : {})}
+    >
       <View
         style={{
           flexDirection: "row",

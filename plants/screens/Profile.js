@@ -7,7 +7,7 @@ import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import ZigZag from "../utils/ZigZag";
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar
@@ -106,7 +106,11 @@ const Profile = () => {
               iconUrl={icons.notification}
               title="Notifications"
             />
-            <ProfileOptionItem iconUrl={icons.orders} title="Transactions" />
+            <ProfileOptionItem
+              iconUrl={icons.orders}
+              title="Transactions"
+              navigate={() => navigation.navigate("Transactions")}
+            />
             <ProfileOptionItem iconUrl={icons.coupon} title="coupons" />
             <ProfileOptionItem iconUrl={icons.coin} title="Supercoins Zone" />
             <ProfileOptionItem iconUrl={icons.gift} title="Gift Cards" />
