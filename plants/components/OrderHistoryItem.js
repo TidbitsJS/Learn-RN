@@ -2,7 +2,7 @@ import React from "react";
 import { Image, Text, View } from "react-native";
 import { COLORS, FONTS, SIZES } from "../constants";
 
-const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
+const OrderHistoryItem = ({ item }) => {
   return (
     <View
       style={{
@@ -23,7 +23,7 @@ const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
         }}
       >
         <Image
-          source={imgUrl}
+          source={item.plantUrl}
           resizeMode="cover"
           style={{
             width: "100%",
@@ -49,7 +49,7 @@ const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
           }}
           numberOfLines={1}
         >
-          {title}
+          {item.title}
         </Text>
         <Text
           style={{
@@ -58,7 +58,7 @@ const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
             textTransform: "capitalize",
           }}
         >
-          {status}
+          {item.status}
         </Text>
       </View>
       <View
@@ -78,7 +78,7 @@ const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
           }}
           numberOfLines={1}
         >
-          ${amount}
+          ${item.amount}
         </Text>
         <Text
           style={{
@@ -88,7 +88,7 @@ const OrderHistoryItem = ({ imgUrl, title, status, amount, date }) => {
             textAlign: "right",
           }}
         >
-          {date}
+          {item.day}
         </Text>
       </View>
     </View>

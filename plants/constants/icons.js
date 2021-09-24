@@ -3,6 +3,7 @@ export const cube = require("../assets/icons/cube_icon.png");
 export const flash = require("../assets/icons/flash_icon.png");
 export const heart = require("../assets/icons/heart_icon.png");
 export const heartGreenOutline = require("../assets/icons/heart_green_outline.png");
+export const planticon = require("../assets/icons/plant_icon.png");
 export const heartRed = require("../assets/icons/heart_red.png");
 export const search = require("../assets/icons/search_icon.png");
 export const focus = require("../assets/icons/focus.png");
@@ -41,6 +42,11 @@ export const closewindow = require("../assets/icons/closewindow.png");
 export const plusblack = require("../assets/icons/plusblack.png");
 export const minus = require("../assets/icons/minus.png");
 export const settings = require("../assets/icons/settings.png");
+export const heartWhite = require("../assets/icons/heart-white.png");
+export const mastercardWhite = require("../assets/icons/mastercard-white.png");
+export const people = require("../assets/icons/people.png");
+export const transaction = require("../assets/icons/transaction.png");
+export const tree = require("../assets/icons/tree.png");
 
 export default {
   camera,
@@ -48,6 +54,7 @@ export default {
   flash,
   heart,
   heartGreenOutline,
+  planticon,
   heartRed,
   search,
   focus,
@@ -86,4 +93,9 @@ export default {
   plusblack,
   minus,
   settings,
+  heartWhite,
+  mastercardWhite,
+  transaction,
+  people,
+  tree,
 };

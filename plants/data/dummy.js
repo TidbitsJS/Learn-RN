@@ -1,4 +1,4 @@
-import { images } from "../constants";
+import { icons, images } from "../constants";
 
 export const plantsData = [
   {
@@ -199,5 +199,169 @@ export const friends = [
   {
     id: 4,
     img: images.profile5,
+  },
+];
+
+export const transactions = [
+  {
+    id: 1,
+    date: "Today, 25 Sep",
+    items: [
+      {
+        plantUrl: images.monstera,
+        title: "Monstera & 5 more",
+        status: "delivered",
+        amount: 2365.43,
+        day: "25/09/2021",
+      },
+      {
+        plantUrl: images.croton,
+        title: "Croton & 5 more",
+        status: "delivered",
+        amount: 4565.43,
+        day: "25/09/2021",
+      },
+      {
+        plantUrl: images.homedecor,
+        title: "Home Decor",
+        status: "pending",
+        amount: 345.5,
+        day: "25/09/2021",
+      },
+      {
+        plantUrl: images.palm,
+        title: "Palm & Oliver",
+        status: "cancelled",
+        amount: 251.52,
+        day: "25/09/2021",
+      },
+      {
+        plantUrl: images.philodendron,
+        title: "Philodendron",
+        status: "delivered",
+        amount: 712.5,
+        day: "25/09/2021",
+      },
+      {
+        plantUrl: images.scheffleraAlpine,
+        title: "Schefflera Apline",
+        status: "delivered",
+        amount: 290.5,
+        day: "25/09/2021",
+      },
+    ],
+  },
+  {
+    id: 2,
+    date: "Yesterday, 24 Sep",
+    items: [
+      {
+        plantUrl: images.croton,
+        title: "Croton & 2 more",
+        status: "delivered",
+        amount: 4565.43,
+        day: "24/09/2021",
+      },
+      {
+        plantUrl: images.anthurium,
+        title: "Anthurium",
+        status: "cancelled",
+        amount: 251.52,
+        day: "24/09/2021",
+      },
+    ],
+  },
+  {
+    id: 3,
+    date: "2021, 23 Sep",
+    items: [
+      {
+        plantUrl: images.fruittree,
+        title: "Fruit Tree",
+        status: "delivered",
+        amount: 712.5,
+        day: "23/09/2021",
+      },
+      {
+        plantUrl: images.olive,
+        title: "Oliver",
+        status: "delivered",
+        amount: 290.5,
+        day: "23/09/2021",
+      },
+      {
+        plantUrl: images.orchid,
+        title: "Orchid & 3 more",
+        status: "cancelled",
+        amount: 1251.52,
+        day: "23/09/2021",
+      },
+    ],
+  },
+  {
+    id: 4,
+    date: "2021, 22 Sep",
+    items: [
+      {
+        plantUrl: images.pilea,
+        title: "Pilea",
+        status: "cancelled",
+        amount: 712.5,
+        day: "22/09/2021",
+      },
+    ],
+  },
+  {
+    id: 5,
+    date: "2021, 21 Sep",
+    items: [
+      {
+        plantUrl: images.redbonsai,
+        title: "Red Bonsai",
+        status: "delivered",
+        amount: 290.5,
+        day: "21/09/2021",
+      },
+    ],
+  },
+];
+
+export const stats = [
+  {
+    id: "stats - 1",
+    iconUrl: icons.mastercardWhite,
+    title: "$9865.32",
+    subtitle: "Total money spent",
+  },
+  {
+    id: "stats - 2",
+    iconUrl: icons.tree,
+    title: "21",
+    subtitle: "Total plants",
+  },
+  {
+    id: "stats - 3",
+    iconUrl: icons.people,
+    title: "12",
+    subtitle: "Total friends",
+  },
+  {
+    id: "stats - 4",
+    iconUrl: icons.transaction,
+    title: "17",
+    subtitle: "Total transactions",
+  },
+
+  {
+    id: "stats - 6",
+    iconUrl: icons.heartWhite,
+    title: "32",
+    subtitle: "Total likes",
+  },
+  {
+    id: "stats - 7",
+    iconUrl: icons.promo,
+    title: "7",
+    subtitle: "Total coupons",
   },
 ];
