@@ -1,6 +1,5 @@
 import React from "react";
-import { Image, View } from "react-native";
-import { TouchableOpacity } from "react-native-gesture-handler";
+import { Image, View, TouchableOpacity } from "react-native";
 import { COLORS } from "../constants";
 
 const ProfileItem = ({

@@ -1,6 +1,5 @@
 import React from "react";
-import { SafeAreaView, Text, View } from "react-native";
-import { ScrollView } from "react-native-gesture-handler";
+import { SafeAreaView, Text, View, ScrollView } from "react-native";
 import ProfileItem from "../components/ProfileItem";
 import ProfileOptionItem from "../components/ProfileOptionItem";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
@@ -105,6 +104,7 @@ const Profile = ({ navigation }) => {
             <ProfileOptionItem
               iconUrl={icons.notification}
               title="Notifications"
+              navigate={() => navigation.navigate("Notifications")}
             />
             <ProfileOptionItem
               iconUrl={icons.orders}

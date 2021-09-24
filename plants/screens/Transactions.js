@@ -37,7 +37,7 @@ const StatCard = ({ item }) => {
   );
 };
 
-const Transactions = () => {
+const Transactions = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -60,6 +60,25 @@ const Transactions = () => {
                   minHeight: 170,
                 }}
               >
+                <TouchableOpacity
+                  style={{ width: "100%", marginBottom: SIZES.font }}
+                  onPress={() => {
+                    navigation.navigate("Home");
+                  }}
+                >
+                  <View
+                    style={{
+                      width: "100%",
+                      justifyContent: "flex-start",
+                    }}
+                  >
+                    <Image
+                      source={icons.leftArrow}
+                      resizeMode="cover"
+                      style={{ width: 30, height: 30 }}
+                    />
+                  </View>
+                </TouchableOpacity>
                 <View
                   style={{
                     width: "100%",

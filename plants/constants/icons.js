@@ -47,6 +47,7 @@ export const mastercardWhite = require("../assets/icons/mastercard-white.png");
 export const people = require("../assets/icons/people.png");
 export const transaction = require("../assets/icons/transaction.png");
 export const tree = require("../assets/icons/tree.png");
+export const bitki = require("../assets/icons/bitki.png");
 
 export default {
   camera,
@@ -98,4 +99,5 @@ export default {
   transaction,
   people,
   tree,
+  bitki,
 };

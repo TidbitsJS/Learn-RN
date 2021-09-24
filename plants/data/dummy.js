@@ -365,3 +365,81 @@ export const stats = [
     subtitle: "Total coupons",
   },
 ];
+
+export const notifications = [
+  {
+    id: "notification-1",
+    title: "New friend request",
+    subtitle: "Dr. Strange sent you a friend request",
+    date: "Today",
+    imgUrl: images.profile1,
+  },
+  {
+    id: "notification-2",
+    title: "Team Bitki",
+    subtitle:
+      "Hey John Doe, your order has been successfully delivered! Not received it? Let us know.",
+    date: "Yesteday",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-3",
+    title: "Team Bitki",
+    subtitle:
+      "Hey John Doe, your order will be delivered today! Not at home? No worries, inform us here.",
+    date: "23 Sep",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-4",
+    title: "New message",
+    subtitle: "Suzan Walkar sent you a message.",
+    date: "23 Sep",
+    imgUrl: images.profile2,
+  },
+  {
+    id: "notification-5",
+    title: "Team Bitki",
+    subtitle:
+      "Hey John Doe, your order is shipped and is on its way! You can track the live status here.",
+    date: "23 Sep",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-6",
+    title: "New friend request",
+    subtitle: "Peter Parker sent you a friend request",
+    date: "23 Sep",
+    imgUrl: images.profile3,
+  },
+  {
+    id: "notification-7",
+    title: "Team Bitki",
+    subtitle:
+      "Hey John Doe, Monstera is the new fad! Have you gotten yours yet? Order now!",
+    date: "21 Sep",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-8",
+    title: "Team Bitki",
+    subtitle:
+      "Hey Jon Doe, everyone has grabbed their Oliver. Hurry and get yours before stocks run out!",
+    date: "21 Sep",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-9",
+    title: "Team Bitki",
+    subtitle: "Hey John Doe, your order is on its way. Enjoy your new plant!",
+    date: "20 Sep",
+    imgUrl: icons.bitki,
+  },
+  {
+    id: "notification-10",
+    title: "New Invitation",
+    subtitle: "Enola Holmes has sent you a invitation. Join now!",
+    date: "19 Sep",
+    imgUrl: images.profile4,
+  },
+];
