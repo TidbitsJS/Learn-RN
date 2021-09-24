@@ -29,7 +29,20 @@ Points:
 
 - Tab Navigation.
 - Stack Navigation.
-- Good UI.
+- Elegant UI.
 - StatusBar Config.
-- Four Screens - Home, Explore, Shop, Profile.
+- Eleven Screens
+  - Home
+  - Explore
+  - Cart
+  - Profile
+  - Notifications
+  - Transactions
+  - Payment Method
+  - Payment Status
+  - Login
+  - Signup
+  - Plant Detail
 - Navigation Props and Params.
+- Lottie Files
+- Native SVG

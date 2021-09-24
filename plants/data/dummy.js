@@ -379,7 +379,7 @@ export const notifications = [
     title: "Team Bitki",
     subtitle:
       "Hey John Doe, your order has been successfully delivered! Not received it? Let us know.",
-    date: "Yesteday",
+    date: "Yesterday",
     imgUrl: icons.bitki,
   },
   {
