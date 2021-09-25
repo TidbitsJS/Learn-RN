@@ -1,3 +1,8 @@
+import { icons, COLORS } from "../constants";
+
+const confirmStatus = "C";
+const pendingStatus = "P";
+
 export const categoriesData = [
   {
     id: 1,

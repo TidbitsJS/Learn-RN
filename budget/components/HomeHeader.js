@@ -4,7 +4,7 @@ import { COLORS, SIZES, FONTS, icons } from "../constants";
 
 const HomeHeader = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <View
         style={{
           flexDirection: "row",
