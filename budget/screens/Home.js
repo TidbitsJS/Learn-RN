@@ -1,11 +1,12 @@
 import React from "react";
-import { SafeAreaView, View } from "react-native";
+import { SafeAreaView, ScrollView, View } from "react-native";
 import { COLORS } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import HomeHeader from "../components/HomeHeader";
 import { categoriesData } from "../data/dummy";
 import HomeCategory from "../components/HomeCategory";
 import HomeCategoryList from "../components/HomeCategoryList";
+import HomeExpenses from "../components/HomeExpenses";
 
 const Home = () => {
   const [categories, setCategories] = React.useState(categoriesData);
@@ -22,10 +23,17 @@ const Home = () => {
           viewMode={viewMode}
           setViewMode={setViewMode}
         />
-        <HomeCategoryList
-          categories={categories}
-          setSelectedCategory={setSelectedCategory}
-        />
+        <ScrollView>
+          {viewMode === "list" && (
+            <View>
+              <HomeCategoryList
+                categories={categories}
+                setSelectedCategory={setSelectedCategory}
+              />
+              <HomeExpenses selectedCategory={selectedCategory} />
+            </View>
+          )}
+        </ScrollView>
       </View>
     </SafeAreaView>
   );
