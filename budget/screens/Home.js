@@ -7,6 +7,7 @@ import { categoriesData } from "../data/dummy";
 import HomeCategory from "../components/HomeCategory";
 import HomeCategoryList from "../components/HomeCategoryList";
 import HomeExpenses from "../components/HomeExpenses";
+import HomePieChart from "../components/HomePieChart";
 
 const Home = () => {
   const [categories, setCategories] = React.useState(categoriesData);
@@ -31,6 +32,15 @@ const Home = () => {
                 setSelectedCategory={setSelectedCategory}
               />
               <HomeExpenses selectedCategory={selectedCategory} />
+            </View>
+          )}
+          {viewMode === "chart" && (
+            <View>
+              <HomePieChart
+                categories={categories}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
             </View>
           )}
         </ScrollView>
