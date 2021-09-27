@@ -8,6 +8,7 @@ import HomeCategory from "../components/HomeCategory";
 import HomeCategoryList from "../components/HomeCategoryList";
 import HomeExpenses from "../components/HomeExpenses";
 import HomePieChart from "../components/HomePieChart";
+import HomeExpenseSummary from "../components/HomeExpenseSummary";
 
 const Home = () => {
   const [categories, setCategories] = React.useState(categoriesData);
@@ -37,6 +38,11 @@ const Home = () => {
           {viewMode === "chart" && (
             <View>
               <HomePieChart
+                categories={categories}
+                selectedCategory={selectedCategory}
+                setSelectedCategory={setSelectedCategory}
+              />
+              <HomeExpenseSummary
                 categories={categories}
                 selectedCategory={selectedCategory}
                 setSelectedCategory={setSelectedCategory}
