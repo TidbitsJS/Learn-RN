@@ -20,131 +20,81 @@ const HomePieChart = ({
     0
   );
 
-  if (Platform.OS === "ios") {
+  const VictoryPieChart = (props) => {
     return (
-      <View style={{ alignItems: "center", justifyContent: "center" }}>
-        <VictoryPie
-          data={chartData}
-          labels={(datum) => `${datum.y}`}
-          radius={({ datum }) =>
-            selectedCategory && selectedCategory.name === datum.name
-              ? SIZES.width * 0.4
-              : SIZES.width * 0.4 - 10
-          }
-          innerRadius={70}
-          labelRadius={({ innerRadius }) =>
-            (SIZES.width * 0.4 + innerRadius) / 2.5
-          }
-          style={{
-            labels: { fill: "white" },
-            parent: {
-              ...styles.shadow,
-            },
-          }}
-          width={SIZES.width * 0.8}
-          height={SIZES.width * 0.8}
-          colorScale={colorScales}
-          events={[
-            {
-              target: "data",
-              eventHandlers: {
-                onPress: () => {
-                  return [
-                    {
-                      target: "labels",
-                      mutation: (props) => {
-                        let categoryName = chartData[props.index].name;
-                        setSelectCategoryByName(
-                          categoryName,
-                          categories,
-                          setSelectedCategory
-                        );
-                      },
+      <VictoryPie
+        data={chartData}
+        labels={(datum) => `${datum.y}`}
+        radius={({ datum }) =>
+          selectedCategory && selectedCategory.name === datum.name
+            ? SIZES.width * 0.4
+            : SIZES.width * 0.4 - 10
+        }
+        innerRadius={70}
+        labelRadius={({ innerRadius }) =>
+          (SIZES.width * 0.4 + innerRadius) / 2.5
+        }
+        style={{
+          labels: { fill: "white" },
+          parent: {
+            ...styles.shadow,
+          },
+        }}
+        width={SIZES.width * 0.8}
+        height={SIZES.width * 0.8}
+        colorScale={colorScales}
+        {...props}
+        events={[
+          {
+            target: "data",
+            eventHandlers: {
+              onPress: () => {
+                return [
+                  {
+                    target: "labels",
+                    mutation: (props) => {
+                      let categoryName = chartData[props.index].name;
+                      setSelectCategoryByName(
+                        categoryName,
+                        categories,
+                        setSelectedCategory
+                      );
                     },
-                  ];
-                },
+                  },
+                ];
               },
             },
-          ]}
-        />
-
-        <View style={{ position: "absolute", top: "42%", left: "40%" }}>
-          <Text style={{ ...FONTS.h1, textAlign: "center" }}>
-            {totalExpenseCount}
-          </Text>
-          <Text style={{ ...FONTS.body3, textAlign: "center" }}>Expenses</Text>
-        </View>
-      </View>
+          },
+        ]}
+      />
     );
-  } else {
-    return (
-      <View
-        style={{
-          flex: 1,
-          alignItems: "center",
-          justifyContent: "flex-start",
-        }}
-      >
+  };
+
+  return (
+    <View style={{ alignItems: "center", justifyContent: "center" }}>
+      {Platform.OS === "ios" ? (
+        <VictoryPieChart width={SIZES.width * 0.8} height={SIZES.width * 0.8} />
+      ) : (
         <Svg
           width={SIZES.width}
           height={SIZES.width}
           style={{ width: "100%", height: "auto" }}
         >
-          <VictoryPie
+          <VictoryPieChart
             standalone={false}
-            data={chartData}
-            labels={(datum) => `${datum.y}`}
-            radius={({ datum }) =>
-              selectedCategory && selectedCategory.name === datum.name
-                ? SIZES.width * 0.4
-                : SIZES.width * 0.4 - 10
-            }
-            innerRadius={70}
-            labelRadius={({ innerRadius }) =>
-              (SIZES.width * 0.4 + innerRadius) / 2.5
-            }
-            style={{
-              labels: { fill: "white" },
-              parent: {
-                ...styles.shadow,
-              },
-            }}
             width={SIZES.width}
             height={SIZES.width}
-            colorScale={colorScales}
-            events={[
-              {
-                target: "data",
-                eventHandlers: {
-                  onPress: () => {
-                    return [
-                      {
-                        target: "labels",
-                        mutation: (props) => {
-                          let categoryName = chartData[props.index].name;
-                          setSelectCategoryByName(
-                            categoryName,
-                            categories,
-                            setSelectedCategory
-                          );
-                        },
-                      },
-                    ];
-                  },
-                },
-              },
-            ]}
           />
         </Svg>
-        <View style={{ position: "absolute", top: "42%", left: "40%" }}>
-          <Text style={{ ...FONTS.h1, textAlign: "center" }}>
-            {totalExpenseCount}
-          </Text>
-          <Text style={{ ...FONTS.body3, textAlign: "center" }}>Expenses</Text>
-        </View>
+      )}
+      <View style={{ position: "absolute", top: "42%", left: "40%" }}>
+        <Text style={{ ...FONTS.h1, textAlign: "center" }}>
+          {totalExpenseCount}
+        </Text>
+        <Text style={{ ...FONTS.body3, textAlign: "center" }}>Expenses</Text>
       </View>
-    );
-  }
+    </View>
+  );
 };
 
 export default HomePieChart;
