@@ -3,45 +3,10 @@ import { StyleSheet, Text, View, Platform } from "react-native";
 import { VictoryPie } from "victory-native";
 import { Svg } from "react-native-svg";
 import { FONTS, SIZES } from "../constants";
-
-function prcoessCategoryDataToDisplay(categories) {
-  let chartData = categories.map((item) => {
-    let confirmExpenses = item.expenses.filter((a) => a.status === "C");
-    let total = confirmExpenses.reduce((a, b) => a + (b.total || 0), 0);
-
-    return {
-      name: item.name,
-      y: total,
-      expenseCount: confirmExpenses.length,
-      color: item.color,
-      id: item.id,
-    };
-  });
-
-  let filterChartData = chartData.filter((item) => item.y > 0);
-
-  let totalExpense = filterChartData.reduce((a, b) => a + (b.y || 0), 0);
-
-  let finalChartData = filterChartData.map((item) => {
-    let percentage = ((item.y / totalExpense) * 100).toFixed(0);
-    return {
-      label: `${percentage}`,
-      y: Number(item.y),
-      expenseCount: item.expenseCount,
-      color: item.color,
-      name: item.name,
-      id: item.id,
-    };
-  });
-
-  return finalChartData;
-}
-
-function setSelectCategoryByName(name, categories, setSelectedCategory) {
-  console.log(categories);
-  let category = categories.filter((a) => a.name === name);
-  setSelectedCategory(category[0]);
-}
+import {
+  prcoessCategoryDataToDisplay,
+  setSelectCategoryByName,
+} from "../utils/common";
 
 const HomePieChart = ({
   categories,
@@ -103,7 +68,7 @@ const HomePieChart = ({
           ]}
         />
 
-        <View style={{ position: "absolute", top: "42%", left: "42%" }}>
+        <View style={{ position: "absolute", top: "42%", left: "40%" }}>
           <Text style={{ ...FONTS.h1, textAlign: "center" }}>
             {totalExpenseCount}
           </Text>
@@ -171,7 +136,7 @@ const HomePieChart = ({
             ]}
           />
         </Svg>
-        <View style={{ marginTop: -SIZES.padding }}>
+        <View style={{ position: "absolute", top: "42%", left: "40%" }}>
           <Text style={{ ...FONTS.h1, textAlign: "center" }}>
             {totalExpenseCount}
           </Text>

@@ -1,5 +1,5 @@
 import React from "react";
-import { SafeAreaView, ScrollView, View } from "react-native";
+import { SafeAreaView, ScrollView, View, LogBox } from "react-native";
 import { COLORS } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import HomeHeader from "../components/HomeHeader";
@@ -10,6 +10,8 @@ import HomeExpenses from "../components/HomeExpenses";
 import HomePieChart from "../components/HomePieChart";
 import HomeExpenseSummary from "../components/HomeExpenseSummary";
 
+LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+
 const Home = () => {
   const [categories, setCategories] = React.useState(categoriesData);
   const [viewMode, setViewMode] = React.useState("chart");
@@ -19,13 +21,13 @@ const Home = () => {
     <SafeAreaView style={{ flex: 1, backgroundColor: "#fff" }}>
       <FocusedStatusBar backgroundColor="#fff" barStyle="dark-content" />
       <View style={{ flex: 1, backgroundColor: COLORS.lightGray2 }}>
-        <HomeHeader />
-        <HomeCategory
-          categories={categories}
-          viewMode={viewMode}
-          setViewMode={setViewMode}
-        />
-        <ScrollView>
+        <ScrollView keyboardShouldPersistTaps="always">
+          <HomeHeader />
+          <HomeCategory
+            categories={categories}
+            viewMode={viewMode}
+            setViewMode={setViewMode}
+          />
           {viewMode === "list" && (
             <View>
               <HomeCategoryList
