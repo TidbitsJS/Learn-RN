@@ -33,9 +33,9 @@ export default function App() {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName={"Home"}
+          initialRouteName={"HomeTab"}
         >
-          <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen name="HomeTab" component={Tabs} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
