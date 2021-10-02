@@ -1,3 +1,5 @@
+import { icons, images } from "../constants";
+
 export const affordable = 1;
 export const fairPrice = 2;
 export const expensive = 3;
