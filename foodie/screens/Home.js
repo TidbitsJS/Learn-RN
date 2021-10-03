@@ -1,7 +1,8 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, ScrollView } from "react-native";
 import HomeCategories from "../components/HomeCategories";
 import HomeHeader from "../components/HomeHeader";
+import HomeRestaurants from "../components/HomeRestaurants";
 import { FONTS, COLORS } from "../constants";
 import { categoryData, restaurantData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
@@ -14,7 +15,7 @@ const initialCurrentLocation = {
   },
 };
 
-const Home = () => {
+const Home = ({ navigation }) => {
   const [categories, setCategories] = React.useState(categoryData);
   const [selectedCategory, setSelectedCategory] = React.useState(null);
   const [restaurants, setRestaurants] = React.useState(restaurantData);
@@ -30,6 +31,14 @@ const Home = () => {
     setSelectedCategory(category);
   }
 
+  function getCategoryNameById(id) {
+    let category = categories.filter((a) => a.id === id);
+
+    if (category.length > 0) return category[0].name;
+
+    return "";
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray4 }}>
       <FocusedStatusBar
@@ -39,11 +48,19 @@ const Home = () => {
       />
       <View style={{ flex: 1 }}>
         <HomeHeader currentLocation={currentLocation} />
-        <HomeCategories
-          categories={categories}
-          selectedCategory={selectedCategory}
-          onSelectCategory={onSelectCategory}
-        />
+        <ScrollView>
+          <HomeCategories
+            categories={categories}
+            selectedCategory={selectedCategory}
+            onSelectCategory={onSelectCategory}
+          />
+          <HomeRestaurants
+            restaurants={restaurants}
+            navigation={navigation}
+            currentLocation={currentLocation}
+            getCategoryNameById={getCategoryNameById}
+          />
+        </ScrollView>
       </View>
     </SafeAreaView>
   );

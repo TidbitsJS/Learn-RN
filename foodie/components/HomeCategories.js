@@ -61,7 +61,7 @@ const HomeCategoryItem = ({ item, selectedCategory, onSelectCategory }) => {
 
 const HomeCategories = ({ categories, selectedCategory, onSelectCategory }) => {
   return (
-    <View style={{ padding: SIZES.padding * 2 }}>
+    <View style={{ padding: SIZES.padding * 2, paddingTop: 0 }}>
       <Text style={{ ...FONTS.h1 }}>Main</Text>
       <Text style={{ ...FONTS.h1 }}>Categories</Text>
 

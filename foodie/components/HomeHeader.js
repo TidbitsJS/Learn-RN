@@ -11,6 +11,7 @@ const HomeHeader = ({ currentLocation }) => {
         marginTop: SIZES.font,
         paddingHorizontal: SIZES.font,
         height: "auto",
+        paddingBottom: SIZES.padding * 2,
       }}
     >
       <TouchableOpacity
