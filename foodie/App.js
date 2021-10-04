@@ -5,6 +5,7 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
+import Restaurant from "./screens/Restaurant";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -39,6 +40,7 @@ export default function App() {
           initialRouteName={"HomeTab"}
         >
           <Stack.Screen name="HomeTab" component={Tabs} />
+          <Stack.Screen name="Restaurant" component={Restaurant} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
