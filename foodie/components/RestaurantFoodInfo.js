@@ -2,9 +2,12 @@ import React from "react";
 import { Animated, Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 
-const RestaurantFoodInfo = ({ restaurant, getOrderQty }) => {
-  const scrollX = new Animated.Value(0);
-
+const RestaurantFoodInfo = ({
+  restaurant,
+  getOrderQty,
+  editOrder,
+  scrollX,
+}) => {
   return (
     <Animated.ScrollView
       horizontal
@@ -18,14 +21,29 @@ const RestaurantFoodInfo = ({ restaurant, getOrderQty }) => {
       )}
     >
       {restaurant?.menu.map((item, index) => (
-        <View key={`menu-${index}`} style={{ alignItems: "center" }}>
-          <View style={{ height: SIZES.height * 0.35 }}>
+        <View
+          key={`menu-${index}`}
+          style={{
+            flex: 1,
+            alignItems: "center",
+          }}
+        >
+          <View
+            style={{
+              height: 250,
+              width: "100%",
+              padding: SIZES.base,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
             <Image
               source={item.photo}
               resizeMode="cover"
               style={{
-                width: SIZES.width,
+                width: "100%",
                 height: "100%",
+                borderRadius: SIZES.base,
               }}
             />
 
@@ -84,42 +102,81 @@ const RestaurantFoodInfo = ({ restaurant, getOrderQty }) => {
             style={{
               width: SIZES.width,
               alignItems: "center",
+              justifyContent: "center",
               marginTop: 15,
-              paddingHorizontal: SIZES.padding * 2,
             }}
           >
             <Text
-              style={{ marginVertical: 10, textAlign: "center", ...FONTS.h2 }}
+              style={{ marginVertical: 15, textAlign: "center", ...FONTS.h2 }}
             >
-              {" "}
-              {item.name} - {item.price.toFixed(2)}{" "}
+              {item.name} - {item.price.toFixed(2)}
             </Text>
-            <Text style={{ ...FONTS.body3 }}>{item.description}</Text>
+            <Text
+              style={{
+                ...FONTS.h4,
+                textTransform: "capitalize",
+                color: COLORS.black,
+                marginTop: SIZES.font,
+                width: "100%",
+                justifyContent: "flex-start",
+                alignItems: "flex-start",
+                paddingHorizontal: SIZES.font,
+              }}
+            >
+              description:
+            </Text>
+            <Text
+              style={{
+                ...FONTS.body3,
+                padding: SIZES.font,
+                color: COLORS.black,
+                width: "100%",
+              }}
+            >
+              {item.description}
+            </Text>
           </View>
 
           <View
             style={{
               flexDirection: "row",
-              marginTop: 10,
+              justifyContent: "space-between",
+              alignItems: "center",
+              marginTop: SIZES.font,
+              width: "100%",
+              paddingHorizontal: SIZES.font,
             }}
           >
-            <Image
-              source={icons.fire}
+            <View>
+              <Text style={{ ...FONTS.h4, textTransform: "capitalize" }}>
+                calories:
+              </Text>
+            </View>
+            <View
               style={{
-                width: 20,
-                height: 20,
-                marginRight: 10,
-              }}
-            />
-
-            <Text
-              style={{
-                ...FONTS.body3,
-                color: COLORS.darkgray,
+                flexDirection: "row",
+                justifyContent: "center",
+                alignItems: "center",
               }}
             >
-              {item.calories.toFixed(2)} cal
-            </Text>
+              <Image
+                source={icons.fire}
+                style={{
+                  width: 20,
+                  height: 20,
+                  marginRight: 10,
+                }}
+              />
+
+              <Text
+                style={{
+                  ...FONTS.body3,
+                  color: COLORS.darkgray,
+                }}
+              >
+                {item.calories.toFixed(2)} cal
+              </Text>
+            </View>
           </View>
         </View>
       ))}
