@@ -26,6 +26,7 @@ const RestaurantFoodInfo = ({
           style={{
             flex: 1,
             alignItems: "center",
+            marginBottom: SIZES.font,
           }}
         >
           <View

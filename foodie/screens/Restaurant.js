@@ -1,10 +1,11 @@
 import React from "react";
-import { Animated, View, SafeAreaView } from "react-native";
+import { Animated, View, SafeAreaView, ScrollView } from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS } from "../constants";
 import RestaurantHeader from "../components/RestaurantHeader";
 import RestaurantFoodInfo from "../components/RestaurantFoodInfo";
 import RestaurantDots from "../components/RestaurantDots";
+import RestaurantOrder from "../components/RestaurantOrder";
 
 const Restaurant = ({ route, navigation }) => {
   const [restaurant, setRestaurant] = React.useState(null);
@@ -64,6 +65,18 @@ const Restaurant = ({ route, navigation }) => {
     return 0;
   }
 
+  function getBasketItemCount() {
+    let itemCount = orderItems.reduce((a, b) => a + (b.qty || 0), 0);
+
+    return itemCount;
+  }
+
+  function sumOrder() {
+    let total = orderItems.reduce((a, b) => a + (b.total || 0), 0);
+
+    return total.toFixed(2);
+  }
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.lightGray3 }}>
       <FocusedStatusBar
@@ -71,16 +84,25 @@ const Restaurant = ({ route, navigation }) => {
         backgroundColor={COLORS.lightGray3}
         barStyle="dark-content"
       />
-      <View style={{ flex: 1 }}>
-        <RestaurantHeader navigation={navigation} restaurant={restaurant} />
-        <RestaurantFoodInfo
-          restaurant={restaurant}
-          getOrderQty={getOrderQty}
-          editOrder={editOrder}
-          scrollX={scrollX}
-        />
-        <RestaurantDots restaurant={restaurant} scrollX={scrollX} />
-      </View>
+      <ScrollView>
+        <View style={{ flex: 1 }}>
+          <RestaurantHeader navigation={navigation} restaurant={restaurant} />
+          <RestaurantFoodInfo
+            restaurant={restaurant}
+            getOrderQty={getOrderQty}
+            editOrder={editOrder}
+            scrollX={scrollX}
+          />
+          <RestaurantDots restaurant={restaurant} scrollX={scrollX} />
+          <RestaurantOrder
+            navigation={navigation}
+            restuarant={restaurant}
+            currentLocation={currentLocation}
+            getBasketItemCount={getBasketItemCount}
+            sumOrder={sumOrder}
+          />
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };
