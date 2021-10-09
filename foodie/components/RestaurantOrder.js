@@ -1,6 +1,7 @@
 import React from "react";
 import { Image, Text, TouchableOpacity, View } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { isIphoneX } from "react-native-iphone-x-helper";
 
 const RestaurantOrder = ({
   navigation,
@@ -94,7 +95,7 @@ const RestaurantOrder = ({
               borderRadius: SIZES.radius,
             }}
             onPress={() =>
-              navigation.navigate("OrderDeliver", {
+              navigation.navigate("OrderDelivery", {
                 restuarant: restuarant,
                 currentLocation: currentLocation,
               })
@@ -104,6 +105,19 @@ const RestaurantOrder = ({
           </TouchableOpacity>
         </View>
       </View>
+
+      {isIphoneX() && (
+        <View
+          style={{
+            position: "absolute",
+            bottom: -34,
+            left: 0,
+            right: 0,
+            height: 34,
+            backgroundColor: COLORS.white,
+          }}
+        />
+      )}
     </View>
   );
 };

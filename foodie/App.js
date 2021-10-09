@@ -6,6 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
 import Restaurant from "./screens/Restaurant";
+import Order from "./screens/Order";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -41,6 +42,7 @@ export default function App() {
         >
           <Stack.Screen name="HomeTab" component={Tabs} />
           <Stack.Screen name="Restaurant" component={Restaurant} />
+          <Stack.Screen name="OrderDelivery" component={Order} />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
