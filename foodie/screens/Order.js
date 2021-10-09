@@ -3,6 +3,8 @@ import { SafeAreaView, View } from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS } from "../constants";
 import OrderMap from "../components/OrderMap";
+import OrderDestinationHeader from "../components/OrderDestinationHeader";
+import OrderDeliveryInfo from "../components/OrderDeliveryInfo";
 
 const Order = ({ route, navigation }) => {
   const mapView = React.useRef();
@@ -58,6 +60,8 @@ const Order = ({ route, navigation }) => {
           setDuration={setDuration}
           setIsReady={setIsReady}
         />
+        <OrderDestinationHeader streetName={streetName} duration={duration} />
+        <OrderDeliveryInfo navigation={navigation} restuarant={restuarant} />
       </View>
     </SafeAreaView>
   );
