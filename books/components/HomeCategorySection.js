@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
+import HomeBookTag from "./HomeBookTag";
 
 const CategoryBook = ({ item }) => {
   return (
     <View style={{ marginVertical: SIZES.base }}>
-      <TouchableOpacity
+      <View
         style={{ flex: 1, flexDirection: "row" }}
         onPress={() =>
           NavigationPreloadManager.navigate("BookDetail", {
@@ -13,16 +14,24 @@ const CategoryBook = ({ item }) => {
           })
         }
       >
-        <Image
-          source={item.bookCover}
-          resizeMode="cover"
-          style={{ width: 100, height: 150, borderRadius: 10 }}
-        />
-        <View style={{ flex: 1, marginLeft: SIZES.radius }}>
-          <View>
+        <TouchableOpacity>
+          <Image
+            source={item.bookCover}
+            resizeMode="cover"
+            style={{ width: 100, height: 150, borderRadius: 10 }}
+          />
+        </TouchableOpacity>
+        <View
+          style={{
+            flex: 1,
+            justifyContent: "space-between",
+            marginLeft: SIZES.radius,
+          }}
+        >
+          <TouchableOpacity>
             <Text
               style={{
-                paddingRight: SIZES.padding,
+                paddingRight: SIZES.padding * 2,
                 ...FONTS.h3,
                 color: COLORS.white,
               }}
@@ -33,65 +42,103 @@ const CategoryBook = ({ item }) => {
             <Text style={{ ...FONTS.h4, color: COLORS.lightGray }}>
               {item.author}
             </Text>
-          </View>
+          </TouchableOpacity>
 
-          <View style={{ flexDirection: "row", marginTop: SIZES.radius }}>
-            <Image
-              source={icons.page_filled_icon}
-              resizeMode="contain"
-              style={{
-                width: 20,
-                height: 20,
-                tintColor: COLORS.lightGray,
-              }}
-            />
-            <Text
-              style={{
-                ...FONTS.body4,
-                color: COLORS.lightGray,
-                paddingHorizontal: SIZES.radius,
-              }}
-            >
-              {item.pageNo}
-            </Text>
-
-            <Image
-              source={icons.read_icon}
-              resizeMode="contain"
-              style={{
-                width: 20,
-                height: 20,
-                tintColor: COLORS.lightGray,
-              }}
-            />
-            <Text
-              style={{
-                ...FONTS.body4,
-                color: COLORS.lightGray,
-                paddingHorizontal: SIZES.radius,
-              }}
-            >
-              {item.readed}
-            </Text>
-          </View>
-
-          <View style={{ flexDirection: "row", marginTop: SIZES.base }}>
+          <View>
             <View
               style={{
-                justifyContent: "center",
+                flexDirection: "row",
                 alignItems: "center",
-                padding: SIZES.base,
-                backgroundColor: COLORS.darkBlue,
-                borderRadius: SIZES.base,
+                marginTop: SIZES.radius,
               }}
             >
-              <Text style={{ ...FONTS.body5, color: COLORS.lightBlue }}>
-                Drama
-              </Text>
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                  marginRight: SIZES.font,
+                }}
+              >
+                <Image
+                  source={icons.page_filled_icon}
+                  resizeMode="contain"
+                  style={{
+                    width: 15,
+                    height: 15,
+                    tintColor: COLORS.lightGray,
+                    marginRight: SIZES.base,
+                  }}
+                />
+                <Text
+                  style={{
+                    ...FONTS.body5,
+                    color: COLORS.lightGray,
+                  }}
+                >
+                  {item.pageNo}
+                </Text>
+              </View>
+
+              <View
+                style={{
+                  flexDirection: "row",
+                  alignItems: "center",
+                }}
+              >
+                <Image
+                  source={icons.read_icon}
+                  resizeMode="contain"
+                  style={{
+                    width: 15,
+                    height: 15,
+                    tintColor: COLORS.lightGray,
+                    marginRight: SIZES.base,
+                  }}
+                />
+                <Text
+                  style={{
+                    ...FONTS.body5,
+                    color: COLORS.lightGray,
+                  }}
+                >
+                  {item.readed}
+                </Text>
+              </View>
+            </View>
+
+            <View
+              style={{
+                flexDirection: "row",
+                marginTop: SIZES.base,
+                justifyContent: "flex-start",
+                alignItems: "center",
+              }}
+            >
+              <HomeBookTag
+                tagName={item.genre[0]}
+                tagBgColor={COLORS.darkGreen}
+                tagColor={COLORS.lightGreen}
+              />
+              {item.genre[1] && (
+                <HomeBookTag
+                  tagName={item.genre[1]}
+                  tagBgColor={COLORS.darkRed}
+                  tagColor={COLORS.lightRed}
+                  marginLeft={5}
+                />
+              )}
+              {item.genre[2] && (
+                <HomeBookTag
+                  tagName={item.genre[2]}
+                  tagBgColor={COLORS.darkBlue}
+                  tagColor={COLORS.lightBlue}
+                  marginLeft={5}
+                />
+              )}
             </View>
           </View>
         </View>
-      </TouchableOpacity>
+      </View>
 
       <TouchableOpacity
         style={{ position: "absolute", top: 5, right: 5 }}
