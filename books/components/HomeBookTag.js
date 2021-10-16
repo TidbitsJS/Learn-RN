@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text } from "react-native";
 
-const HomeBookTag = ({ tagName, tagColor, tagBgColor, ...props }) => {
+const HomeBookTag = ({ tagName, tagColor, tagBgColor }) => {
   return (
     <View
       style={{
@@ -9,9 +9,10 @@ const HomeBookTag = ({ tagName, tagColor, tagBgColor, ...props }) => {
         alignItems: "center",
         paddingHorizontal: 5,
         paddingVertical: 5,
+        marginRight: 5,
+        marginTop: 5,
         backgroundColor: tagBgColor,
         borderRadius: 5,
-        ...props,
       }}
     >
       <Text

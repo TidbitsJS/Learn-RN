@@ -1,18 +1,7 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
-
-const LineDivider = () => {
-  return (
-    <View
-      style={{
-        width: 1,
-        paddingVertical: SIZES.font,
-        backgroundColor: COLORS.lightGray,
-      }}
-    />
-  );
-};
+import LineDivider from "../utils/LineDivider";
 
 const SectionButton = ({ iconUrl, textName }) => {
   return (
@@ -63,11 +52,11 @@ const HomeButtonSection = () => {
     >
       <SectionButton iconUrl={icons.claim_icon} textName="Claim" />
 
-      <LineDivider />
+      <LineDivider color={COLORS.lightGray} />
 
       <SectionButton iconUrl={icons.point_icon} textName="Get Point" />
 
-      <LineDivider />
+      <LineDivider color={COLORS.lightGray} />
 
       <SectionButton iconUrl={icons.card_icon} textName="My Card" />
     </View>

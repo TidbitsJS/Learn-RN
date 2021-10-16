@@ -61,7 +61,7 @@ export const bookAtomicHabits = {
   description:
     "World-renowned habits expert James Clear has discovered a simpler system for transforming your life. He knows that lasting change comes from the compound effect of hundreds of small decisions – doing two push-ups a day, waking up five minutes early, or holding a single short phone call. He calls them atomic habits. \n In this ground-breaking book, Clear reveals how these tiny changes will help you get 1 percent better every day. He uncovers a handful of simple life hacks (the forgotten art of Habit Stacking, the unexpected power of the Two Minute Rule, or the trick to entering the Goldilocks Zone) and delves into cutting-edge psychology and neuroscience to explain why they matter. Along the way, he tells inspiring stories of Olympic gold medalists, leading CEOs and distinguished scientists who have used the science of small habits to stay productive, motivated and happy.",
   backgroundColor: "rgba(255, 255, 255, 0.9)",
-  navTintColor: "#FFF",
+  navTintColor: "#000",
 };
 
 export const bookCantHurtMe = {
@@ -237,7 +237,7 @@ export const bookDaVinciCode = {
   description:
     "The record-breaking bestseller. \nA man is murdered in the world’s most famous museum. \nAround his body is a ring of codes, drawn in blood. \nHe died to protect a secret which Robert Langdon must uncover. \nIt will be a race against time to decipher this final message. \nCan he get there before the killers do?",
   backgroundColor: "rgba(254, 250, 189, 0.9)",
-  navTintColor: "#FFF",
+  navTintColor: "#000",
 };
 
 export const bookTheHobbit = {

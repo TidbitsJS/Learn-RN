@@ -3,7 +3,7 @@ import { View, Text, TouchableOpacity, Image, FlatList } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import HomeBookTag from "./HomeBookTag";
 
-const CategoryBook = ({ item }) => {
+const CategoryBook = ({ item, navigation }) => {
   return (
     <View style={{ marginVertical: SIZES.base }}>
       <View
@@ -14,7 +14,13 @@ const CategoryBook = ({ item }) => {
           })
         }
       >
-        <TouchableOpacity>
+        <TouchableOpacity
+          onPress={() =>
+            navigation.navigate("BookDetail", {
+              book: item,
+            })
+          }
+        >
           <Image
             source={item.bookCover}
             resizeMode="cover"
@@ -28,7 +34,13 @@ const CategoryBook = ({ item }) => {
             marginLeft: SIZES.radius,
           }}
         >
-          <TouchableOpacity>
+          <TouchableOpacity
+            onPress={() =>
+              navigation.navigate("BookDetail", {
+                book: item,
+              })
+            }
+          >
             <Text
               style={{
                 paddingRight: SIZES.padding * 2,
@@ -111,6 +123,7 @@ const CategoryBook = ({ item }) => {
                 flexDirection: "row",
                 marginTop: SIZES.base,
                 justifyContent: "flex-start",
+                flexWrap: "wrap",
                 alignItems: "center",
               }}
             >
@@ -124,7 +137,6 @@ const CategoryBook = ({ item }) => {
                   tagName={item.genre[1]}
                   tagBgColor={COLORS.darkRed}
                   tagColor={COLORS.lightRed}
-                  marginLeft={5}
                 />
               )}
               {item.genre[2] && (
@@ -132,7 +144,6 @@ const CategoryBook = ({ item }) => {
                   tagName={item.genre[2]}
                   tagBgColor={COLORS.darkBlue}
                   tagColor={COLORS.lightBlue}
-                  marginLeft={5}
                 />
               )}
             </View>
@@ -158,7 +169,7 @@ const CategoryBook = ({ item }) => {
   );
 };
 
-const HomeCategorySection = ({ categories, selectedCategory }) => {
+const HomeCategorySection = ({ navigation, categories, selectedCategory }) => {
   let books = [];
   let selectedCategoryBooks = categories.filter(
     (a) => a.id === selectedCategory
@@ -172,7 +183,9 @@ const HomeCategorySection = ({ categories, selectedCategory }) => {
     <View style={{ flex: 1, padding: SIZES.font }}>
       <FlatList
         data={books}
-        renderItem={({ item }) => <CategoryBook item={item} />}
+        renderItem={({ item }) => (
+          <CategoryBook item={item} navigation={navigation} />
+        )}
         keyExtractor={(item) => `category-${item.id}`}
         showsVerticalScrollIndicator={false}
       />

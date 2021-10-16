@@ -4,6 +4,7 @@ import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
+import BookDetail from "./screens/BookDetail";
 
 const theme = {
   ...DefaultTheme,
@@ -36,6 +37,11 @@ function App() {
           initialRouteName={"Home"}
         >
           <Stack.Screen name="Home" component={Tabs} />
+          <Stack.Screen
+            name="BookDetail"
+            component={BookDetail}
+            options={{ headerShown: false }}
+          />
         </Stack.Navigator>
       </NavigationContainer>
     </SafeAreaProvider>
