@@ -1,9 +1,10 @@
 import React from "react";
-import { View, SafeAreaView, ScrollView } from "react-native";
+import { View, SafeAreaView, ScrollView, Text } from "react-native";
 import BookInfoSection from "../components/BookInfoSection";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
-import { COLORS } from "../constants";
+import { COLORS, FONTS } from "../constants";
 import BookDescription from "../components/BookDescription";
+import BookBottomButton from "../components/BookBottomButton";
 
 const BookDetail = ({ route, navigation }) => {
   const [book, setBook] = React.useState(null);
@@ -21,10 +22,26 @@ const BookDetail = ({ route, navigation }) => {
         backgroundColor="transparent"
       />
       <ScrollView>
-        <View style={{ flex: 1, backgroundColor: COLORS.black }}>
-          {book && <BookInfoSection book={book} navigation={navigation} />}
-          {book && <BookDescription description={book.description} />}
-        </View>
+        {book ? (
+          <View style={{ flex: 1, backgroundColor: COLORS.black }}>
+            <BookInfoSection book={book} navigation={navigation} />
+            <BookDescription description={book.description} />
+            <BookBottomButton />
+          </View>
+        ) : (
+          <View
+            style={{
+              flex: 1,
+              backgroundColor: COLORS.black,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Text style={{ ...FONTS.h3, color: COLORS.white }}>
+              Oops, sorry!
+            </Text>
+          </View>
+        )}
       </ScrollView>
     </SafeAreaView>
   );

@@ -24,13 +24,13 @@ const BookDescription = ({ description }) => {
     <View
       style={{
         flex: 1,
+        height: 250,
         flexDirection: "row",
-        height: 210,
         paddingVertical: SIZES.padding,
         paddingHorizontal: SIZES.font,
       }}
     >
-      <View style={{ width: 4, height: "100%", backgroundColor: COLORS.gray1 }}>
+      <View style={{ width: 4, backgroundColor: COLORS.gray1 }}>
         <Animated.View
           style={{
             width: 4,
@@ -53,9 +53,10 @@ const BookDescription = ({ description }) => {
       </View>
 
       <ScrollView
-        contentContainerStyle={{ paddingLeft: SIZES.padding2 }}
+        contentContainerStyle={{ paddingLeft: SIZES.padding }}
         showsVerticalScrollIndicator={false}
         scrollEventThrottle={10}
+        nestedScrollEnabled={true}
         onContentSizeChange={(width, height) => {
           setScrollViewWholeHeight(height);
         }}
