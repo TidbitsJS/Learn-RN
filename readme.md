@@ -46,3 +46,37 @@ Points:
 - Navigation Props and Params.
 - Lottie Files
 - Native SVG
+
+# 
+
+### Budget App
+
+An app to show living expenses.
+
+Points:
+
+- Tab Navigation.
+- Stack Navigation.
+- Styles.
+- Victory Native Charts.
+- SVG.
+
+#
+
+### Food App
+
+An app to order & track food from the restaurants.
+
+Points:
+
+- Tab Navigation
+- Stack Navigation
+- Status bar & Styles
+- Google maps
+- Animations 
+- Three Screens
+  - Restaurant list
+  - Restaurant Details
+  - Order Map
+
+#
