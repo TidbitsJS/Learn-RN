@@ -60,7 +60,7 @@ export const bookAtomicHabits = {
   readed: "275k",
   description:
     "World-renowned habits expert James Clear has discovered a simpler system for transforming your life. He knows that lasting change comes from the compound effect of hundreds of small decisions – doing two push-ups a day, waking up five minutes early, or holding a single short phone call. He calls them atomic habits. \n In this ground-breaking book, Clear reveals how these tiny changes will help you get 1 percent better every day. He uncovers a handful of simple life hacks (the forgotten art of Habit Stacking, the unexpected power of the Two Minute Rule, or the trick to entering the Goldilocks Zone) and delves into cutting-edge psychology and neuroscience to explain why they matter. Along the way, he tells inspiring stories of Olympic gold medalists, leading CEOs and distinguished scientists who have used the science of small habits to stay productive, motivated and happy.",
-  backgroundColor: "rgba(255, 255, 255, 0.9)",
+  backgroundColor: "rgba(255, 253, 246, 0.9)",
   navTintColor: "#000",
 };
 
@@ -156,7 +156,7 @@ export const bookSita = {
   readed: "357k",
   description:
     "She is the warrior we need. The Goddess we await. \nShe will defend Dharma. She will protect us. \nIndia, 3400 BCE. \nIndia is beset with divisions, resentment and poverty. The people hate their rulers. They despise their corrupt and selfish elite. Chaos is just one spark away. Outsiders exploit these divisions. Raavan, the demon king of Lanka, grows increasingly powerful, sinking his fangs deeper into the hapless Sapt Sindhu. \nTwo powerful tribes, the protectors of the divine land of India, decide that enough is enough. A saviour is needed. They begin their search. \nAn abandoned baby is found in a field. Protected by a vulture from a pack of murderous wolves. She is adopted by the ruler of Mithila, a powerless kingdom, ignored by all. Nobody believes this child will amount to much. But they are wrong. \nFor she is no ordinary girl. She is Sita. \nContinue the epic journey with Amish’s latest: A thrilling adventure that chronicles the rise of an adopted child, who became the prime minister. And then, a Goddess. \nThis is the second book in the Ram Chandra Series. A sequel that takes you back. Back before the beginning.",
-  backgroundColor: "rgba(51, 12, 56, 0.9)",
+  backgroundColor: "rgba(238, 144, 109, 0.9)",
   navTintColor: "#FFF",
 };
 
