@@ -9,7 +9,7 @@ const DiscoverBooksItem = ({ item }) => {
       style={{
         flex: 1,
         margin: 5,
-        backgroundColor: COLORS.gray,
+        backgroundColor: item.backgroundColor,
         padding: SIZES.base,
         borderRadius: 5,
         maxWidth: "50%",

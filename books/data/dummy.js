@@ -1,21 +1,33 @@
 import { icons } from "../constants";
 
 import {
+  bookOtherWordsForHome,
+  bookTheMetropolis,
+  bookTheTinyDragon,
   bookAtomicHabits,
   bookCantHurtMe,
-  bookChamberOfSecrets,
-  bookDaVinciCode,
   bookEverythingIsFked,
   bookFaultInOurStars,
   bookFortyRulesOfLove,
   bookImmortalsOfMeluha,
-  bookOtherWordsForHome,
   bookSita,
   bookSubtleArtOfNotGivingAFked,
-  bookTheMetropolis,
   bookThePalaceOfIllusions,
-  bookTheTinyDragon,
   bookWishICouldTellYou,
+  bookChamberOfSecrets,
+  bookDaVinciCode,
+  bookTheHobbit,
+  bookAshesToMagic,
+  bookEgoIsTheEnemy,
+  bookElementsOfGate,
+  bookInfluence,
+  bookKingdomOfCopper,
+  bookMonkFerrari,
+  bookNarashima,
+  bookPerfectUs,
+  bookPrioryOfOrangeTree,
+  bookRealmOfBeasts,
+  bookUnderland,
 } from "./books";
 
 export const myBooksData = [
@@ -63,6 +75,7 @@ export const categoriesData = [
       bookEverythingIsFked,
       bookWishICouldTellYou,
       bookImmortalsOfMeluha,
+      bookUnderland,
     ],
   },
   {
@@ -74,6 +87,7 @@ export const categoriesData = [
       bookFortyRulesOfLove,
       bookTheMetropolis,
       bookAtomicHabits,
+      bookTheHobbit,
     ],
   },
 ];
@@ -107,49 +121,31 @@ export const discoverBooksTag = [
 ];
 
 export const discoverBooks = [
-  {
-    ...bookAtomicHabits,
-  },
-  {
-    ...bookCantHurtMe,
-  },
-  {
-    ...bookChamberOfSecrets,
-  },
-  {
-    ...bookDaVinciCode,
-  },
-  {
-    ...bookEverythingIsFked,
-  },
-  {
-    ...bookFaultInOurStars,
-  },
-  {
-    ...bookFortyRulesOfLove,
-  },
-  {
-    ...bookImmortalsOfMeluha,
-  },
-  {
-    ...bookOtherWordsForHome,
-  },
-  {
-    ...bookSita,
-  },
-  {
-    ...bookSubtleArtOfNotGivingAFked,
-  },
-  {
-    ...bookTheMetropolis,
-  },
-  {
-    ...bookThePalaceOfIllusions,
-  },
-  {
-    ...bookTheTinyDragon,
-  },
-  {
-    ...bookWishICouldTellYou,
-  },
+  bookAshesToMagic,
+  bookKingdomOfCopper,
+  bookNarashima,
+  bookPerfectUs,
+  bookPrioryOfOrangeTree,
+  bookMonkFerrari,
+  bookRealmOfBeasts,
+  bookInfluence,
+  bookElementsOfGate,
+  bookTheHobbit,
+  bookDaVinciCode,
+  bookEgoIsTheEnemy,
+  bookOtherWordsForHome,
+  bookTheMetropolis,
+  bookTheTinyDragon,
+  bookAtomicHabits,
+  bookCantHurtMe,
+  bookEverythingIsFked,
+  bookFaultInOurStars,
+  bookFortyRulesOfLove,
+  bookImmortalsOfMeluha,
+  bookSita,
+  bookSubtleArtOfNotGivingAFked,
+  bookThePalaceOfIllusions,
+  bookWishICouldTellYou,
+  bookChamberOfSecrets,
+  bookUnderland,
 ];

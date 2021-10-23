@@ -15,6 +15,16 @@ export const palaceOfIllusions = require("../assets/images/palace_of_illusions.j
 export const sita = require("../assets/images/sita.jpg");
 export const subtleArt = require("../assets/images/subtle_art.jpg");
 export const wishICouldTellYou = require("../assets/images/wish_i_could_tell_you.jpg");
+export const ashesToMagic = require("../assets/images/ashes_to_magic.jpg");
+export const egoIsTheEnemy = require("../assets/images/ego_is_the_enemy.jpg");
+export const elementsOfGate = require("../assets/images/elements_of_gate.jpg");
+export const influence = require("../assets/images/influence.jpg");
+export const kingdomOfCopper = require("../assets/images/kingdom_of_copper.jpg");
+export const monkFerrari = require("../assets/images/monk_ferrari.jpg");
+export const narsimha = require("../assets/images/narsimha.jpg");
+export const perfectUs = require("../assets/images/perfect_us.jpg");
+export const prioryOfOrangeTree = require("../assets/images/priory_of_orange_tree.jpg");
+export const realmOfBeasts = require("../assets/images/realm_of_beasts.jpg");
 
 export default {
   otherWordsForHome,
@@ -34,4 +44,14 @@ export default {
   sita,
   subtleArt,
   wishICouldTellYou,
+  ashesToMagic,
+  elementsOfGate,
+  influence,
+  kingdomOfCopper,
+  monkFerrari,
+  egoIsTheEnemy,
+  narsimha,
+  perfectUs,
+  prioryOfOrangeTree,
+  realmOfBeasts,
 };
