@@ -13,22 +13,29 @@ export const bookmark_icon = require("../assets/icons/bookmark_icon.png");
 export const read_icon = require("../assets/icons/read_icon.png");
 export const back_arrow_icon = require("../assets/icons/back_arrow_icon.png");
 export const more_icon = require("../assets/icons/more_icon.png");
-
+export const bestseller = require("../assets/icons/bestseller.png");
+export const bookstore = require("../assets/icons/bookstore.png");
+export const fiction = require("../assets/icons/fiction.png");
+export const mic = require("../assets/icons/mic.png");
 
 export default {
-    card_icon,
-    claim_icon,
-    dashboard_icon,
-    menu_icon,
-    notification_icon,
-    point_icon,
-    search_icon,
-    clock_icon,
-    page_icon,
-    page_filled_icon,
-    plus_icon,
-    bookmark_icon,
-    read_icon,
-    back_arrow_icon,
-    more_icon
-}
+  card_icon,
+  claim_icon,
+  dashboard_icon,
+  menu_icon,
+  notification_icon,
+  point_icon,
+  search_icon,
+  clock_icon,
+  page_icon,
+  page_filled_icon,
+  plus_icon,
+  bookmark_icon,
+  read_icon,
+  back_arrow_icon,
+  more_icon,
+  bestseller,
+  bookstore,
+  fiction,
+  mic,
+};
