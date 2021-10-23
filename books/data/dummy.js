@@ -1,3 +1,5 @@
+import { icons } from "../constants";
+
 import {
   bookAtomicHabits,
   bookCantHurtMe,
@@ -80,3 +82,74 @@ export const profileData = {
   name: "Enola Holmes",
   point: 200,
 };
+
+export const discoverBooksTag = [
+  {
+    title: "Best Seller",
+    total: 3452,
+    icon: icons.bestseller,
+  },
+  {
+    title: "Bookstore",
+    total: 8745,
+    icon: icons.bookstore,
+  },
+  {
+    title: "Fiction",
+    total: 1234,
+    icon: icons.fiction,
+  },
+  {
+    title: "Non-Fiction",
+    total: 987,
+    icon: icons.fiction,
+  },
+];
+
+export const discoverBooks = [
+  {
+    ...bookAtomicHabits,
+  },
+  {
+    ...bookCantHurtMe,
+  },
+  {
+    ...bookChamberOfSecrets,
+  },
+  {
+    ...bookDaVinciCode,
+  },
+  {
+    ...bookEverythingIsFked,
+  },
+  {
+    ...bookFaultInOurStars,
+  },
+  {
+    ...bookFortyRulesOfLove,
+  },
+  {
+    ...bookImmortalsOfMeluha,
+  },
+  {
+    ...bookOtherWordsForHome,
+  },
+  {
+    ...bookSita,
+  },
+  {
+    ...bookSubtleArtOfNotGivingAFked,
+  },
+  {
+    ...bookTheMetropolis,
+  },
+  {
+    ...bookThePalaceOfIllusions,
+  },
+  {
+    ...bookTheTinyDragon,
+  },
+  {
+    ...bookWishICouldTellYou,
+  },
+];

@@ -8,29 +8,7 @@ import {
   Image,
 } from "react-native";
 import { icons, FONTS, COLORS, SIZES } from "../constants";
-
-const itemData = [
-  {
-    title: "Best Seller",
-    total: 3452,
-    icon: icons.bestseller,
-  },
-  {
-    title: "Bookstore",
-    total: 8745,
-    icon: icons.bookstore,
-  },
-  {
-    title: "Fiction",
-    total: 1234,
-    icon: icons.fiction,
-  },
-  {
-    title: "Non-Fiction",
-    total: 987,
-    icon: icons.fiction,
-  },
-];
+import { discoverBooksTag } from "../data/dummy";
 
 const DiscoverHeaderItem = ({ item }) => {
   return (
@@ -131,7 +109,7 @@ const DiscoverHeader = () => {
 
       <View style={{ marginTop: SIZES.padding }}>
         <FlatList
-          data={itemData}
+          data={discoverBooksTag}
           renderItem={({ item }) => <DiscoverHeaderItem item={item} />}
           keyExtractor={(item) => `explore-${item.title}`}
           showsVerticalScrollIndicator={false}

@@ -12,6 +12,7 @@ import {
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import DiscoverHeader from "../components/DiscoverHeader";
+import DiscoverBooks from "../components/DiscoverBooks";
 
 const Discover = ({ navigation }) => {
   return (
@@ -20,6 +21,7 @@ const Discover = ({ navigation }) => {
       <ScrollView>
         <View style={{ flex: 1, padding: SIZES.font }}>
           <DiscoverHeader />
+          <DiscoverBooks />
         </View>
       </ScrollView>
     </SafeAreaView>
