@@ -1,11 +1,17 @@
 import React from "react";
-import { View, FlatList, Image } from "react-native";
-import { COLORS, SIZES } from "../constants";
+import { View, FlatList, Image, TouchableOpacity } from "react-native";
+import { SIZES } from "../constants";
 import { discoverBooks } from "../data/dummy";
 
-const DiscoverBooksItem = ({ item }) => {
+const DiscoverBooksItem = ({ item, navigation }) => {
   return (
-    <View
+    <TouchableOpacity
+      activeOpacity={0.4}
+      onPress={() =>
+        navigation.navigate("BookDetail", {
+          book: item,
+        })
+      }
       style={{
         flex: 1,
         margin: 5,
@@ -24,16 +30,18 @@ const DiscoverBooksItem = ({ item }) => {
           borderRadius: 5,
         }}
       />
-    </View>
+    </TouchableOpacity>
   );
 };
 
-const DiscoverBooks = () => {
+const DiscoverBooks = ({ navigation }) => {
   return (
     <View style={{ marginTop: SIZES.padding }}>
       <FlatList
         data={discoverBooks}
-        renderItem={({ item }) => <DiscoverBooksItem item={item} />}
+        renderItem={({ item }) => (
+          <DiscoverBooksItem item={item} navigation={navigation} />
+        )}
         numColumns={2}
         keyExtractor={(item) => `book-${item.bookName}`}
       />

@@ -412,7 +412,7 @@ export const bookRealmOfBeasts = {
   readed: "337k",
   description:
     "Tor Lir, the Nameless One, is determined to ignore his birthright. Instead of ruling the immortals, he leaves the forests of the Iaen to study the ways of mortals.\nBut, fate won’t be denied. After he discovers mortals are dying, his past comes to haunt him with the reminder that he must put an end to imbalance before darkness rises again. \nCitrine, after being banished from her village, discovers the legendary land of a friendly giant. There, she takes advantage of the tranquility surrounding her to study the lore of herbs and craft a spell of protection for her mythical beasts.\nWhen darkness creeps into Paradise, bringing the mysterious wizard, Tor Lir, and an omen of death, Citrine realizes that a long forgotten deal she made with a dark creature has grave consequences, spelling danger for herself, her beasts, and Paradise.\nDesperate to undo her mistakes, Citrine joins forces with Tor Lir, a cold wizard she instantly dislikes.",
-  backgroundColor: "rgba(221, 197, 171, 0.9)",
+  backgroundColor: "rgba(41, 38, 38, 0.9)",
   navTintColor: "#FFF",
 };
 

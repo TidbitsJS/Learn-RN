@@ -1,16 +1,7 @@
 import React from "react";
-import {
-  View,
-  Text,
-  SafeAreaView,
-  ScrollView,
-  TextInput,
-  Image,
-  TouchableOpacity,
-  FlatList,
-} from "react-native";
+import { View, SafeAreaView, ScrollView } from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import DiscoverHeader from "../components/DiscoverHeader";
 import DiscoverBooks from "../components/DiscoverBooks";
 
@@ -21,7 +12,7 @@ const Discover = ({ navigation }) => {
       <ScrollView>
         <View style={{ flex: 1, padding: SIZES.font }}>
           <DiscoverHeader />
-          <DiscoverBooks />
+          <DiscoverBooks navigation={navigation} />
         </View>
       </ScrollView>
     </SafeAreaView>
