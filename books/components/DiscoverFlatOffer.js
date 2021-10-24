@@ -17,8 +17,37 @@ const DiscoverFlatOffer = ({ navigation }) => {
         justifyContent: "flex-start",
         alignItems: "flex-end",
         backgroundColor: COLORS.gray,
+        overflow: "hidden",
       }}
     >
+      <View
+        style={{
+          position: "absolute",
+          top: -40,
+          left: -60,
+          width: 100,
+          height: 100,
+          borderRadius: 50,
+          borderWidth: 2,
+          borderColor: COLORS.black,
+          backgroundColor: COLORS.black,
+        }}
+      />
+
+      <View
+        style={{
+          position: "absolute",
+          bottom: -40,
+          left: -40,
+          width: 100,
+          backgroundColor: COLORS.primary,
+          height: 100,
+          borderRadius: 50,
+          borderWidth: 2,
+          borderColor: COLORS.primary,
+        }}
+      />
+
       <View style={{ paddingRight: SIZES.font }}>
         <Text style={{ ...FONTS.h2, color: COLORS.white }}>Flat</Text>
         <Text style={{ ...FONTS.h2, color: COLORS.white }}>50% off</Text>
