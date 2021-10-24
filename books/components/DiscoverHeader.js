@@ -42,7 +42,7 @@ const DiscoverHeaderItem = ({ item }) => {
 
 const DiscoverHeader = () => {
   return (
-    <>
+    <View style={{ padding: SIZES.font }}>
       <View style={{ marginTop: SIZES.font }}>
         <Text style={{ ...FONTS.h1, color: COLORS.white }}>Discover</Text>
         <Text
@@ -104,7 +104,9 @@ const DiscoverHeader = () => {
         >
           Explore books
         </Text>
-        <Text style={{ ...FONTS.body4, color: COLORS.white }}>More</Text>
+        <TouchableOpacity activeOpacity={0.5}>
+          <Text style={{ ...FONTS.body4, color: COLORS.white }}>More</Text>
+        </TouchableOpacity>
       </View>
 
       <View style={{ marginTop: SIZES.padding }}>
@@ -116,7 +118,7 @@ const DiscoverHeader = () => {
           horizontal
         />
       </View>
-    </>
+    </View>
   );
 };
 

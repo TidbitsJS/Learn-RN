@@ -36,7 +36,7 @@ const DiscoverBooksItem = ({ item, navigation }) => {
 
 const DiscoverBooks = ({ navigation }) => {
   return (
-    <View style={{ marginTop: SIZES.padding }}>
+    <View style={{ marginTop: SIZES.padding, padding: SIZES.base }}>
       <FlatList
         data={discoverBooks}
         renderItem={({ item }) => (
