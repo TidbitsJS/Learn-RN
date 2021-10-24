@@ -25,6 +25,8 @@ export const narsimha = require("../assets/images/narsimha.jpg");
 export const perfectUs = require("../assets/images/perfect_us.jpg");
 export const prioryOfOrangeTree = require("../assets/images/priory_of_orange_tree.jpg");
 export const realmOfBeasts = require("../assets/images/realm_of_beasts.jpg");
+export const orangebg = require("../assets/orangebg.jpg");
+export const bluebg = require("../assets/bluebg.jpg");
 
 export default {
   otherWordsForHome,
@@ -54,4 +56,6 @@ export default {
   perfectUs,
   prioryOfOrangeTree,
   realmOfBeasts,
+  orangebg,
+  bluebg,
 };

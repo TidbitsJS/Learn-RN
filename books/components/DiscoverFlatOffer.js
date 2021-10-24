@@ -23,20 +23,6 @@ const DiscoverFlatOffer = ({ navigation }) => {
       <View
         style={{
           position: "absolute",
-          top: -40,
-          left: -60,
-          width: 100,
-          height: 100,
-          borderRadius: 50,
-          borderWidth: 2,
-          borderColor: COLORS.black,
-          backgroundColor: COLORS.black,
-        }}
-      />
-
-      <View
-        style={{
-          position: "absolute",
           bottom: -40,
           left: -40,
           width: 100,
