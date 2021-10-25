@@ -4,7 +4,7 @@ import { COLORS, FONTS, SIZES, images } from "../constants";
 
 const ShopHeader = () => {
   return (
-    <View style={{ flex: 1 }}>
+    <View>
       <View
         style={{
           margin: SIZES.font,

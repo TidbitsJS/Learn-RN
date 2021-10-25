@@ -1,16 +1,27 @@
 import React from "react";
-import { View, Text, SafeAreaView } from "react-native";
+import { View, Text, SafeAreaView, FlatList, ScrollView } from "react-native";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
-import { COLORS } from "../constants";
+import { COLORS, SIZES } from "../constants";
 import ShopHeader from "../components/ShopHeader";
+import ShopCartItem from "../components/ShopCartItem";
+import { discoverBooks } from "../data/dummy";
 
 const Shop = () => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
-      <View style={{ flex: 1 }}>
-        <ShopHeader />
-      </View>
+      <ScrollView>
+        <View style={{ flex: 1 }}>
+          <ShopHeader />
+          <View style={{ marginTop: SIZES.padding, marginBottom: SIZES.font }}>
+            <FlatList
+              data={discoverBooks.slice(4, 10)}
+              renderItem={({ item }) => <ShopCartItem item={item} />}
+              keyExtractor={(item) => `cart-${item.bookName}`}
+            />
+          </View>
+        </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

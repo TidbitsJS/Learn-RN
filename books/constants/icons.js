@@ -17,6 +17,8 @@ export const bestseller = require("../assets/icons/bestseller.png");
 export const bookstore = require("../assets/icons/bookstore.png");
 export const fiction = require("../assets/icons/fiction.png");
 export const mic = require("../assets/icons/mic.png");
+export const minus = require("../assets/icons/minus.png");
+export const plus = require("../assets/icons/plus.png");
 
 export default {
   card_icon,
@@ -38,4 +40,6 @@ export default {
   bookstore,
   fiction,
   mic,
+  minus,
+  plus,
 };
