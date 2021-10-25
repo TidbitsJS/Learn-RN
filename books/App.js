@@ -1,10 +1,13 @@
 import React from "react";
+import { LogBox } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
 import BookDetail from "./screens/BookDetail";
+
+LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
 const theme = {
   ...DefaultTheme,
