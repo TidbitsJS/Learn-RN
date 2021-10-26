@@ -2,7 +2,23 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 
-const ShopCartItem = ({ item }) => {
+const ShopCartItem = ({ item, handleRemoveItem, handleTotalPrice }) => {
+  const [items, setItems] = React.useState(1);
+
+  const handleNoOfItems = (type) => {
+    if (type === "add") {
+      setItems(items + 1);
+      handleTotalPrice(item.price);
+    } else {
+      if (items < 2) {
+        handleRemoveItem(item.id);
+      } else {
+        setItems(items - 1);
+      }
+      handleTotalPrice(-item.price);
+    }
+  };
+
   return (
     <View
       style={{
@@ -32,16 +48,16 @@ const ShopCartItem = ({ item }) => {
             {item.bookName}
           </Text>
           <Text style={{ ...FONTS.body4, color: COLORS.lightGray3 }}>
-            $56.21
+            $ {item.price}
           </Text>
         </View>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
           <Text style={{ ...FONTS.body4, color: COLORS.primary }}>remove</Text>
         </TouchableOpacity>
       </View>
 
       <View style={{ alignItems: "center", justifyContent: "space-evenly" }}>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleNoOfItems("minus")}>
           <Image
             source={icons.minus}
             style={{ width: 23, height: 23 }}
@@ -55,9 +71,9 @@ const ShopCartItem = ({ item }) => {
             marginVertical: 5,
           }}
         >
-          3
+          {items}
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => handleNoOfItems("add")}>
           <Image
             source={icons.plus}
             style={{ width: 23, height: 23 }}

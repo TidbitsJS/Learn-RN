@@ -27,6 +27,7 @@ export const prioryOfOrangeTree = require("../assets/images/priory_of_orange_tre
 export const realmOfBeasts = require("../assets/images/realm_of_beasts.jpg");
 export const orangebg = require("../assets/orangebg.jpg");
 export const bluebg = require("../assets/bluebg.jpg");
+export const redbg = require("../assets/redbg.jpg");
 
 export default {
   otherWordsForHome,
@@ -58,4 +59,5 @@ export default {
   realmOfBeasts,
   orangebg,
   bluebg,
+  redbg,
 };

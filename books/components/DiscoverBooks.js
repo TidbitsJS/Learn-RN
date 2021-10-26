@@ -49,7 +49,7 @@ const DiscoverBooks = ({ navigation }) => {
       />
 
       <DiscoverOfferBar
-        imgUrl={images.orangebg}
+        imgUrl={images.redbg}
         title="Save Up to 50%"
         subtitle="expires in 3 days"
       />

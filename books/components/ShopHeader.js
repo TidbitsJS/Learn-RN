@@ -39,7 +39,7 @@ const ShopHeader = () => {
         }}
       >
         <ImageBackground
-          source={images.bluebg}
+          source={images.orangebg}
           resizeMode="cover"
           style={{
             position: "absolute",
