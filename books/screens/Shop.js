@@ -5,6 +5,7 @@ import { COLORS, SIZES } from "../constants";
 import ShopHeader from "../components/ShopHeader";
 import ShopCartItem from "../components/ShopCartItem";
 import { discoverBooks } from "../data/dummy";
+import ShopFooter from "../components/ShopFooter";
 
 const Shop = () => {
   return (
@@ -20,6 +21,7 @@ const Shop = () => {
               keyExtractor={(item) => `cart-${item.bookName}`}
             />
           </View>
+          <ShopFooter />
         </View>
       </ScrollView>
     </SafeAreaView>
