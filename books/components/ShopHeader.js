@@ -18,7 +18,7 @@ const ShopHeader = () => {
             color: COLORS.white,
           }}
         >
-          My Cart
+          My Book Bag
         </Text>
         <Text
           style={{ ...FONTS.body3, color: COLORS.lightGray3, marginTop: 5 }}

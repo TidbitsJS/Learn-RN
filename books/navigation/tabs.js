@@ -49,15 +49,15 @@ const Tabs = () => {
                 />
               );
 
-            case "Notification":
+            case "Cart":
               return (
                 <Image
-                  source={icons.notification_icon}
+                  source={icons.cart}
                   resizeMode="contain"
                   style={{
                     tintColor: tintColor,
-                    width: 20,
-                    height: 20,
+                    width: 25,
+                    height: 25,
                   }}
                 />
               );
@@ -80,7 +80,7 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Discover} />
-      <Tab.Screen name="Notification" component={Shop} />
+      <Tab.Screen name="Cart" component={Shop} />
       <Tab.Screen name="Setting" component={Home} />
     </Tab.Navigator>
   );

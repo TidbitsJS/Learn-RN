@@ -19,6 +19,7 @@ export const fiction = require("../assets/icons/fiction.png");
 export const mic = require("../assets/icons/mic.png");
 export const minus = require("../assets/icons/minus.png");
 export const plus = require("../assets/icons/plus.png");
+export const cart = require("../assets/icons/cart.png");
 
 export default {
   card_icon,
@@ -42,4 +43,5 @@ export default {
   mic,
   minus,
   plus,
+  cart,
 };

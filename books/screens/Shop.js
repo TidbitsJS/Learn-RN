@@ -49,7 +49,7 @@ const Shop = ({ navigation }) => {
             />
           </View>
           {totalPrice == 0 && <ShopSomething navigation={navigation} />}
-          <ShopFooter totalPrice={totalPrice} />
+          {totalPrice != 0 && <ShopFooter />}
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -1,56 +1,91 @@
 import React from "react";
 import { View, Text, FlatList, Image, TouchableOpacity } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, lotties, SIZES } from "../constants";
 import { discoverBooks } from "../data/dummy";
+import LottieView from "lottie-react-native";
 
-const ShopSomething = ({ navigation }) => {
-  return (
-    <View style={{ flex: 1, margin: SIZES.font }}>
-      <Text style={{ ...FONTS.h2, color: COLORS.white, textAlign: "center" }}>
-        Bag is Empty
-      </Text>
+class ShopSomething extends React.Component {
+  componentDidMount() {
+    this.animation.play();
+  }
 
+  render() {
+    const { navigation } = this.props;
+
+    return (
       <View
         style={{
-          backgroundColor: COLORS.gray,
-          margin: SIZES.font,
-          padding: SIZES.font,
-          justifyContent: "center",
-          alignItems: "center",
-          borderRadius: SIZES.base,
+          flex: 1,
+          marginHorizontal: SIZES.font,
+          marginBottom: SIZES.font,
         }}
       >
-        <Text
-          style={{
-            ...FONTS.body5,
-            color: COLORS.white,
-            marginBottom: SIZES.font,
-            textTransform: "uppercase",
-          }}
-        >
-          Discover new books
+        <Text style={{ ...FONTS.h2, color: COLORS.white, textAlign: "center" }}>
+          Ouch, <Text style={{ color: COLORS.primary }}>books</Text> are{" "}
+          <Text style={{ color: COLORS.primary }}>missing</Text>
         </Text>
 
-        <FlatList
-          data={discoverBooks.slice(1, 5)}
-          horizontal
-          renderItem={({ item }) => (
-            <TouchableOpacity
-              style={{ margin: SIZES.base }}
-              onPress={() => navigation.navigate("BookDetail", { book: item })}
-            >
-              <Image
-                source={item.bookCover}
-                style={{ width: 80, height: 120, borderRadius: SIZES.base }}
-                resizeMode="cover"
-              />
-            </TouchableOpacity>
-          )}
-          keyExtractor={(item) => `cartshop-${item.bookName}`}
-        />
+        <View
+          style={{
+            width: "100%",
+            justifyContent: "center",
+            alignItems: "center",
+          }}
+        >
+          <LottieView
+            ref={(animation) => {
+              this.animation = animation;
+            }}
+            source={lotties.basketLottie}
+            loop={true}
+            style={{ width: 200, height: 200 }}
+          />
+        </View>
+
+        <View
+          style={{
+            backgroundColor: COLORS.gray,
+            margin: SIZES.font,
+            padding: SIZES.font,
+            justifyContent: "center",
+            alignItems: "center",
+            borderRadius: SIZES.base,
+          }}
+        >
+          <Text
+            style={{
+              ...FONTS.body5,
+              color: COLORS.white,
+              marginBottom: SIZES.font,
+              textTransform: "uppercase",
+            }}
+          >
+            Discover new books
+          </Text>
+
+          <FlatList
+            data={discoverBooks.slice(1, 5)}
+            horizontal
+            renderItem={({ item }) => (
+              <TouchableOpacity
+                style={{ margin: SIZES.base }}
+                onPress={() =>
+                  navigation.navigate("BookDetail", { book: item })
+                }
+              >
+                <Image
+                  source={item.bookCover}
+                  style={{ width: 80, height: 120, borderRadius: SIZES.base }}
+                  resizeMode="cover"
+                />
+              </TouchableOpacity>
+            )}
+            keyExtractor={(item) => `cartshop-${item.bookName}`}
+          />
+        </View>
       </View>
-    </View>
-  );
-};
+    );
+  }
+}
 
 export default ShopSomething;
