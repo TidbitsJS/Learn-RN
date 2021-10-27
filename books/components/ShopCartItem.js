@@ -2,7 +2,12 @@ import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 
-const ShopCartItem = ({ item, handleRemoveItem, handleTotalPrice }) => {
+const ShopCartItem = ({
+  item,
+  handleRemoveItem,
+  handleTotalPrice,
+  navigation,
+}) => {
   const [items, setItems] = React.useState(1);
 
   const handleNoOfItems = (type) => {
@@ -27,7 +32,11 @@ const ShopCartItem = ({ item, handleRemoveItem, handleTotalPrice }) => {
         margin: SIZES.font,
       }}
     >
-      <TouchableOpacity activeOpacity={0.45} style={{ width: 60, height: 80 }}>
+      <TouchableOpacity
+        activeOpacity={0.45}
+        style={{ width: 60, height: 80 }}
+        onPress={() => navigation.navigate("BookDetail", { book: item })}
+      >
         <Image
           source={item.bookCover}
           resizeMode="cover"
@@ -43,15 +52,23 @@ const ShopCartItem = ({ item, handleRemoveItem, handleTotalPrice }) => {
           marginHorizontal: SIZES.base,
         }}
       >
-        <View>
+        <TouchableOpacity
+          activeOpacity={0.5}
+          onPress={() => navigation.navigate("BookDetail", { book: item })}
+        >
           <Text style={{ ...FONTS.h3, color: COLORS.white }} numberOfLines={1}>
             {item.bookName}
           </Text>
           <Text style={{ ...FONTS.body4, color: COLORS.lightGray3 }}>
             $ {item.price}
           </Text>
-        </View>
-        <TouchableOpacity onPress={() => handleRemoveItem(item.id)}>
+        </TouchableOpacity>
+        <TouchableOpacity
+          onPress={() => {
+            handleTotalPrice(-(item.price * items));
+            handleRemoveItem(item.id);
+          }}
+        >
           <Text style={{ ...FONTS.body4, color: COLORS.primary }}>remove</Text>
         </TouchableOpacity>
       </View>

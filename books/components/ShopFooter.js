@@ -42,21 +42,21 @@ const ShopFooter = ({ totalPrice }) => {
       />
 
       <TouchableOpacity
+        activeOpacity={totalPrice != 0 ? 0.5 : 1}
         style={{
           width: "100%",
           padding: SIZES.font,
           marginTop: SIZES.padding,
-          backgroundColor: COLORS.primary,
+          backgroundColor: totalPrice != 0 ? COLORS.primary : COLORS.gray,
           borderRadius: SIZES.radius,
           justifyContent: "center",
           alignItems: "center",
         }}
-        activeOpacity={0.5}
       >
         <Text
           style={{
             ...FONTS.body3,
-            color: COLORS.white,
+            color: totalPrice != 0 ? COLORS.white : COLORS.lightGray,
             textTransform: "capitalize",
           }}
         >

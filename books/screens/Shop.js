@@ -6,8 +6,9 @@ import ShopHeader from "../components/ShopHeader";
 import ShopCartItem from "../components/ShopCartItem";
 import { discoverBooks } from "../data/dummy";
 import ShopFooter from "../components/ShopFooter";
+import ShopSomething from "../components/ShopSomething";
 
-const Shop = () => {
+const Shop = ({ navigation }) => {
   const [cartItems, setCartItems] = React.useState(discoverBooks.slice(15, 20));
   const [totalPrice, setTotalPrice] = React.useState(
     cartItems.reduce((acc, item) => acc + item.price, 0).toFixed(2)
@@ -41,11 +42,13 @@ const Shop = () => {
                   item={item}
                   handleRemoveItem={handleRemoveItem}
                   handleTotalPrice={handleTotalPrice}
+                  navigation={navigation}
                 />
               )}
               keyExtractor={(item) => `cart-${item.bookName}`}
             />
           </View>
+          {totalPrice == 0 && <ShopSomething navigation={navigation} />}
           <ShopFooter totalPrice={totalPrice} />
         </View>
       </ScrollView>
