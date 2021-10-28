@@ -5,6 +5,7 @@ import { icons, COLORS } from "../constants";
 import Home from "../screens/Home";
 import Discover from "../screens/Discover";
 import Shop from "../screens/Shop";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -81,7 +82,7 @@ const Tabs = () => {
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Search" component={Discover} />
       <Tab.Screen name="Cart" component={Shop} />
-      <Tab.Screen name="Setting" component={Home} />
+      <Tab.Screen name="Setting" component={Profile} />
     </Tab.Navigator>
   );
 };

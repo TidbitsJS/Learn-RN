@@ -28,6 +28,8 @@ export const realmOfBeasts = require("../assets/images/realm_of_beasts.jpg");
 export const orangebg = require("../assets/orangebg.jpg");
 export const bluebg = require("../assets/bluebg.jpg");
 export const redbg = require("../assets/redbg.jpg");
+export const bookbg = require("../assets/bookbg.jpeg");
+export const enola = require("../assets/enola.png");
 
 export default {
   otherWordsForHome,
@@ -60,4 +62,6 @@ export default {
   orangebg,
   bluebg,
   redbg,
+  bookbg,
+  enola,
 };
