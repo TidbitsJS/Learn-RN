@@ -21,6 +21,9 @@ export const minus = require("../assets/icons/minus.png");
 export const plus = require("../assets/icons/plus.png");
 export const cart = require("../assets/icons/cart.png");
 export const menu = require("../assets/icons/menu.png");
+export const bookshelf = require("../assets/icons/bookshelf.png");
+export const heart = require("../assets/icons/heart.png");
+export const read = require("../assets/icons/read.png");
 
 export default {
   card_icon,
@@ -46,4 +49,7 @@ export default {
   plus,
   cart,
   menu,
+  bookshelf,
+  heart,
+  read,
 };
