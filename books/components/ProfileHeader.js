@@ -6,7 +6,7 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { COLORS, images, icons, SIZES, FONTS } from "../constants";
+import { COLORS, images, icons, SIZES, FONTS, SHADOW } from "../constants";
 
 const ProfileHeader = () => {
   return (
@@ -35,6 +35,7 @@ const ProfileHeader = () => {
           flexDirection: "row",
           justifyContent: "space-between",
           alignItems: "center",
+          ...SHADOW.darkShadow,
         }}
       >
         <View

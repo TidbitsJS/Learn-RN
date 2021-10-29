@@ -1,22 +1,25 @@
 import React from "react";
 import { View, Text, FlatList, Image } from "react-native";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SHADOW, SIZES } from "../constants";
 
 const stats = [
   {
     title: "Books Read",
     value: "47",
     icon: icons.read,
+    color: COLORS.darkGreen,
   },
   {
     title: "Books Bought",
     value: "117",
     icon: icons.bookshelf,
+    color: COLORS.darkRed,
   },
   {
     title: "Books Liked",
     value: "27",
     icon: icons.heart,
+    color: COLORS.darkBlue,
   },
 ];
 
@@ -30,6 +33,7 @@ const ProfileStatsItem = ({ item }) => {
         borderRadius: SIZES.radius,
         marginHorizontal: SIZES.font,
         marginVertical: SIZES.font + 10,
+        ...SHADOW.darkShadow,
       }}
     >
       <View
@@ -37,12 +41,13 @@ const ProfileStatsItem = ({ item }) => {
           position: "absolute",
           top: -20,
           left: -10,
-          backgroundColor: COLORS.white,
+          backgroundColor: item.color,
           width: 40,
           height: 40,
           borderRadius: 20,
           justifyContent: "center",
           alignItems: "center",
+          ...SHADOW.mediumShadow,
         }}
       >
         <Image
