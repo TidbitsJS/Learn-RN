@@ -54,10 +54,9 @@ class ShopSomething extends React.Component {
         >
           <Text
             style={{
-              ...FONTS.body5,
+              ...FONTS.body4,
               color: COLORS.white,
               marginBottom: SIZES.font,
-              textTransform: "uppercase",
             }}
           >
             Discover new books
@@ -75,7 +74,7 @@ class ShopSomething extends React.Component {
               >
                 <Image
                   source={item.bookCover}
-                  style={{ width: 80, height: 120, borderRadius: SIZES.base }}
+                  style={{ width: 100, height: 150, borderRadius: SIZES.base }}
                   resizeMode="cover"
                 />
               </TouchableOpacity>
