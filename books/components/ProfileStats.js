@@ -69,6 +69,16 @@ const ProfileStatsItem = ({ item }) => {
 const ProfileStats = () => {
   return (
     <View style={{ margin: SIZES.font }}>
+      <Text
+        style={{
+          ...FONTS.h2,
+          color: COLORS.white,
+          marginHorizontal: SIZES.font,
+          marginTop: SIZES.base,
+        }}
+      >
+        Your Stats
+      </Text>
       <View style={{ marginVertical: SIZES.font }}>
         <FlatList
           data={stats}

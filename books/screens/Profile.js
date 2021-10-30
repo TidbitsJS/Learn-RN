@@ -4,6 +4,7 @@ import ProfileHeader from "../components/ProfileHeader";
 import ProfileStats from "../components/ProfileStats";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS } from "../constants";
+import ProfileSettings from "../components/ProfileSettings";
 
 const Profile = () => {
   return (
@@ -17,6 +18,7 @@ const Profile = () => {
         <View style={{ flex: 1 }}>
           <ProfileHeader />
           <ProfileStats />
+          <ProfileSettings />
         </View>
       </ScrollView>
     </SafeAreaView>

@@ -23,7 +23,13 @@ export const cart = require("../assets/icons/cart.png");
 export const menu = require("../assets/icons/menu.png");
 export const bookshelf = require("../assets/icons/bookshelf.png");
 export const heart = require("../assets/icons/heart.png");
+export const arrowRight = require("../assets/icons/arrow_right.png");
 export const read = require("../assets/icons/read.png");
+export const help = require("../assets/icons/help.png");
+export const language = require("../assets/icons/language.png");
+export const privacy = require("../assets/icons/privacy.png");
+export const terms = require("../assets/icons/terms.png");
+export const notification = require("../assets/icons/notification.png");
 
 export default {
   card_icon,
@@ -52,4 +58,10 @@ export default {
   bookshelf,
   heart,
   read,
+  arrowRight,
+  help,
+  language,
+  privacy,
+  terms,
+  notification,
 };
