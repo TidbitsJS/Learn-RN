@@ -7,8 +7,10 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import CustomButton from "../components/CustomButton";
 import FormTextInput from "../components/FormTextInput";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import LogWithButton from "../components/LogWithButton";
+import { COLORS, FONTS, icons, SHADOW, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Form = ({ route, navigation }) => {
@@ -87,53 +89,98 @@ const Form = ({ route, navigation }) => {
               backgroundColor: COLORS.black,
               borderTopRightRadius: SIZES.padding,
               borderTopLeftRadius: SIZES.padding,
-              padding: SIZES.padding,
             }}
           >
-            {type === "Sign Up" && (
+            <View
+              style={{
+                padding: SIZES.padding,
+              }}
+            >
+              {type === "Sign Up" && (
+                <FormTextInput
+                  placeholderText="Email"
+                  type="email"
+                  value={credential.email}
+                  onHandleInputText={handleInputText}
+                />
+              )}
               <FormTextInput
-                placeholderText="Email"
-                type="email"
-                value={credential.email}
+                placeholderText="Username"
+                type="username"
+                value={credential.username}
                 onHandleInputText={handleInputText}
               />
-            )}
-            <FormTextInput
-              placeholderText="Username"
-              type="username"
-              value={credential.username}
-              onHandleInputText={handleInputText}
-            />
-            <FormTextInput
-              placeholderText="Password"
-              type="password"
-              value={credential.password}
-              onHandleInputText={handleInputText}
-            />
-            {type === "Sign Up" && (
               <FormTextInput
-                placeholderText="Confirm Password"
-                type="confirmPassword"
-                value={credential.confirmPassword}
+                placeholderText="Password"
+                type="password"
+                value={credential.password}
                 onHandleInputText={handleInputText}
               />
-            )}
-            {type === "Sign In" && (
-              <TouchableOpacity
-                style={{ marginTop: SIZES.base }}
-                activeOpacity={0.5}
-              >
-                <Text
-                  style={{
-                    ...FONTS.body4,
-                    color: COLORS.primary,
-                    textAlign: "right",
-                  }}
+              {type === "Sign Up" && (
+                <FormTextInput
+                  placeholderText="Confirm Password"
+                  type="confirmPassword"
+                  value={credential.confirmPassword}
+                  onHandleInputText={handleInputText}
+                />
+              )}
+              {type === "Sign In" && (
+                <TouchableOpacity
+                  style={{ marginTop: SIZES.base }}
+                  activeOpacity={0.5}
                 >
-                  Forgot Password?.
-                </Text>
-              </TouchableOpacity>
-            )}
+                  <Text
+                    style={{
+                      ...FONTS.body4,
+                      color: COLORS.primary,
+                      textAlign: "right",
+                    }}
+                  >
+                    Forgot Password?.
+                  </Text>
+                </TouchableOpacity>
+              )}
+              <View style={{ marginTop: SIZES.padding }}>
+                <CustomButton
+                  title={type}
+                  bgColor={COLORS.white}
+                  color={COLORS.black}
+                  onHandlePress={() => {}}
+                />
+              </View>
+            </View>
+            <View
+              style={{
+                marginVertical: SIZES.base,
+                height: 10,
+                backgroundColor: COLORS.gray,
+              }}
+            />
+            <View style={{ padding: SIZES.padding }}>
+              <Text
+                style={{
+                  ...FONTS.h3,
+                  color: COLORS.primary,
+                  textAlign: "center",
+                }}
+              >
+                OR
+              </Text>
+              <View style={{ marginVertical: SIZES.font }}>
+                <LogWithButton
+                  title="Continue With Google"
+                  iconUrl={icons.google}
+                />
+                <LogWithButton
+                  title="Continue With Github"
+                  iconUrl={icons.github}
+                />
+                <LogWithButton
+                  title="Continue With Twitter"
+                  iconUrl={icons.twitter}
+                />
+              </View>
+            </View>
           </View>
         </View>
       </ScrollView>

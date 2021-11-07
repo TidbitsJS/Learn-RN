@@ -7,37 +7,38 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import CustomButton from "../components/CustomButton";
 import { COLORS, FONTS, images, SHADOW, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const WelcomeBtn = ({ title, bgColor, color, navigation, ...props }) => (
-  <TouchableOpacity
-    activeOpacity={0.5}
-    onPress={() =>
-      navigation.navigate("Form", {
-        type: title,
-      })
-    }
-    style={{
-      flex: 1,
-      backgroundColor: bgColor,
-      padding: SIZES.font,
-      borderRadius: SIZES.padding,
-      ...SHADOW.lightShadow,
-      ...props,
-    }}
-  >
-    <Text
-      style={{
-        ...FONTS.h3,
-        color: color,
-        textAlign: "center",
-      }}
-    >
-      {title}
-    </Text>
-  </TouchableOpacity>
-);
+// const WelcomeBtn = ({ title, bgColor, color, navigation, ...props }) => (
+//   <TouchableOpacity
+//     activeOpacity={0.5}
+//     onPress={() =>
+//       navigation.navigate("Form", {
+//         type: title,
+//       })
+//     }
+//     style={{
+//       flex: 1,
+//       backgroundColor: bgColor,
+//       padding: SIZES.font,
+//       borderRadius: SIZES.padding,
+//       ...SHADOW.lightShadow,
+//       ...props,
+//     }}
+//   >
+//     <Text
+//       style={{
+//         ...FONTS.h3,
+//         color: color,
+//         textAlign: "center",
+//       }}
+//     >
+//       {title}
+//     </Text>
+//   </TouchableOpacity>
+// );
 
 const Welcome = ({ navigation }) => {
   return (
@@ -102,18 +103,26 @@ const Welcome = ({ navigation }) => {
                 marginVertical: SIZES.padding,
               }}
             >
-              <WelcomeBtn
+              <CustomButton
                 title="Sign In"
                 bgColor={COLORS.black}
                 color={COLORS.white}
-                navigation={navigation}
+                onHandlePress={() => {
+                  navigation.navigate("Form", {
+                    type: "Sign In",
+                  });
+                }}
                 marginRight={SIZES.font}
               />
-              <WelcomeBtn
+              <CustomButton
                 title="Sign Up"
                 bgColor={COLORS.white}
                 color={COLORS.black}
-                navigation={navigation}
+                onHandlePress={() => {
+                  navigation.navigate("Form", {
+                    type: "Sign Up",
+                  });
+                }}
               />
             </View>
           </View>

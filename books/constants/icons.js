@@ -30,6 +30,9 @@ export const language = require("../assets/icons/language.png");
 export const privacy = require("../assets/icons/privacy.png");
 export const terms = require("../assets/icons/terms.png");
 export const notification = require("../assets/icons/notification.png");
+export const github = require("../assets/icons/github.png");
+export const google = require("../assets/icons/google.png");
+export const twitter = require("../assets/icons/twitter.png");
 
 export default {
   card_icon,
@@ -64,4 +67,7 @@ export default {
   privacy,
   terms,
   notification,
+  github,
+  google,
+  twitter,
 };
