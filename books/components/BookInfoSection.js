@@ -6,7 +6,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SHADOW, SIZES } from "../constants";
 import LineDivider from "../utils/LineDivider";
 
 const InfoBar = ({ value, name }) => {

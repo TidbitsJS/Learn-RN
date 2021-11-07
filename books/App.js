@@ -6,6 +6,7 @@ import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
 import BookDetail from "./screens/BookDetail";
+import Welcome from "./screens/Welcome";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -37,8 +38,9 @@ function App() {
           screenOptions={{
             headerShown: false,
           }}
-          initialRouteName={"Home"}
+          initialRouteName={"Welcome"}
         >
+          <Stack.Screen name="Welcome" component={Welcome} />
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen
             name="BookDetail"

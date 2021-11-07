@@ -30,6 +30,7 @@ export const bluebg = require("../assets/bluebg.jpg");
 export const redbg = require("../assets/redbg.jpg");
 export const bookbg = require("../assets/bookbg.jpeg");
 export const enola = require("../assets/enola.png");
+export const logo = require("../assets/logo.png");
 
 export default {
   otherWordsForHome,
@@ -64,4 +65,5 @@ export default {
   redbg,
   bookbg,
   enola,
+  logo,
 };

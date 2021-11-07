@@ -1,13 +1,13 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
-import { SIZES, FONTS, COLORS } from "../constants";
+import { SIZES, FONTS, COLORS, SHADOW } from "../constants";
 
 const DiscoverBookPreview = ({ book, navigation }) => {
   return (
     <TouchableOpacity
       style={{
         flex: 1,
-        backgroundColor: book.backgroundColor,
+        backgroundColor: COLORS.white,
         padding: SIZES.font,
         height: 250,
         flexDirection: "row",
@@ -31,7 +31,7 @@ const DiscoverBookPreview = ({ book, navigation }) => {
       >
         <View>
           <Text
-            style={{ ...FONTS.h2, color: book.navTintColor }}
+            style={{ ...FONTS.h2, color: COLORS.darkGreen }}
             numberOfLines={2}
           >
             {book.bookName}
@@ -39,8 +39,9 @@ const DiscoverBookPreview = ({ book, navigation }) => {
           <Text
             style={{
               ...FONTS.body4,
-              color: book.navTintColor,
+              color: COLORS.darkGreen,
             }}
+            numberOfLines={1}
           >
             {book.author}
           </Text>
@@ -48,7 +49,7 @@ const DiscoverBookPreview = ({ book, navigation }) => {
             style={{
               ...FONTS.body5,
               marginTop: SIZES.font,
-              color: book.navTintColor,
+              color: COLORS.darkBlue,
             }}
             numberOfLines={5}
           >
@@ -61,10 +62,15 @@ const DiscoverBookPreview = ({ book, navigation }) => {
             backgroundColor: COLORS.primary,
             padding: SIZES.base,
             borderRadius: SIZES.radius,
+            ...SHADOW.lightShadow,
           }}
         >
           <Text
-            style={{ ...FONTS.body4, color: COLORS.white, textAlign: "center" }}
+            style={{
+              ...FONTS.body4,
+              color: book.navTintColor,
+              textAlign: "center",
+            }}
           >
             Buy Now
           </Text>

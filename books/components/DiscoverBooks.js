@@ -20,7 +20,7 @@ const DiscoverBooksItem = ({ item, navigation }) => {
         backgroundColor: item.backgroundColor,
         padding: SIZES.base,
         borderRadius: 5,
-        maxWidth: "50%",
+        maxWidth: "48%",
       }}
     >
       <Image
@@ -65,7 +65,7 @@ const DiscoverBooks = ({ navigation }) => {
         keyExtractor={(item) => `book-${item.bookName}`}
       />
 
-      <DiscoverBookPreview book={discoverBooks[2]} navigation={navigation} />
+      <DiscoverBookPreview book={discoverBooks[0]} navigation={navigation} />
 
       <FlatList
         data={discoverBooks.slice(18)}
