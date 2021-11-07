@@ -5,13 +5,19 @@ import {
   SafeAreaView,
   Image,
   TouchableOpacity,
+  ScrollView,
 } from "react-native";
 import { COLORS, FONTS, images, SHADOW, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const WelcomeBtn = ({ bgColor, color, ...props }) => (
+const WelcomeBtn = ({ title, bgColor, color, navigation, ...props }) => (
   <TouchableOpacity
     activeOpacity={0.5}
+    onPress={() =>
+      navigation.navigate("Form", {
+        type: title,
+      })
+    }
     style={{
       flex: 1,
       backgroundColor: bgColor,
@@ -28,80 +34,91 @@ const WelcomeBtn = ({ bgColor, color, ...props }) => (
         textAlign: "center",
       }}
     >
-      Sign up
+      {title}
     </Text>
   </TouchableOpacity>
 );
 
-const Welcome = () => {
+const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
-      <View style={{ flex: 1 }}>
-        <View
-          style={{
-            flex: 1.25,
-            backgroundColor: COLORS.black,
-            justifyContent: "center",
-            alignItems: "center",
-          }}
-        >
-          <Image
-            source={images.logo}
-            style={{ width: 120, height: 150 }}
-            resizeMode="contain"
-          />
-        </View>
-        <View
-          style={{
-            flex: 1,
-            backgroundColor: COLORS.primary,
-            borderTopLeftRadius: SIZES.padding,
-            borderTopRightRadius: SIZES.padding,
-            padding: SIZES.padding,
-            justifyContent: "space-between",
-          }}
-        >
-          <View>
-            <Text
-              style={{
-                ...FONTS.h1,
-                color: COLORS.white,
-                marginTop: SIZES.font,
-              }}
-            >
-              Welcome
-            </Text>
-            <Text
-              style={{
-                ...FONTS.body4,
-                color: COLORS.white,
-                marginTop: SIZES.font,
-              }}
-            >
-              Kitap is your best source to buy cheap book online, make online
-              book purchase, making us the best book website in India to read
-              book online.
-            </Text>
+      <ScrollView contentContainerStyle={{ flexGrow: 1 }}>
+        <View style={{ flex: 1 }}>
+          <View
+            style={{
+              flex: 3,
+              minHeight: 250,
+              backgroundColor: COLORS.black,
+              justifyContent: "center",
+              alignItems: "center",
+            }}
+          >
+            <Image
+              source={images.logo}
+              style={{ width: 120, height: 150 }}
+              resizeMode="contain"
+            />
           </View>
           <View
             style={{
-              flexDirection: "row",
+              flex: 1,
+              minHeight: 300,
+              backgroundColor: COLORS.primary,
+              borderTopLeftRadius: SIZES.padding,
+              borderTopRightRadius: SIZES.padding,
+              padding: SIZES.padding,
               justifyContent: "space-between",
-              alignItems: "center",
-
-              marginVertical: SIZES.padding,
             }}
           >
-            <WelcomeBtn
-              bgColor={COLORS.black}
-              color={COLORS.white}
-              marginRight={SIZES.font}
-            />
-            <WelcomeBtn bgColor={COLORS.white} color={COLORS.black} />
+            <View style={{ marginVertical: SIZES.font }}>
+              <Text
+                style={{
+                  ...FONTS.h1,
+                  color: COLORS.white,
+                  marginTop: SIZES.font,
+                }}
+              >
+                Welcome
+              </Text>
+              <Text
+                style={{
+                  ...FONTS.body4,
+                  color: COLORS.white,
+                  marginTop: SIZES.font,
+                }}
+              >
+                Kitap is your best source to buy cheap book online, make online
+                book purchase, making us the best book website in India to read
+                book online.
+              </Text>
+            </View>
+            <View
+              style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
+
+                marginVertical: SIZES.padding,
+              }}
+            >
+              <WelcomeBtn
+                title="Sign In"
+                bgColor={COLORS.black}
+                color={COLORS.white}
+                navigation={navigation}
+                marginRight={SIZES.font}
+              />
+              <WelcomeBtn
+                title="Sign Up"
+                bgColor={COLORS.white}
+                color={COLORS.black}
+                navigation={navigation}
+              />
+            </View>
           </View>
         </View>
-      </View>
+      </ScrollView>
     </SafeAreaView>
   );
 };

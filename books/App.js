@@ -7,6 +7,7 @@ import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
 import BookDetail from "./screens/BookDetail";
 import Welcome from "./screens/Welcome";
+import Form from "./screens/Form";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -41,6 +42,7 @@ function App() {
           initialRouteName={"Welcome"}
         >
           <Stack.Screen name="Welcome" component={Welcome} />
+          <Stack.Screen name="Form" component={Form} />
           <Stack.Screen name="Home" component={Tabs} />
           <Stack.Screen
             name="BookDetail"
