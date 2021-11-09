@@ -11,7 +11,7 @@ import CustomAlert from "../components/CustomAlert";
 import CustomButton from "../components/CustomButton";
 import FormTextInput from "../components/FormTextInput";
 import LogWithButton from "../components/LogWithButton";
-import { COLORS, FONTS, icons, SHADOW, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Form = ({ route, navigation }) => {

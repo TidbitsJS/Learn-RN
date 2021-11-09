@@ -1,32 +1,14 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Animated } from "react-native";
-import { COLORS, FONTS, SHADOW, SIZES } from "../constants";
+import { View, Text, TouchableOpacity } from "react-native";
+import * as Animatable from "react-native-animatable";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
+import { COLORS, FONTS, SHADOW, SIZES } from "../constants";
 
 const CustomAlert = ({ errorMessage, onHandleClose }) => {
-  const [fadeValue] = React.useState(new Animated.Value(0));
-
-  const _end = () => {
-    // fade out effect animation
-    Animated.timing(fadeValue, {
-      toValue: 0,
-      duration: 500,
-      useNativeDriver: true,
-    }).stop();
-  };
-
-  React.useEffect(() => {
-    Animated.timing(fadeValue, {
-      toValue: 1,
-      duration: 2000,
-      useNativeDriver: true,
-    }).start();
-  });
-
   return (
     <>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
-      <Animated.View
+      <View
         style={{
           position: "absolute",
           top: 0,
@@ -39,7 +21,9 @@ const CustomAlert = ({ errorMessage, onHandleClose }) => {
           zIndex: 2,
         }}
       >
-        <View
+        <Animatable.View
+          animation="zoomIn"
+          duration={500}
           style={{
             width: "80%",
             backgroundColor: COLORS.white,
@@ -70,15 +54,12 @@ const CustomAlert = ({ errorMessage, onHandleClose }) => {
               justifyContent: "flex-end",
               alignItems: "flex-end",
             }}
-            onPress={() => {
-              _end();
-              onHandleClose();
-            }}
+            onPress={() => onHandleClose()}
           >
             <Text style={{ ...FONTS.h4, color: COLORS.gray }}>Okay</Text>
           </TouchableOpacity>
-        </View>
-      </Animated.View>
+        </Animatable.View>
+      </View>
     </>
   );
 };
