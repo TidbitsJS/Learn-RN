@@ -7,6 +7,7 @@ import {
   TouchableOpacity,
   ScrollView,
 } from "react-native";
+import CustomAlert from "../components/CustomAlert";
 import CustomButton from "../components/CustomButton";
 import FormTextInput from "../components/FormTextInput";
 import LogWithButton from "../components/LogWithButton";
@@ -21,6 +22,10 @@ const Form = ({ route, navigation }) => {
     password: "",
     confirmPassword: "",
   });
+  const [error, setError] = React.useState({
+    status: false,
+    errorMessage: "Something went wrong. Please try again.",
+  });
 
   const handleInputText = (type, value) => {
     setCredential({
@@ -29,8 +34,67 @@ const Form = ({ route, navigation }) => {
     });
   };
 
+  const handleSubmit = () => {
+    let validateSignIn =
+      credential.username.trim() === "" || credential.password.trim() === "";
+
+    let validateSignUp =
+      credential.email.trim() === "" ||
+      credential.confirmPassword.trim() === "";
+
+    if (type === "Sign In") {
+      if (validateSignIn) {
+        setError({
+          status: true,
+          errorMessage:
+            "All fields are required. Please fill in the fields to proceed",
+        });
+      } else {
+        navigation.navigate("Home");
+        setCredential({
+          email: "",
+          username: "",
+          password: "",
+          confirmPassword: "",
+        });
+      }
+    } else {
+      if (validateSignUp && validateSignIn) {
+        setError({
+          status: true,
+          errorMessage:
+            "All fields are required. Please fill in the fields to proceed",
+        });
+      } else if (credential.password !== credential.confirmPassword) {
+        setError({
+          status: true,
+          errorMessage:
+            "Password does not match. Ensure your password & confirm password fields are same.",
+        });
+      } else {
+        navigation.navigate("Home");
+        setCredential({
+          email: "",
+          username: "",
+          password: "",
+          confirmPassword: "",
+        });
+      }
+    }
+  };
+
+  const handleErrorClose = () => {
+    setError({ status: false, errorMessage: "" });
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.primary }}>
+      {error.status && (
+        <CustomAlert
+          errorMessage={error.errorMessage}
+          onHandleClose={handleErrorClose}
+        />
+      )}
       <FocusedStatusBar animated={true} backgroundColor={COLORS.primary} />
       <ScrollView>
         <View style={{ flex: 1 }}>
@@ -59,9 +123,16 @@ const Form = ({ route, navigation }) => {
                   style={{ width: 20, height: 20 }}
                 />
               </TouchableOpacity>
-              <Text style={{ ...FONTS.body5, color: COLORS.black }}>
-                Register
-              </Text>
+              <TouchableOpacity
+                onPress={() => {
+                  let whereto = type === "Sign In" ? "Sign Up" : "Sign In";
+                  navigation.navigate("Form", { type: whereto });
+                }}
+              >
+                <Text style={{ ...FONTS.body5, color: COLORS.black }}>
+                  {type === "Sign In" ? "Register" : "Login"}
+                </Text>
+              </TouchableOpacity>
             </View>
             <Text
               style={{
@@ -145,14 +216,14 @@ const Form = ({ route, navigation }) => {
                   title={type}
                   bgColor={COLORS.white}
                   color={COLORS.black}
-                  onHandlePress={() => {}}
+                  onHandlePress={handleSubmit}
                 />
               </View>
             </View>
             <View
               style={{
                 marginVertical: SIZES.base,
-                height: 10,
+                height: 7,
                 backgroundColor: COLORS.gray,
               }}
             />
