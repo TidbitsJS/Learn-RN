@@ -37,7 +37,7 @@ const SettingItem = ({ item }) => {
         flexDirection: "row",
         justifyContent: "center",
         alignItems: "center",
-        marginVertical: SIZES.base,
+        marginVertical: SIZES.font,
       }}
     >
       <TouchableOpacity

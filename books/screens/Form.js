@@ -12,9 +12,12 @@ import CustomButton from "../components/CustomButton";
 import FormTextInput from "../components/FormTextInput";
 import LogWithButton from "../components/LogWithButton";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { useStateContext } from "../context/StateContext";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Form = ({ route, navigation }) => {
+  const { setLogged } = useStateContext();
+
   const { type } = route.params;
   const [credential, setCredential] = React.useState({
     email: "",
@@ -50,7 +53,7 @@ const Form = ({ route, navigation }) => {
             "All fields are required. Please fill in the fields to proceed",
         });
       } else {
-        navigation.navigate("Home");
+        setLogged(true);
         setCredential({
           email: "",
           username: "",
@@ -72,7 +75,7 @@ const Form = ({ route, navigation }) => {
             "Password does not match. Ensure your password & confirm password fields are same.",
         });
       } else {
-        navigation.navigate("Home");
+        setLogged(true);
         setCredential({
           email: "",
           username: "",

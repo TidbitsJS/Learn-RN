@@ -4,10 +4,9 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { SafeAreaProvider } from "react-native-safe-area-context";
 import { useFonts } from "expo-font";
-import Tabs from "./navigation/tabs";
-import BookDetail from "./screens/BookDetail";
-import Welcome from "./screens/Welcome";
-import Form from "./screens/Form";
+
+import { StateContextProvider } from "./context/StateContext";
+import { RootNavigator } from "./navigation/stack";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -34,23 +33,11 @@ function App() {
 
   return (
     <SafeAreaProvider style={{ flex: 1 }}>
-      <NavigationContainer theme={theme}>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-          initialRouteName={"Welcome"}
-        >
-          <Stack.Screen name="Welcome" component={Welcome} />
-          <Stack.Screen name="Form" component={Form} />
-          <Stack.Screen name="Home" component={Tabs} />
-          <Stack.Screen
-            name="BookDetail"
-            component={BookDetail}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
+      <StateContextProvider>
+        <NavigationContainer theme={theme}>
+          <RootNavigator />
+        </NavigationContainer>
+      </StateContextProvider>
     </SafeAreaProvider>
   );
 }

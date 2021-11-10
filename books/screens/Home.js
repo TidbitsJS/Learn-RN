@@ -8,6 +8,7 @@ import HomeButtonSection from "../components/HomeButtonSection";
 import HomeBookSection from "../components/HomeBookSection";
 import HomeCategoryHeader from "../components/HomeCategoryHeader";
 import HomeCategorySection from "../components/HomeCategorySection";
+import * as Animatable from "react-native-animatable";
 
 const Home = ({ navigation }) => {
   const [selectedCategory, setSelectedCategory] = React.useState(1);
@@ -16,7 +17,7 @@ const Home = ({ navigation }) => {
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
       <ScrollView>
-        <View style={{ flex: 1 }}>
+        <Animatable.View animation="fadeIn" style={{ flex: 1 }}>
           <HomeHeader profile={profileData} />
           <HomeButtonSection />
           <HomeBookSection navigation={navigation} myBooks={myBooksData} />
@@ -30,7 +31,7 @@ const Home = ({ navigation }) => {
             categories={categoriesData}
             selectedCategory={selectedCategory}
           />
-        </View>
+        </Animatable.View>
       </ScrollView>
     </SafeAreaView>
   );
