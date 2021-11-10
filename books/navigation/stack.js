@@ -6,6 +6,7 @@ import BookDetail from "../screens/BookDetail";
 import Welcome from "../screens/Welcome";
 import Form from "../screens/Form";
 import ContactInfo from "../screens/ContactInfo";
+import PaymentMethod from "../screens/PaymentMethod";
 
 const Stack = createStackNavigator();
 
@@ -40,6 +41,11 @@ const HomeNavigator = () => {
       <Stack.Screen
         name="ContactInfo"
         component={ContactInfo}
+        options={{ headerShown: false }}
+      />
+      <Stack.Screen
+        name="PaymentMethod"
+        component={PaymentMethod}
         options={{ headerShown: false }}
       />
     </Stack.Navigator>

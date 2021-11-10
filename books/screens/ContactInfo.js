@@ -18,11 +18,23 @@ const OrderInfoItem = ({ title, subtitle, ...props }) => {
         flexDirection: "row",
         justifyContent: "space-between",
         alignItems: "center",
-        marginBottom: SIZES.base,
+        marginVertical: 5,
+        marginHorizontal: SIZES.base,
       }}
     >
-      <Text style={{ ...FONTS.body4, color: COLORS.lightGray }}>{title} :</Text>
-      <Text style={{ ...FONTS.body4, color: COLORS.white, ...props }}>
+      <Text
+        style={{ ...FONTS.body4, color: COLORS.lightGray, letterSpacing: 0.55 }}
+      >
+        {title} :
+      </Text>
+      <Text
+        style={{
+          ...FONTS.body4,
+          color: COLORS.white,
+          letterSpacing: 0.55,
+          ...props,
+        }}
+      >
         {subtitle}
       </Text>
     </View>
@@ -64,6 +76,7 @@ const ContactInfoItem = ({ iconUrl, title, subtitle, ...props }) => {
           style={{
             ...FONTS.body4,
             color: COLORS.lightGray,
+            letterSpacing: 0.55,
           }}
         >
           {subtitle}
@@ -84,7 +97,7 @@ const ContactInfoItem = ({ iconUrl, title, subtitle, ...props }) => {
   );
 };
 
-const ContactInfo = () => {
+const ContactInfo = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.black }}>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
@@ -98,7 +111,7 @@ const ContactInfo = () => {
               padding: SIZES.font,
             }}
           >
-            <TouchableOpacity>
+            <TouchableOpacity onPress={() => navigation.goBack()}>
               <Image
                 source={icons.back_arrow_icon}
                 style={{ width: 20, height: 20, tintColor: COLORS.white }}
@@ -147,7 +160,13 @@ const ContactInfo = () => {
                 />
 
                 <View style={{ margin: SIZES.base }}>
-                  <Text style={{ ...FONTS.h3, color: COLORS.white }}>
+                  <Text
+                    style={{
+                      ...FONTS.h3,
+                      color: COLORS.white,
+                      letterSpacing: 0.55,
+                    }}
+                  >
                     Address
                   </Text>
                   <Text
@@ -155,6 +174,7 @@ const ContactInfo = () => {
                       ...FONTS.body4,
                       color: COLORS.lightGray,
                       marginTop: 5,
+                      letterSpacing: 0.55,
                     }}
                   >
                     221B Baker Street, London, 11908 - UK
@@ -167,6 +187,7 @@ const ContactInfo = () => {
                     margin: SIZES.base,
                     borderRadius: SIZES.font,
                     overflow: "hidden",
+                    ...SHADOW.lightShadow,
                   }}
                 >
                   <MapView
@@ -201,7 +222,7 @@ const ContactInfo = () => {
                 Order Info
               </Text>
 
-              <View style={{ marginTop: SIZES.font }}>
+              <View style={{ marginTop: SIZES.base }}>
                 <OrderInfoItem title="Subtotal" subtitle="$128" />
                 <OrderInfoItem title="Shipping Cost" subtitle="$50" />
                 <OrderInfoItem
@@ -222,11 +243,13 @@ const ContactInfo = () => {
                 justifyContent: "center",
                 alignItems: "center",
               }}
+              activeOpacity={0.5}
+              onPress={() => navigation.navigate("PaymentMethod")}
             >
               <Text
                 style={{ ...FONTS.h3, color: COLORS.white, letterSpacing: 1 }}
               >
-                Pay $210
+                Continue
               </Text>
             </TouchableOpacity>
           </View>

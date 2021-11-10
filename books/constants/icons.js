@@ -40,6 +40,9 @@ export const mastercard = require("../assets/icons/mastercard.png");
 export const message = require("../assets/icons/message.png");
 export const paypal = require("../assets/icons/paypal.png");
 export const webmoney = require("../assets/icons/webmoney.png");
+export const bhim = require("../assets/icons/bhim.png");
+export const bitcoin = require("../assets/icons/bitcoin.png");
+export const paytm = require("../assets/icons/paytm.png");
 
 export default {
   card_icon,
@@ -84,4 +87,7 @@ export default {
   message,
   paypal,
   webmoney,
+  bhim,
+  bitcoin,
+  paytm,
 };
