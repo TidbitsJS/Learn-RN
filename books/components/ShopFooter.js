@@ -21,7 +21,7 @@ const ShopFooterItem = ({ title, subtitle }) => (
   </View>
 );
 
-const ShopFooter = ({ totalPrice }) => {
+const ShopFooter = ({ totalPrice, navigation }) => {
   let discount = totalPrice * 0.25,
     tax = totalPrice * 0.1,
     shipping = totalPrice * 0.05;
@@ -43,6 +43,7 @@ const ShopFooter = ({ totalPrice }) => {
 
       <TouchableOpacity
         activeOpacity={0.5}
+        onPress={() => navigation.navigate("ContactInfo")}
         style={{
           width: "100%",
           padding: SIZES.font,

@@ -33,6 +33,13 @@ export const notification = require("../assets/icons/notification.png");
 export const github = require("../assets/icons/github.png");
 export const google = require("../assets/icons/google.png");
 export const twitter = require("../assets/icons/twitter.png");
+export const apple = require("../assets/icons/apple.png");
+export const call = require("../assets/icons/call.png");
+export const edit = require("../assets/icons/edit.png");
+export const mastercard = require("../assets/icons/mastercard.png");
+export const message = require("../assets/icons/message.png");
+export const paypal = require("../assets/icons/paypal.png");
+export const webmoney = require("../assets/icons/webmoney.png");
 
 export default {
   card_icon,
@@ -70,4 +77,11 @@ export default {
   github,
   google,
   twitter,
+  apple,
+  call,
+  edit,
+  mastercard,
+  message,
+  paypal,
+  webmoney,
 };
