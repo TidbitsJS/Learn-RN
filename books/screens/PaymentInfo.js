@@ -367,6 +367,7 @@ const PaymentInfo = ({ navigation }) => {
                     alignItems: "center",
                   }}
                   activeOpacity={0.5}
+                  onPress={() => navigation.navigate("PaymentSuccess")}
                 >
                   <Text
                     style={{

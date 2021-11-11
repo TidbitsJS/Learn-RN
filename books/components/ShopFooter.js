@@ -35,7 +35,11 @@ const ShopFooter = ({ totalPrice, navigation }) => {
         title="Shipping Charges"
         subtitle={`$ ${shipping.toFixed(2)}`}
       />
-      <Dash width="100%" paddingVertical={SIZES.font} />
+      <Dash
+        strokeColor={COLORS.lightGray4}
+        width="100%"
+        paddingVertical={SIZES.font}
+      />
       <ShopFooterItem
         title="Total"
         subtitle={`$ ${(totalPrice - discount + tax + shipping).toFixed(2)}`}

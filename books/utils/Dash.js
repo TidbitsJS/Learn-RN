@@ -4,7 +4,7 @@ import Svg, { Line } from "react-native-svg";
 import { COLORS } from "../constants";
 const { width } = Dimensions.get("window");
 
-const Dash = (props) => {
+const Dash = ({ strokeColor, ...props }) => {
   return (
     <View
       style={{
@@ -23,7 +23,7 @@ const Dash = (props) => {
           strokeLinecap="butt"
           y2={0}
           style={{
-            stroke: COLORS.lightGray4,
+            stroke: strokeColor,
             strokeWidth: 1,
           }}
         />
