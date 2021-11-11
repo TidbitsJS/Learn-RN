@@ -253,6 +253,7 @@ const PaymentMethod = ({ navigation }) => {
                   alignItems: "center",
                 }}
                 activeOpacity={0.5}
+                onPress={() => navigation.navigate("PaymentInfo")}
               >
                 <Text
                   style={{ ...FONTS.h3, color: COLORS.white, letterSpacing: 1 }}

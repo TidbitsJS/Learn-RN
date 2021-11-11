@@ -2518,6 +2518,11 @@ css-what@^3.2.1:
   resolved "https://registry.yarnpkg.com/css-what/-/css-what-3.4.2.tgz#ea7026fcb01777edbde52124e21f327e7ae950e4"
   integrity sha512-ACUm3L0/jiZTqfzRM3Hi9Q8eZqd6IK37mMWPLz9PJxkLWllYeRf+EHUSHYEtFop2Eqytaq1FizFVh7XfBnXCDQ==
 
+date-and-time@0.9.0:
+  version "0.9.0"
+  resolved "https://registry.yarnpkg.com/date-and-time/-/date-and-time-0.9.0.tgz#1524579e56dc07675c640b41735a7665c0659240"
+  integrity sha512-4JybB6PbR+EebpFx/KyR5Ybl+TcdXMLIJkyYsCx3P4M4CWGMuDyFF19yh6TyasMAIF5lrsgIxiSHBXh2FFc7Fg==
+
 dayjs@^1.8.15:
   version "1.10.7"
   resolved "https://registry.yarnpkg.com/dayjs/-/dayjs-1.10.7.tgz#2cf5f91add28116748440866a0a1d26f3a6ce468"
@@ -4946,6 +4951,14 @@ react-native-maps@0.28.0:
   dependencies:
     "@types/geojson" "^7946.0.7"
 
+react-native-masked-text@^1.13.0:
+  version "1.13.0"
+  resolved "https://registry.yarnpkg.com/react-native-masked-text/-/react-native-masked-text-1.13.0.tgz#533fde8c45ccbaa1d6b0df30bf19b84b4ace3de3"
+  integrity sha512-iMku5Ky6DP4fTRosjsYNJOhH8yoBQCzRALBdv1wVDKmCBQhhVE8RHr5EW4SNUjkYTZL473sDdEKl4NI948q9FQ==
+  dependencies:
+    date-and-time "0.9.0"
+    tinymask "1.0.2"
+
 react-native-safe-area-context@3.2.0:
   version "3.2.0"
   resolved "https://registry.yarnpkg.com/react-native-safe-area-context/-/react-native-safe-area-context-3.2.0.tgz#06113c6b208f982d68ab5c3cebd199ca93db6941"
@@ -5709,6 +5722,11 @@ time-stamp@^1.0.0:
   version "1.1.0"
   resolved "https://registry.yarnpkg.com/time-stamp/-/time-stamp-1.1.0.tgz#764a5a11af50561921b133f3b44e618687e0f5c3"
   integrity sha1-dkpaEa9QVhkhsTPztE5hhofg9cM=
+
+tinymask@1.0.2:
+  version "1.0.2"
+  resolved "https://registry.yarnpkg.com/tinymask/-/tinymask-1.0.2.tgz#df3775a94087b0d3d056c256e8923c01b7ec0941"
+  integrity sha1-3zd1qUCHsNPQVsJW6JI8AbfsCUE=
 
 tmp@^0.0.33:
   version "0.0.33"
