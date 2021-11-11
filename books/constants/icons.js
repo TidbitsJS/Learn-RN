@@ -44,6 +44,8 @@ export const bhim = require("../assets/icons/bhim.png");
 export const bitcoin = require("../assets/icons/bitcoin.png");
 export const paytm = require("../assets/icons/paytm.png");
 export const creditCard = require("../assets/icons/creditCard.png");
+export const cancel = require("../assets/icons/cancel.png");
+export const arrowDown = require("../assets/icons/arrowDown.png");
 
 export default {
   card_icon,
@@ -92,4 +94,6 @@ export default {
   bitcoin,
   paytm,
   creditCard,
+  cancel,
+  arrowDown,
 };

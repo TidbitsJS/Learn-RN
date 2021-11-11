@@ -13,9 +13,10 @@ import { COLORS, FONTS, icons, SHADOW, SIZES } from "../constants";
 import { TextInputMask } from "react-native-masked-text";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const PaymentInfo = () => {
+const PaymentInfo = ({ navigation }) => {
   const [isEnabled, setIsEnabled] = React.useState(false);
   const [paymentDetails, setPaymentDetails] = React.useState({
+    name: "",
     cardNumber: "",
     password: "",
     cvv: "",
@@ -23,13 +24,29 @@ const PaymentInfo = () => {
   });
 
   return (
-    <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
+    <SafeAreaView style={{ flex: 1 }}>
       <FocusedStatusBar animated={true} backgroundColor={COLORS.black} />
       <ScrollView>
         <View style={{ flex: 1 }}>
           <View
             style={{
+              backgroundColor: COLORS.black,
+              paddingTop: SIZES.font,
+              paddingLeft: SIZES.font,
+            }}
+          >
+            <TouchableOpacity onPress={() => navigation.navigate("Cart")}>
+              <Image
+                source={icons.cancel}
+                style={{ width: 25, height: 25, tintColor: COLORS.white }}
+                resizeMode="cover"
+              />
+            </TouchableOpacity>
+          </View>
+          <View
+            style={{
               paddingVertical: SIZES.padding2,
+              paddingTop: SIZES.padding,
               paddingHorizontal: SIZES.font,
               justifyContent: "center",
               alignItems: "center",
@@ -38,13 +55,14 @@ const PaymentInfo = () => {
           >
             <Text style={{ color: COLORS.white }}>
               <Text style={{ ...FONTS.body1 }}>$ </Text>
-              <Text style={{ ...FONTS.h1 }}>205.45</Text>
+              <Text style={{ ...FONTS.h1, letterSpacing: 0.75 }}>205.45</Text>
             </Text>
             <Text
               style={{
                 ...FONTS.body4,
                 color: COLORS.lightGray,
                 marginTop: SIZES.base,
+                letterSpacing: 0.45,
               }}
             >
               Enola Holmes
@@ -54,6 +72,9 @@ const PaymentInfo = () => {
           <View style={{ backgroundColor: COLORS.black }}>
             <View
               style={{
+                flexDirection: "row",
+                justifyContent: "space-between",
+                alignItems: "center",
                 padding: SIZES.padding,
                 backgroundColor: COLORS.secondary,
                 borderTopLeftRadius: SIZES.padding2,
@@ -61,9 +82,34 @@ const PaymentInfo = () => {
                 ...SHADOW.darkShadow,
               }}
             >
-              <Text style={{ ...FONTS.body3, color: COLORS.white }}>
+              <Text
+                style={{
+                  ...FONTS.h3,
+                  color: COLORS.white,
+                  flex: 1,
+                  letterSpacing: 0.5,
+                }}
+              >
                 Show Saved Cards
               </Text>
+
+              <TouchableOpacity
+                style={{
+                  width: 30,
+                  height: 30,
+                  borderRadius: 7,
+                  justifyContent: "center",
+                  alignItems: "center",
+                  borderWidth: 1,
+                  borderColor: COLORS.lightGray,
+                }}
+              >
+                <Image
+                  source={icons.arrowDown}
+                  style={{ width: "70%", height: "70%" }}
+                  resizeMode="cover"
+                />
+              </TouchableOpacity>
             </View>
           </View>
 
@@ -86,7 +132,46 @@ const PaymentInfo = () => {
                     marginVertical: SIZES.base,
                   }}
                 >
-                  Num Card
+                  Card Holder Name
+                </Text>
+                <View
+                  style={{
+                    width: "100%",
+                    padding: SIZES.base,
+                    backgroundColor: COLORS.gray,
+                    borderRadius: SIZES.base,
+                    backgroundColor: COLORS.lightGray2,
+                  }}
+                >
+                  <TextInput
+                    placeholder="John Doe"
+                    style={{ ...FONTS.h4, color: COLORS.primary }}
+                    value={paymentDetails.name}
+                    onChangeText={(text) => {
+                      setPaymentDetails({
+                        ...paymentDetails,
+                        name: text,
+                      });
+                    }}
+                    style={{
+                      width: "100%",
+                      ...FONTS.body4,
+                      color: COLORS.secondary,
+                      letterSpacing: 0.55,
+                    }}
+                  />
+                </View>
+              </View>
+
+              <View style={{ marginVertical: SIZES.base }}>
+                <Text
+                  style={{
+                    ...FONTS.body4,
+                    color: COLORS.lightGray,
+                    marginVertical: SIZES.base,
+                  }}
+                >
+                  Card Number
                 </Text>
                 <View
                   style={{
@@ -287,10 +372,10 @@ const PaymentInfo = () => {
                     style={{
                       ...FONTS.h3,
                       color: COLORS.white,
-                      letterSpacing: 1,
+                      letterSpacing: 0.55,
                     }}
                   >
-                    Continue
+                    Process Payment
                   </Text>
                 </TouchableOpacity>
               </View>
