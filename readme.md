@@ -47,7 +47,7 @@ Points:
 - Lottie Files
 - Native SVG
 
-# 
+#
 
 ### Budget App
 
@@ -73,10 +73,45 @@ Points:
 - Stack Navigation
 - Status bar & Styles
 - Google maps
-- Animations 
+- Animations
 - Three Screens
   - Restaurant list
   - Restaurant Details
   - Order Map
 
 #
+
+### Book App
+
+An app to buy & explore books online. To watch it on your device, download the expo app from Google Play Store & open the following link
+
+> Link of Kitap App [Open in Expo](https://expo.dev/@tidbit/books)
+
+![book01 mockup](./screenshots/books/book01.png)
+
+Points:
+
+- Tab Navigation
+- Stack Navigation
+- Status bar & styles
+- Google maps
+- Masked Inputs
+- Animations
+- Lottie Files
+- Twelve Screens
+  - Welcome
+  - Sign In
+  - Sign Up
+  - Home
+  - Discover
+  - Cart
+  - Profile
+  - Checkout
+  - Payment Method
+  - Payment Info
+  - Payment Success
+  - Book Details
+
+![book02 mockup](./screenshots/books/book02.png)
+
+![book03 mockup](./screenshots/books/book03.png)
