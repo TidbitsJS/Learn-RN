@@ -1,8 +1,8 @@
 import React from "react";
-import { Text, View } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
+import Tabs from "./navigation/tabs";
 
 const theme = {
   ...DefaultTheme,
@@ -31,16 +31,9 @@ const App = () => {
         screenOptions={{
           headerShown: false,
         }}
-        initialRouteName="SignUp"
+        initialRouteName="Main"
       >
-        <Stack.Screen
-          name="SignUp"
-          component={() => (
-            <View>
-              <Text>SignUp</Text>
-            </View>
-          )}
-        />
+        <Stack.Screen name="Main" component={Tabs} />
       </Stack.Navigator>
     </NavigationContainer>
   );
