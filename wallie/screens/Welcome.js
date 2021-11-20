@@ -39,7 +39,6 @@ const Welcome = ({ navigation }) => {
               <Text
                 style={{
                   ...FONTS.largeTitle,
-                  fontFamily: "Roboto-Black",
                   color: COLORS.black,
                   textAlign: "center",
                 }}
