@@ -86,20 +86,20 @@ const SignUp = ({ navigation }) => {
               style={{
                 marginTop: SIZES.font * 2,
                 marginBottom: SIZES.font,
-                marginHorizontal: SIZES.font * 1.25,
+                marginHorizontal: SIZES.medium * 2,
               }}
             >
               <TouchableOpacity
                 style={{
                   backgroundColor: COLORS.black,
-                  borderRadius: SIZES.radius,
+                  borderRadius: SIZES.font * 1.25,
                   alignItems: "center",
                   justifyContent: "center",
                   padding: SIZES.font,
                 }}
                 onPress={() => navigation.navigate("Tabs")}
               >
-                <Text style={{ color: COLORS.white, ...FONTS.h3 }}>
+                <Text style={{ color: COLORS.white, ...FONTS.h4 }}>
                   Continue
                 </Text>
               </TouchableOpacity>

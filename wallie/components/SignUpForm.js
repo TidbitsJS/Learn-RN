@@ -9,11 +9,11 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
     <View
       style={{
         marginVertical: SIZES.font * 2,
-        paddingHorizontal: SIZES.medium * 1.25,
+        paddingHorizontal: SIZES.medium * 2,
       }}
     >
       <View>
-        <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>
+        <Text style={{ color: COLORS.lightGreen, ...FONTS.body5 }}>
           Full Name
         </Text>
         <TextInput
@@ -32,7 +32,7 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
       </View>
 
       <View style={{ marginTop: SIZES.font }}>
-        <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>
+        <Text style={{ color: COLORS.lightGreen, ...FONTS.body5 }}>
           Phone Number
         </Text>
         <View
@@ -108,7 +108,7 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
           marginTop: SIZES.font,
         }}
       >
-        <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>
+        <Text style={{ color: COLORS.lightGreen, ...FONTS.body5 }}>
           Password
         </Text>
         <View
