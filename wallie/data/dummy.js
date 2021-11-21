@@ -62,27 +62,27 @@ export const featuresData = [
 export const specialPromoData = [
   {
     id: 1,
-    img: images.promoBanner,
-    title: "Bonus Cashback1",
-    description: "Don't miss it. Grab it now!",
+    img: images.money,
+    title: "Bonus Cashback",
+    description: "Don't miss cashback. Grab instantly.",
   },
   {
     id: 2,
-    img: images.promoBanner,
-    title: "Bonus Cashback2",
-    description: "Don't miss it. Grab it now!",
+    img: images.gift,
+    title: "Gift Cards",
+    description: "Don't miss gift cards and vouchers.",
   },
   {
     id: 3,
-    img: images.promoBanner,
-    title: "Bonus Cashback3",
-    description: "Don't miss it. Grab it now!",
+    img: images.burger,
+    title: "Food Offers",
+    description: "Don't miss food offers. Enjoy your meal.",
   },
   {
     id: 4,
-    img: images.promoBanner,
-    title: "Bonus Cashback4",
-    description: "Don't miss it. Grab it now!",
+    img: images.store,
+    title: "Shop Deals",
+    description: "Don't miss shopping. Shop more",
   },
 ];
 

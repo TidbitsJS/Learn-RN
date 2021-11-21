@@ -12,14 +12,14 @@ const HomeSpecialOffersItem = ({ item }) => (
   >
     <View
       style={{
-        height: 80,
+        height: 90,
         borderTopLeftRadius: SIZES.font,
         borderTopRightRadius: SIZES.font,
         backgroundColor: COLORS.primary,
       }}
     >
       <Image
-        source={images.promoBanner}
+        source={item.img}
         resizeMode="cover"
         style={{
           width: "100%",

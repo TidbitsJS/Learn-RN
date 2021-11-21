@@ -48,7 +48,7 @@ const Home = () => {
                   justifyContent: "center",
                   alignItems: "center",
                   backgroundColor: COLORS.lightGray,
-                  borderRadius: 2,
+                  borderRadius: 5,
                 }}
               >
                 <Image
@@ -58,6 +58,7 @@ const Home = () => {
                     height: 20,
                     tintColor: COLORS.secondary,
                   }}
+                  resizeMode="cover"
                 />
                 <View
                   style={{
@@ -76,7 +77,7 @@ const Home = () => {
 
           <View
             style={{
-              height: 120,
+              height: 150,
               borderRadius: SIZES.medium,
               marginVertical: SIZES.font,
             }}
@@ -90,6 +91,51 @@ const Home = () => {
                 borderRadius: SIZES.medium,
               }}
             />
+
+            <View
+              style={{
+                position: "absolute",
+                top: 0,
+                left: 0,
+                right: 0,
+                bottom: 0,
+                padding: SIZES.font,
+                justifyContent: "space-between",
+              }}
+            >
+              <Text
+                style={{
+                  ...FONTS.body3,
+                  color: COLORS.white,
+                }}
+              >
+                Go Premium
+              </Text>
+              <View>
+                <View
+                  style={{
+                    flexDirection: "row",
+                    justifyContent: "flex-start",
+                    alignItems: "flex-end",
+                  }}
+                >
+                  <Text style={{ ...FONTS.h1, color: COLORS.white }}>70</Text>
+                  <Text
+                    style={{
+                      ...FONTS.body4,
+                      color: COLORS.white,
+                      marginBottom: 5,
+                      marginLeft: 5,
+                    }}
+                  >
+                    %
+                  </Text>
+                </View>
+                <Text style={{ ...FONTS.body4, color: COLORS.white }}>
+                  More profit
+                </Text>
+              </View>
+            </View>
           </View>
 
           <HomeFeatures />
