@@ -8,6 +8,7 @@ import {
   Image,
 } from "react-native";
 import HomeFeatures from "../components/HomeFeatures";
+import HomeSpecialOffers from "../components/HomeSpecialOffers";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
@@ -92,6 +93,7 @@ const Home = () => {
           </View>
 
           <HomeFeatures />
+          <HomeSpecialOffers />
         </View>
       </ScrollView>
     </SafeAreaView>

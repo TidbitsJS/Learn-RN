@@ -49,6 +49,7 @@ const HomeFeatures = () => {
         }}
         keyExtractor={(item) => `${item.id}`}
         renderItem={({ item }) => <HomeFeaturesItem item={item} />}
+        ListHeaderComponent={<Text style={{ ...FONTS.body3 }}>Features</Text>}
       />
     </View>
   );
