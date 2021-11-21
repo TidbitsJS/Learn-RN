@@ -4,12 +4,13 @@ import {
   Text,
   SafeAreaView,
   ScrollView,
-  TouchableOpacity,
   Image,
+  TextInput,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
-import { COLORS, FONTS, icons, SIZES } from "../constants";
+import { COLORS, FONTS, images, SIZES } from "../constants";
+import SignUpForm from "../components/SignUpForm";
 
 const SignUp = () => {
   return (
@@ -21,7 +22,22 @@ const SignUp = () => {
       >
         <ScrollView>
           <View style={{ flex: 1 }}>
-            <Text>Sign Up Screen</Text>
+            <View
+              style={{
+                marginVertical: SIZES.font,
+                height: 100,
+                alignItems: "center",
+                justifyContent: "center",
+              }}
+            >
+              <Image
+                source={images.wallieLogo}
+                resizeMode="contain"
+                style={{ width: "60%" }}
+              />
+            </View>
+
+            <SignUpForm />
           </View>
         </ScrollView>
       </LinearGradient>

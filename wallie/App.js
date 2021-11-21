@@ -22,6 +22,7 @@ const App = () => {
     "MSans-Black": require("./assets/fonts/MerriweatherSans-Bold.ttf"),
     "MSans-Bold": require("./assets/fonts/MerriweatherSans-Medium.ttf"),
     "MSans-Regular": require("./assets/fonts/MerriweatherSans-Regular.ttf"),
+    "MSans-Light": require("./assets/fonts/MerriweatherSans-Light.ttf"),
   });
 
   if (!loaded) {

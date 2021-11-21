@@ -35,6 +35,7 @@ export const SIZES = {
   // global sizes
   base: 8,
   font: 14,
+  medium: 16,
   radius: 30,
   padding: 10,
   padding2: 12,
