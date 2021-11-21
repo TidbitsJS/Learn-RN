@@ -37,7 +37,7 @@ const App = () => {
         }}
         initialRouteName="Welcome"
       >
-        <Stack.Screen name="Main" component={Tabs} />
+        <Stack.Screen name="Tabs" component={Tabs} />
         <Stack.Screen name="Sign Up" component={SignUp} />
         <Stack.Screen name="Welcome" component={Welcome} />
       </Stack.Navigator>

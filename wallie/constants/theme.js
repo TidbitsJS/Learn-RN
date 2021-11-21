@@ -65,7 +65,7 @@ export const FONTS = {
   },
   h1: { fontFamily: "MSans-Black", fontSize: SIZES.h1, lineHeight: 36 },
   h2: { fontFamily: "MSans-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: "MSans-Bold", fontSize: SIZES.h3, lineHeight: 22 },
+  h3: { fontFamily: "MSans-Bold", fontSize: SIZES.h3, lineHeight: 26 },
   h4: { fontFamily: "MSans-Bold", fontSize: SIZES.h4, lineHeight: 22 },
   body1: {
     fontFamily: "MSans-Regular",

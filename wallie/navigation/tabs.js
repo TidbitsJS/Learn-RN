@@ -73,6 +73,7 @@ const TabBarCustomButton = ({ accessibilityState, children, onPress }) => {
 const Tabs = () => {
   return (
     <Tab.Navigator
+      initialRouteName="Home"
       screenOptions={({ route }) => ({
         tabBarShowLabel: false,
         headerShown: false,

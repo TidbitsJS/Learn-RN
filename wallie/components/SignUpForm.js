@@ -2,44 +2,14 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
 import { SIZES, COLORS, FONTS, icons } from "../constants";
 
-const SignUpForm = () => {
-  const [areas, setAreas] = React.useState([]);
-  const [selectedArea, setSelectedArea] = React.useState(null);
-  const [modalVisible, setModalVisible] = React.useState(false);
+const SignUpForm = ({ selectedArea, setModalVisible }) => {
   const [showPassword, setShowPassword] = React.useState(false);
-
-  const fetchAreas = async () => {
-    const response = await fetch("https://restcountries.com/v2/all");
-    const jsonData = await response.json();
-
-    let data = jsonData.map((item) => {
-      return {
-        code: item.alpha2Code,
-        name: item.name,
-        callingCode: `+${item.callingCodes[0]}`,
-        flag: `https://www.countryflags.io/${item.alpha2Code}/flat/64.png`,
-      };
-    });
-
-    setAreas(data);
-    if (data.length > 0) {
-      let defaultData = data.filter((a) => a.code === "US");
-
-      if (defaultData.length > 0) {
-        setSelectedArea(defaultData[0]);
-      }
-    }
-  };
-
-  React.useEffect(() => {
-    fetchAreas();
-  }, []);
 
   return (
     <View
       style={{
-        marginVertical: SIZES.font,
-        paddingHorizontal: SIZES.medium,
+        marginVertical: SIZES.font * 2,
+        paddingHorizontal: SIZES.medium * 1.25,
       }}
     >
       <View>
@@ -65,15 +35,22 @@ const SignUpForm = () => {
         <Text style={{ color: COLORS.lightGreen, ...FONTS.body3 }}>
           Phone Number
         </Text>
-        <View style={{ flexDirection: "row", alignItems: "center" }}>
+        <View
+          style={{
+            marginVertical: SIZES.base,
+            flexDirection: "row",
+            alignItems: "center",
+          }}
+        >
           <TouchableOpacity
             style={{
-              width: 100,
               marginHorizontal: 5,
-              paddingVertical: 5,
               borderBottomColor: COLORS.white,
               borderBottomWidth: 1,
+              paddingRight: SIZES.base,
               flexDirection: "row",
+              justifyContent: "flex-start",
+              alignItems: "center",
               ...FONTS.body2,
             }}
             onPress={() => setModalVisible(true)}
@@ -85,6 +62,7 @@ const SignUpForm = () => {
                   width: 10,
                   height: 10,
                   tintColor: COLORS.white,
+                  marginRight: 5,
                 }}
               />
             </View>
@@ -100,7 +78,13 @@ const SignUpForm = () => {
             </View>
 
             <View style={{ justifyContent: "center", marginLeft: 5 }}>
-              <Text style={{ color: COLORS.white, ...FONTS.body3 }}>
+              <Text
+                style={{
+                  color: COLORS.white,
+                  textAlign: "center",
+                  ...FONTS.body4,
+                }}
+              >
                 {selectedArea?.callingCode}
               </Text>
             </View>
@@ -109,13 +93,12 @@ const SignUpForm = () => {
           <TextInput
             style={{
               flex: 1,
-              marginVertical: SIZES.padding,
-              paddingVertical: 5,
               borderBottomColor: COLORS.white,
               borderBottomWidth: 1,
               color: COLORS.white,
-              ...FONTS.body3,
+              ...FONTS.body4,
             }}
+            keyboardType="number-pad"
           />
         </View>
       </View>
