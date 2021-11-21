@@ -90,7 +90,7 @@ export const FONTS = {
   body5: {
     fontFamily: "MSans-Regular",
     fontSize: SIZES.body5,
-    lineHeight: 22,
+    lineHeight: 18,
   },
 };
 

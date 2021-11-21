@@ -42,8 +42,8 @@ const AreaModal = ({ areas, modalVisible, setModalVisible, setSelectArea }) => {
         >
           <View
             style={{
-              height: 500,
               width: "90%",
+              marginVertical: SIZES.font * 2,
               backgroundColor: COLORS.lightGreen,
               borderRadius: SIZES.radius,
             }}

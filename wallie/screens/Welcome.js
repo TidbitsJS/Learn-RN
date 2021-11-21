@@ -14,9 +14,14 @@ const Welcome = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar backgroundColor={COLORS.white} />
-      <ScrollView contentContainerStyle={{ flex: 1 }}>
+      <ScrollView>
         <View
-          style={{ flex: 1, justifyContent: "center", alignItems: "center" }}
+          style={{
+            flex: 1,
+            justifyContent: "center",
+            alignItems: "center",
+            minHeight: SIZES.height,
+          }}
         >
           <View style={{ width: "90%", padding: SIZES.font }}>
             <Image

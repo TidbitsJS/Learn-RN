@@ -1,10 +1,13 @@
 import React from "react";
+import { LogBox } from "react-native";
 import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import { useFonts } from "expo-font";
 import Tabs from "./navigation/tabs";
 import SignUp from "./screens/SignUp";
 import Welcome from "./screens/Welcome";
+
+LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
 const theme = {
   ...DefaultTheme,
