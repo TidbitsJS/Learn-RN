@@ -49,7 +49,7 @@ export const SIZES = {
   body1: 30,
   body2: 22,
   body3: 18,
-  body4: 14,
+  body4: 16,
   body5: 12,
 
   // app dimensions

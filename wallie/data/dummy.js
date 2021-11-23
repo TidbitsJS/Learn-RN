@@ -86,7 +86,44 @@ export const specialPromoData = [
   },
 ];
 
+export const profileOptions = [
+  {
+    id: "prof-1",
+    icon: icons.wallet,
+    title: "Balance",
+    description: "$ 115.00",
+  },
+  {
+    id: "prof-2",
+    icon: icons.qrcode,
+    title: "QR Code",
+  },
+  {
+    id: "prof-3",
+    icon: icons.barcode,
+    title: "Barcode",
+  },
+  {
+    id: "prof-4",
+    icon: icons.password,
+    title: "Password",
+    description: "24****",
+  },
+  {
+    id: "prof-5",
+    icon: icons.fingerprint,
+    title: "Fingerprint",
+  },
+  {
+    id: "prof-6",
+    icon: icons.email,
+    title: "Email",
+    description: "holmes@gmail.com",
+  },
+];
+
 export default {
   featuresData,
   specialPromoData,
+  profileOptions,
 };
