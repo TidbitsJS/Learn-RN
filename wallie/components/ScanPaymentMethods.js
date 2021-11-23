@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { SIZES, FONTS, COLORS, icons } from "../constants";
+import { SIZES, FONTS, COLORS, icons, SHADOW } from "../constants";
 
 const ScanPaymentMethods = () => {
   return (
@@ -9,11 +9,12 @@ const ScanPaymentMethods = () => {
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: 55,
+        bottom: 57,
         padding: SIZES.medium * 2,
         borderTopLeftRadius: SIZES.radius,
         borderTopRightRadius: SIZES.radius,
         backgroundColor: COLORS.white,
+        ...SHADOW.darkShadow,
       }}
     >
       <View style={{ flex: 1 }}>

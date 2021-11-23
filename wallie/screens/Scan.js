@@ -12,7 +12,7 @@ import { Camera } from "expo-camera";
 import { useIsFocused } from "@react-navigation/core";
 import ScanPaymentMethods from "../components/ScanPaymentMethods";
 
-const ScanHeader = () => (
+const ScanHeader = ({ navigation }) => (
   <View
     style={{
       flexDirection: "row",
@@ -117,7 +117,7 @@ const Scan = ({ navigation }) => {
             buttonNegative: "Cancel",
           }}
         >
-          <ScanHeader />
+          <ScanHeader navigation={navigation} />
           <View
             style={{
               flex: 1,
