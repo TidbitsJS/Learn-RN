@@ -7,6 +7,7 @@ const money = require("../assets/images/money.jpg");
 const burger = require("../assets/images/burger.jpeg");
 const gift = require("../assets/images/gift.jpg");
 const store = require("../assets/images/store.png");
+const holmes = require("../assets/images/holmes.jpg");
 
 // Dummy
 const usFlag = require("../assets/images/us-flag.jpg");
@@ -21,6 +22,7 @@ export default {
   burger,
   gift,
   store,
+  holmes,
 
   // Dummy
   usFlag,

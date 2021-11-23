@@ -1,12 +1,10 @@
 import React from "react";
-import { StyleSheet, Text, View, Image, TouchableOpacity } from "react-native";
-import {
-  createBottomTabNavigator,
-  BottomTabBar,
-} from "@react-navigation/bottom-tabs";
+import { StyleSheet, View, Image, TouchableOpacity } from "react-native";
+import { createBottomTabNavigator } from "@react-navigation/bottom-tabs";
 import Svg, { Path } from "react-native-svg";
 import { COLORS, icons } from "../constants";
 import Home from "../screens/Home";
+import Profile from "../screens/Profile";
 
 const Tab = createBottomTabNavigator();
 
@@ -136,7 +134,7 @@ const Tabs = () => {
     >
       <Tab.Screen name="Home" component={Home} />
       <Tab.Screen name="Scan" component={Home} />
-      <Tab.Screen name="User" component={Home} />
+      <Tab.Screen name="User" component={Profile} />
     </Tab.Navigator>
   );
 };
