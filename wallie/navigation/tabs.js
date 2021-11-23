@@ -5,6 +5,7 @@ import Svg, { Path } from "react-native-svg";
 import { COLORS, icons } from "../constants";
 import Home from "../screens/Home";
 import Profile from "../screens/Profile";
+import Scan from "../screens/Scan";
 
 const Tab = createBottomTabNavigator();
 
@@ -133,7 +134,7 @@ const Tabs = () => {
       })}
     >
       <Tab.Screen name="Home" component={Home} />
-      <Tab.Screen name="Scan" component={Home} />
+      <Tab.Screen name="Scan" component={Scan} />
       <Tab.Screen name="User" component={Profile} />
     </Tab.Navigator>
   );

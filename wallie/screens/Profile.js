@@ -11,7 +11,7 @@ import { COLORS, FONTS, icons, images, SHADOW, SIZES } from "../constants";
 import { profileOptions } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const ProfileOptionItem = ({ item }) => (
+const ProfileOptionItem = ({ item, index }) => (
   <TouchableOpacity
     style={{
       flexDirection: "row",
@@ -19,7 +19,7 @@ const ProfileOptionItem = ({ item }) => (
       alignItems: "center",
       padding: SIZES.padding,
       marginVertical: 3,
-      marginTop: item.title === "Password" ? SIZES.font * 2 : 3,
+      marginTop: index === 3 ? SIZES.font * 2 : 3,
     }}
   >
     <View
@@ -99,13 +99,15 @@ const Profile = () => {
       <View style={{ flex: 1 }}>
         <View
           style={{
-            marginVertical: SIZES.font,
+            marginVertical: SIZES.padding * 2,
             paddingHorizontal: SIZES.medium,
           }}
         >
           <FlatList
             data={profileOptions}
-            renderItem={({ item }) => <ProfileOptionItem item={item} />}
+            renderItem={({ item, index }) => (
+              <ProfileOptionItem item={item} index={index} />
+            )}
             keyExtractor={(item) => item.id}
             contentContainerStyle={{ paddingBottom: SIZES.medium * 5 }}
             showsVerticalScrollIndicator={false}
@@ -114,7 +116,7 @@ const Profile = () => {
                 <Text
                   style={{
                     ...FONTS.h3,
-                    marginVertical: SIZES.font,
+                    marginBottom: SIZES.font,
                     color: COLORS.lime,
                     fontFamily: "MSans-ExtraBold",
                   }}
@@ -122,7 +124,7 @@ const Profile = () => {
                   Account
                 </Text>
 
-                <View style={{ marginVertical: SIZES.font }}>
+                <View style={{ marginVertical: SIZES.padding * 2 }}>
                   <View
                     style={{
                       backgroundColor: COLORS.primary,
