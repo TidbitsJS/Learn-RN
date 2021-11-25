@@ -23,6 +23,25 @@ const fingerprint = require("../assets/icons/fingerprint.png");
 const email = require("../assets/icons/email.png");
 const forward = require("../assets/icons/forward.png");
 const signout = require("../assets/icons/signout.png");
+const airbnb = require("../assets/icons/airbnb.png");
+const amazon = require("../assets/icons/amazon.png");
+const burgerking = require("../assets/icons/burgerking.png");
+const cartoon = require("../assets/icons/cartoon.png");
+const cola = require("../assets/icons/cola.png");
+const dishtv = require("../assets/icons/dishtv.png");
+const ebay = require("../assets/icons/ebay.png");
+const hm = require("../assets/icons/hm.png");
+const mcdonald = require("../assets/icons/mcdonald.png");
+const netflix = require("../assets/icons/netflix.png");
+const nike = require("../assets/icons/nike.png");
+const notion = require("../assets/icons/notion.png");
+const playstation = require("../assets/icons/playstation.png");
+const spotify = require("../assets/icons/spotify.png");
+const sprite = require("../assets/icons/sprite.png");
+const starbucks = require("../assets/icons/starbucks.png");
+const theatre = require("../assets/icons/theatre.png");
+const wattpad = require("../assets/icons/wattpad.png");
+const plus = require("../assets/icons/plus.png");
 
 export default {
   back,
@@ -50,4 +69,23 @@ export default {
   email,
   forward,
   signout,
+  airbnb,
+  amazon,
+  burgerking,
+  cartoon,
+  cola,
+  dishtv,
+  ebay,
+  hm,
+  mcdonald,
+  netflix,
+  nike,
+  notion,
+  playstation,
+  spotify,
+  sprite,
+  starbucks,
+  theatre,
+  wattpad,
+  plus,
 };

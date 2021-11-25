@@ -92,6 +92,7 @@ export const profileOptions = [
     icon: icons.wallet,
     title: "Balance",
     description: "$ 115.00",
+    route: "Balance",
   },
   {
     id: "prof-2",
@@ -119,6 +120,44 @@ export const profileOptions = [
     icon: icons.email,
     title: "Email",
     description: "holmes@gmail.com",
+  },
+];
+
+export const BalanceData = [
+  {
+    id: 1,
+    date: "15 November 2021",
+    amount: "$ 47.34",
+    title: "Burger King",
+    icon: icons.burgerking,
+  },
+  {
+    id: 2,
+    date: "15 November 2021",
+    amount: "$ 24.99",
+    title: "H & M",
+    icon: icons.hm,
+  },
+  {
+    id: 3,
+    date: "15 November 2021",
+    amount: "$ 12.00",
+    title: "Starbucks",
+    icon: icons.starbucks,
+  },
+  {
+    id: 4,
+    date: "14 November 2021",
+    amount: "$ 12.50",
+    title: "Netflix",
+    icon: icons.netflix,
+  },
+  {
+    id: 5,
+    date: "12 November 2021",
+    amount: "$ 50.00",
+    title: "Top Up",
+    icon: icons.plus,
   },
 ];
 

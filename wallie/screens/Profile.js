@@ -11,7 +11,7 @@ import { COLORS, FONTS, icons, images, SHADOW, SIZES } from "../constants";
 import { profileOptions } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const ProfileOptionItem = ({ item, index }) => (
+const ProfileOptionItem = ({ item, index, navigation }) => (
   <TouchableOpacity
     style={{
       flexDirection: "row",
@@ -20,6 +20,9 @@ const ProfileOptionItem = ({ item, index }) => (
       padding: SIZES.padding,
       marginVertical: 3,
       marginTop: index === 3 ? SIZES.font * 2 : 3,
+    }}
+    onPress={() => {
+      item.route && navigation.navigate(item.route);
     }}
   >
     <View
@@ -88,7 +91,7 @@ const ProfileOptionItem = ({ item, index }) => (
   </TouchableOpacity>
 );
 
-const Profile = () => {
+const Profile = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -106,7 +109,11 @@ const Profile = () => {
           <FlatList
             data={profileOptions}
             renderItem={({ item, index }) => (
-              <ProfileOptionItem item={item} index={index} />
+              <ProfileOptionItem
+                item={item}
+                index={index}
+                navigation={navigation}
+              />
             )}
             keyExtractor={(item) => item.id}
             contentContainerStyle={{ paddingBottom: SIZES.medium * 5 }}
