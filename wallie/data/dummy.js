@@ -123,7 +123,7 @@ export const profileOptions = [
   },
 ];
 
-export const BalanceData = [
+export const balanceData = [
   {
     id: 1,
     date: "15 November 2021",
@@ -135,8 +135,8 @@ export const BalanceData = [
     id: 2,
     date: "15 November 2021",
     amount: "$ 24.99",
-    title: "H & M",
-    icon: icons.hm,
+    title: "ebay",
+    icon: icons.ebay,
   },
   {
     id: 3,
@@ -158,6 +158,7 @@ export const BalanceData = [
     amount: "$ 50.00",
     title: "Top Up",
     icon: icons.plus,
+    topUp: true,
   },
 ];
 
@@ -165,4 +166,5 @@ export default {
   featuresData,
   specialPromoData,
   profileOptions,
+  balanceData,
 };

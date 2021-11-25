@@ -129,6 +129,17 @@ export const SHADOW = {
 
     elevation: 2,
   },
+  dimShadow: {
+    shadowColor: COLORS.lightGray,
+    shadowOffset: {
+      width: 0,
+      height: 1,
+    },
+    shadowOpacity: 0.1,
+    shadowRadius: 1,
+
+    elevation: 1,
+  },
 };
 
 const appTheme = { COLORS, SIZES, FONTS, SHADOW };
