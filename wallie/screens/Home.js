@@ -28,9 +28,7 @@ const Home = () => {
             paddingBottom: SIZES.medium * 5,
           }}
         >
-          <View
-            style={{ flexDirection: "row", marginVertical: SIZES.padding * 2 }}
-          >
+          <View style={{ flexDirection: "row", marginVertical: SIZES.font }}>
             <View style={{ flex: 1 }}>
               <Text style={{ ...FONTS.h3, fontFamily: "MSans-ExtraBold" }}>
                 Hello!
@@ -79,7 +77,7 @@ const Home = () => {
             style={{
               height: 150,
               borderRadius: SIZES.medium,
-              marginVertical: SIZES.font,
+              marginVertical: SIZES.padding * 2,
             }}
           >
             <Image
