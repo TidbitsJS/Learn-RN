@@ -1,6 +1,12 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
-import { SIZES, COLORS, FONTS, SHADOW, images, icons } from "../constants";
+import {
+  View,
+  Text,
+  TouchableOpacity,
+  Image,
+  ImageBackground,
+} from "react-native";
+import { SIZES, COLORS, FONTS, images, icons } from "../constants";
 
 const ProfileHeader = () => {
   return (
@@ -19,14 +25,25 @@ const ProfileHeader = () => {
       <View style={{ marginVertical: SIZES.padding * 2 }}>
         <View
           style={{
-            backgroundColor: COLORS.primary,
             padding: SIZES.font,
-            minHeight: 150,
+            height: 150,
             borderRadius: SIZES.font,
             flexDirection: "row",
             alignItems: "center",
+            overflow: "hidden",
           }}
         >
+          <ImageBackground
+            source={images.banner}
+            resizeMode="cover"
+            style={{
+              position: "absolute",
+              top: 0,
+              left: 0,
+              right: 0,
+              bottom: 0,
+            }}
+          />
           <View style={{ marginHorizontal: SIZES.base }}>
             <Image
               source={images.holmes}

@@ -90,8 +90,7 @@ const Balance = ({ navigation }) => {
           ListFooterComponent={() => (
             <TouchableOpacity
               style={{
-                marginTop: SIZES.medium * 1.25,
-                marginBottom: SIZES.base,
+                marginVertical: SIZES.medium * 1.25,
                 backgroundColor: COLORS.lightGreen,
                 padding: SIZES.font,
                 borderRadius: SIZES.font,

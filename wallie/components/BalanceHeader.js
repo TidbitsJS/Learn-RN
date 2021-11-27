@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { FONTS, COLORS, SIZES, SHADOW, icons } from "../constants";
+import { FONTS, COLORS, SIZES, icons } from "../constants";
 
 const BalanceHeader = ({ navigation }) => {
   return (
@@ -134,9 +134,9 @@ const BalanceHeader = ({ navigation }) => {
             color: COLORS.secondary,
           }}
         >
-          Manage History
+          Money History
         </Text>
-        <TouchableOpacity>
+        <TouchableOpacity onPress={() => navigation.navigate("MoneyHistory")}>
           <Text style={{ ...FONTS.body4, color: COLORS.gray }}>View All</Text>
         </TouchableOpacity>
       </View>
