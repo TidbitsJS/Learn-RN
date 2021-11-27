@@ -291,9 +291,128 @@ export const balanceData = [
   },
 ];
 
+export const gamesData = [
+  {
+    title: "Popular Games",
+    data: [
+      {
+        gameList: [
+          {
+            id: 1,
+            title: "Call of Duty",
+            imgUrl: images.callofduty,
+          },
+          {
+            id: 2,
+            title: "Age of Empires III",
+            imgUrl: images.ageofempires,
+          },
+          {
+            id: 3,
+            title: "Cyberpunk",
+            imgUrl: images.cyperpunk,
+          },
+          {
+            id: 4,
+            title: "Fry Cry 4",
+            imgUrl: images.frycry4,
+          },
+
+          {
+            id: 7,
+            title: "Horizon 4",
+            imgUrl: images.horizon4,
+          },
+
+          {
+            id: 9,
+            title: "Uncharted",
+            imgUrl: images.uncharted4,
+          },
+
+          {
+            id: 11,
+            title: "Witcher III",
+            imgUrl: images.witcher,
+          },
+          {
+            id: 12,
+            title: "Dishonored",
+            imgUrl: images.dishonored,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Flash Games",
+    data: [
+      {
+        gameList: [
+          {
+            id: 13,
+            title: "Asphalt Legends",
+            imgUrl: images.asphalt,
+          },
+          {
+            id: 14,
+            title: "Fortnite",
+            imgUrl: images.fortnite,
+          },
+          {
+            id: 15,
+            title: "Plants Vs Zombies",
+            imgUrl: images.plantsvszombies,
+          },
+          {
+            id: 16,
+            title: "Saints Row",
+            imgUrl: images.saintsrow3,
+          },
+        ],
+      },
+    ],
+  },
+  {
+    title: "Premium Games",
+    data: [
+      {
+        gameList: [
+          {
+            id: 5,
+            title: "Tom's Ghost Recon",
+            imgUrl: images.ghostreckon,
+          },
+          {
+            id: 6,
+            title: "Grand Theft Auto",
+            imgUrl: images.gta,
+          },
+          {
+            id: 8,
+            title: "Pubg Battlegrounds",
+            imgUrl: images.pubg,
+          },
+          {
+            id: 10,
+            title: "Assasins Creed Valhalla",
+            imgUrl: images.valhalla,
+          },
+          {
+            id: 11,
+            title: "Assasins Creed Valhalla",
+            imgUrl: images.valhalla,
+          },
+        ],
+      },
+    ],
+  },
+];
+
 export default {
   featuresData,
   specialPromoData,
   profileOptions,
   balanceData,
+  gamesData,
 };

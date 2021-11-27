@@ -23,6 +23,11 @@ const pubg = require("../assets/images/pubg.jpg");
 const uncharted4 = require("../assets/images/uncharted4.jpg");
 const valhalla = require("../assets/images/valhalla.jpg");
 const witcher = require("../assets/images/witcher.jpg");
+const asphalt = require("../assets/images/asphalt.jpg");
+const dishonored = require("../assets/images/dishonored.jpg");
+const fortnite = require("../assets/images/fortnite.jpg");
+const plantsvszombies = require("../assets/images/plantsvszombies.jpg");
+const saintsrow3 = require("../assets/images/saintsrow3.jpg");
 
 // Dummy
 const usFlag = require("../assets/images/us-flag.jpg");
@@ -56,4 +61,9 @@ export default {
   uncharted4,
   valhalla,
   witcher,
+  asphalt,
+  dishonored,
+  fortnite,
+  plantsvszombies,
+  saintsrow3,
 };

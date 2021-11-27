@@ -81,7 +81,7 @@ const GameHeader = ({ navigation }) => {
         style={{
           height: 150,
           borderRadius: SIZES.medium,
-          marginVertical: SIZES.font,
+          marginTop: SIZES.font,
         }}
       >
         <Image
