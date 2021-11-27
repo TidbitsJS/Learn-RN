@@ -1,9 +1,12 @@
 import React from "react";
-import { View, Text, SafeAreaView, Image } from "react-native";
-import { COLORS, SIZES, images } from "../constants";
+import { View, SafeAreaView, Text, FlatList } from "react-native";
+import MoneyHistoryHeader from "../components/MoneyHistoryHeader";
+import { COLORS, FONTS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
+import { balanceData } from "../data/dummy";
+import MoneyBalanceItem from "../components/MoneyBalanceItem";
 
-const MoneyHistory = () => {
+const MoneyHistory = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -11,25 +14,26 @@ const MoneyHistory = () => {
         barStyle="dark-content"
       />
       <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
-        <Text>Money History</Text>
-
-        <View
-          style={{
-            height: 150,
-            borderRadius: SIZES.medium,
-            marginVertical: SIZES.padding * 2,
-          }}
-        >
-          <Image
-            source={images.foodbanner}
-            resizeMode="cover"
-            style={{
-              width: "100%",
-              height: "100%",
-              borderRadius: SIZES.medium,
-            }}
-          />
-        </View>
+        <FlatList
+          data={balanceData}
+          renderItem={({ item }) => <MoneyBalanceItem item={item} />}
+          keyExtractor={(item) => `money-${item.id}`}
+          showsVerticalScrollIndicator={false}
+          ListHeaderComponent={() => (
+            <MoneyHistoryHeader navigation={navigation} />
+          )}
+          ListFooterComponent={() => (
+            <View
+              style={{
+                marginVertical: SIZES.font,
+                justifyContent: "center",
+                alignItems: "center",
+              }}
+            >
+              <Text style={{ ...FONTS.h3, color: COLORS.primary }}>. . .</Text>
+            </View>
+          )}
+        />
       </View>
     </SafeAreaView>
   );

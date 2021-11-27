@@ -30,7 +30,6 @@ const cartoon = require("../assets/icons/cartoon.png");
 const cola = require("../assets/icons/cola.png");
 const dishtv = require("../assets/icons/dishtv.png");
 const ebay = require("../assets/icons/ebay.png");
-const hm = require("../assets/icons/hm.png");
 const mcdonald = require("../assets/icons/mcdonald.png");
 const netflix = require("../assets/icons/netflix.png");
 const nike = require("../assets/icons/nike.png");
@@ -76,7 +75,6 @@ export default {
   cola,
   dishtv,
   ebay,
-  hm,
   mcdonald,
   netflix,
   nike,
