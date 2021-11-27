@@ -9,8 +9,9 @@ const ScanPaymentMethods = () => {
         position: "absolute",
         left: 0,
         right: 0,
-        bottom: 57,
+        bottom: 10,
         padding: SIZES.medium * 2,
+        paddingBottom: SIZES.medium * 5,
         borderTopLeftRadius: SIZES.radius,
         borderTopRightRadius: SIZES.radius,
         backgroundColor: COLORS.white,
@@ -19,7 +20,7 @@ const ScanPaymentMethods = () => {
     >
       <View style={{ flex: 1 }}>
         <Text style={{ ...FONTS.h4 }}>Another</Text>
-        <Text style={{ ...FONTS.h4, marginTop: 5 }}>Payment Method</Text>
+        <Text style={{ ...FONTS.h4 }}>Payment Method</Text>
       </View>
 
       <View

@@ -52,7 +52,7 @@ const Welcome = ({ navigation }) => {
               </Text>
               <Text
                 style={{
-                  ...FONTS.body3,
+                  ...FONTS.body4,
                   color: COLORS.lime,
                   textAlign: "center",
                   marginTop: SIZES.base,
@@ -62,7 +62,7 @@ const Welcome = ({ navigation }) => {
               </Text>
               <Text
                 style={{
-                  ...FONTS.body3,
+                  ...FONTS.body4,
                   color: COLORS.lime,
                   textAlign: "center",
                 }}
@@ -83,7 +83,7 @@ const Welcome = ({ navigation }) => {
             >
               <Text
                 style={{
-                  ...FONTS.body3,
+                  ...FONTS.body4,
                   color: COLORS.white,
                   textAlign: "center",
                 }}

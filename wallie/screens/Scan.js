@@ -133,8 +133,8 @@ const Scan = ({ navigation }) => {
               source={images.focus}
               resizeMode="stretch"
               style={{
-                width: 200,
-                height: 300,
+                width: "50%",
+                height: 210,
               }}
             />
           </View>

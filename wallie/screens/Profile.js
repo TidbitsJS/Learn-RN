@@ -8,7 +8,7 @@ import {
   FlatList,
 } from "react-native";
 import ProfileHeader from "../components/ProfileHeader";
-import { COLORS, FONTS, icons, images, SHADOW, SIZES } from "../constants";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 import { profileOptions } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
@@ -57,7 +57,7 @@ const ProfileOptionItem = ({ item, index, navigation }) => (
       <Text
         style={{
           ...FONTS.body4,
-          color: COLORS.gray,
+          color: COLORS.darkgray2,
           marginLeft: SIZES.base,
           textAlign: "center",
         }}
@@ -76,7 +76,7 @@ const ProfileOptionItem = ({ item, index, navigation }) => (
       <Text
         style={{
           ...FONTS.body4,
-          color: COLORS.gray,
+          color: COLORS.darkgray2,
           textAlign: "right",
         }}
         numberOfLines={1}

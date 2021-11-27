@@ -137,7 +137,9 @@ const BalanceHeader = ({ navigation }) => {
           Money History
         </Text>
         <TouchableOpacity onPress={() => navigation.navigate("MoneyHistory")}>
-          <Text style={{ ...FONTS.body4, color: COLORS.gray }}>View All</Text>
+          <Text style={{ ...FONTS.body4, color: COLORS.darkgray2 }}>
+            View All
+          </Text>
         </TouchableOpacity>
       </View>
     </View>

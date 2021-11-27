@@ -45,7 +45,10 @@ const MoneyBalanceItem = ({ item }) => (
         />
       </View>
       <View style={{ width: 80 }}>
-        <Text style={{ ...FONTS.body4, color: COLORS.gray }} numberOfLines={1}>
+        <Text
+          style={{ ...FONTS.body4, color: COLORS.darkgray2, textAlign: "left" }}
+          numberOfLines={1}
+        >
           {item.title}
         </Text>
         <Text style={{ ...FONTS.body4, color: COLORS.black }} numberOfLines={1}>

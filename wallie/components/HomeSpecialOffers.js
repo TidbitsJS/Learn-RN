@@ -62,7 +62,7 @@ const HomeSpecialOffers = () => {
               <Text style={{ ...FONTS.body3 }}>Speical Promos</Text>
             </View>
             <TouchableOpacity>
-              <Text style={{ color: COLORS.gray, ...FONTS.body4 }}>
+              <Text style={{ color: COLORS.darkgray2, ...FONTS.body4 }}>
                 View All
               </Text>
             </TouchableOpacity>

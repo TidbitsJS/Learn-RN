@@ -33,6 +33,26 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
 
       <View style={{ marginTop: SIZES.font }}>
         <Text style={{ color: COLORS.lightGreen, ...FONTS.body5 }}>
+          Email Address
+        </Text>
+        <TextInput
+          style={{
+            marginVertical: SIZES.base,
+            borderBottomColor: COLORS.white,
+            borderBottomWidth: 1,
+            color: COLORS.white,
+            ...FONTS.body4,
+            fontFamily: "MSans-Light",
+          }}
+          placeholder="Enter email address"
+          placeholderTextColor={COLORS.lightGray}
+          selectionColor={COLORS.white}
+          keyboardType="email-address"
+        />
+      </View>
+
+      <View style={{ marginTop: SIZES.font }}>
+        <Text style={{ color: COLORS.lightGreen, ...FONTS.body5 }}>
           Phone Number
         </Text>
         <View
