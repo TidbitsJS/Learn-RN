@@ -1,11 +1,12 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../constants";
 import { featuresData } from "../data/dummy";
 
 const HomeFeaturesItem = ({ item, navigation }) => (
   <TouchableOpacity
     style={{
+      flex: 1,
       alignItems: "center",
       margin: SIZES.padding,
     }}
@@ -32,7 +33,14 @@ const HomeFeaturesItem = ({ item, navigation }) => (
         }}
       />
     </View>
-    <Text style={{ textAlign: "center", flexWrap: "wrap", ...FONTS.body5 }}>
+    <Text
+      style={{
+        textAlign: "center",
+        flexWrap: "wrap",
+        ...FONTS.body5,
+        width: "100%",
+      }}
+    >
       {item.description}
     </Text>
   </TouchableOpacity>

@@ -169,6 +169,13 @@ export const balanceData = [
     icon: icons.airbnb,
   },
   {
+    id: 25,
+    date: "13 November 2021",
+    amount: "$ 199.99",
+    title: "McDonald's",
+    icon: icons.mcdonald,
+  },
+  {
     id: 7,
     date: "13 November 2021",
     amount: "$ 12.00",
@@ -288,6 +295,13 @@ export const balanceData = [
     amount: "$ 8.30",
     title: "Coco Cola",
     icon: icons.cola,
+  },
+  {
+    id: 24,
+    date: "05 November 2021",
+    amount: "$ 99.99",
+    title: "McDonald's",
+    icon: icons.mcdonald,
   },
 ];
 
