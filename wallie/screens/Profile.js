@@ -116,7 +116,7 @@ const Profile = ({ navigation }) => {
               />
             )}
             keyExtractor={(item) => item.id}
-            contentContainerStyle={{ paddingBottom: SIZES.medium * 5 }}
+            contentContainerStyle={{ paddingBottom: SIZES.medium * 6 }}
             showsVerticalScrollIndicator={false}
             ListHeaderComponent={() => <ProfileHeader />}
             ListFooterComponent={() => (

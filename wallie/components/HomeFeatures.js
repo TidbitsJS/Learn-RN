@@ -3,12 +3,13 @@ import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
 import { FONTS, SIZES } from "../constants";
 import { featuresData } from "../data/dummy";
 
-const HomeFeaturesItem = ({ item }) => (
+const HomeFeaturesItem = ({ item, navigation }) => (
   <TouchableOpacity
     style={{
       alignItems: "center",
       margin: SIZES.padding,
     }}
+    onPress={() => item.route && navigation.navigate(item.route)}
   >
     <View
       style={{
@@ -37,7 +38,7 @@ const HomeFeaturesItem = ({ item }) => (
   </TouchableOpacity>
 );
 
-const HomeFeatures = () => {
+const HomeFeatures = ({ navigation }) => {
   return (
     <View style={{ marginVertical: SIZES.font }}>
       <FlatList
@@ -48,7 +49,9 @@ const HomeFeatures = () => {
           flexWrap: "wrap",
         }}
         keyExtractor={(item) => `${item.id}`}
-        renderItem={({ item }) => <HomeFeaturesItem item={item} />}
+        renderItem={({ item }) => (
+          <HomeFeaturesItem item={item} navigation={navigation} />
+        )}
         ListHeaderComponent={<Text style={{ ...FONTS.body3 }}>Features</Text>}
       />
     </View>

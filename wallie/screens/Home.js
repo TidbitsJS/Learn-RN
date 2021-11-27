@@ -12,7 +12,7 @@ import HomeSpecialOffers from "../components/HomeSpecialOffers";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const Home = () => {
+const Home = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -91,7 +91,7 @@ const Home = () => {
             />
           </View>
 
-          <HomeFeatures />
+          <HomeFeatures navigation={navigation} />
           <HomeSpecialOffers />
         </View>
       </ScrollView>

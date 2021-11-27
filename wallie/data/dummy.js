@@ -42,6 +42,7 @@ export const featuresData = [
     color: COLORS.primary,
     backgroundColor: COLORS.lightGreen,
     description: "Games",
+    route: "Games",
   },
   {
     id: 7,

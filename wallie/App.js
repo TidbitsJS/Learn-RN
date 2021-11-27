@@ -8,6 +8,7 @@ import SignUp from "./screens/SignUp";
 import Welcome from "./screens/Welcome";
 import Balance from "./screens/Balance";
 import MoneyHistory from "./screens/MoneyHistory";
+import Games from "./screens/Games";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -47,6 +48,7 @@ const App = () => {
         <Stack.Screen name="Welcome" component={Welcome} />
         <Stack.Screen name="Balance" component={Balance} />
         <Stack.Screen name="MoneyHistory" component={MoneyHistory} />
+        <Stack.Screen name="Games" component={Games} />
       </Stack.Navigator>
     </NavigationContainer>
   );
