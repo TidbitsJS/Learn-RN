@@ -1,9 +1,10 @@
 import React from "react";
 import { View, Text, SafeAreaView } from "react-native";
+import TopUpHeader from "../components/topup/TopUpHeader";
 import { COLORS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
-const TopUp = () => {
+const TopUp = ({ navigation }) => {
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -11,7 +12,7 @@ const TopUp = () => {
         barStyle="dark-content"
       />
       <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
-        <Text>Top up screen</Text>
+        <TopUpHeader navigation={navigation} />
       </View>
     </SafeAreaView>
   );
