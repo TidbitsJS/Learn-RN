@@ -6,9 +6,11 @@ import {
   Image,
   TouchableOpacity,
   ScrollView,
+  FlatList,
 } from "react-native";
 import TransferHeader from "../components/TransferHeader";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
+import { transactionData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const TransferMoneyItem = ({ bgColor, bgIconColor, iconUrl, title }) => (
@@ -63,14 +65,7 @@ const TransferMoneyItem = ({ bgColor, bgIconColor, iconUrl, title }) => (
   </TouchableOpacity>
 );
 
-const TransactionProfileItem = ({
-  bgColor,
-  imgUrl,
-  name,
-  transferId,
-  amount,
-  textColor,
-}) => (
+const TransactionProfileItem = ({ item }) => (
   <TouchableOpacity
     style={{
       flex: 1,
@@ -80,8 +75,9 @@ const TransactionProfileItem = ({
       paddingVertical: SIZES.medium,
       margin: SIZES.base,
       borderRadius: SIZES.medium,
-      backgroundColor: bgColor,
+      backgroundColor: item.bgColor,
       minHeight: 210,
+      maxWidth: "46%",
     }}
   >
     <View
@@ -92,7 +88,7 @@ const TransactionProfileItem = ({
       }}
     >
       <Image
-        source={imgUrl}
+        source={item.imgUrl}
         style={{ width: 50, height: 50, borderRadius: SIZES.base }}
         resizeMode="cover"
       />
@@ -105,7 +101,7 @@ const TransactionProfileItem = ({
           textAlign: "center",
         }}
       >
-        {name}
+        {item.name}
       </Text>
       <Text
         style={{
@@ -115,7 +111,7 @@ const TransactionProfileItem = ({
           textAlign: "center",
         }}
       >
-        {transferId}
+        {item.transferId}
       </Text>
     </View>
 
@@ -135,10 +131,10 @@ const TransactionProfileItem = ({
           ...FONTS.h4,
           lineHeight: 18,
           textAlign: "center",
-          color: textColor,
+          color: item.textColor,
         }}
       >
-        {amount}
+        {item.amount}
       </Text>
     </View>
   </TouchableOpacity>
@@ -151,54 +147,56 @@ const Transfer = ({ navigation }) => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
-      <ScrollView>
-        <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
-          <TransferHeader navigation={navigation} />
-          <View style={{ marginVertical: SIZES.base }}>
-            <TransferMoneyItem
-              bgColor={COLORS.lightyellow}
-              bgIconColor={COLORS.yellow}
-              iconUrl={icons.wallet}
-              title="Wallet to Wallet"
-            />
-            <TransferMoneyItem
-              bgColor={COLORS.lightGreen}
-              bgIconColor={COLORS.green}
-              iconUrl={icons.bank}
-              title="Wallet to Bank"
-            />
-          </View>
-          <View style={{ marginVertical: SIZES.font }}>
-            <Text style={{ ...FONTS.h3, color: COLORS.black }}>
-              Recent Transaction
-            </Text>
-
-            <View
-              style={{
-                flexDirection: "row",
-                marginVertical: SIZES.padding,
-              }}
-            >
-              <TransactionProfileItem
-                bgColor={COLORS.lightGreen}
-                imgUrl={images.holmes}
-                name="MyCroft Holmes"
-                transferId="******896890"
-                amount="+ 510.23"
-                textColor={COLORS.green}
-              />
-              <TransactionProfileItem
-                bgColor={COLORS.lightRed}
-                imgUrl={images.holmes}
-                name="Enola Holmes"
-                transferId="******673489"
-                amount="- 120.55"
-                textColor={COLORS.red}
-              />
+      <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
+        <FlatList
+          data={transactionData}
+          renderItem={({ item }) => <TransactionProfileItem item={item} />}
+          numColumns={2}
+          showsVerticalScrollIndicator={false}
+          keyExtractor={(item) => `transaction-${item.id}`}
+          ListHeaderComponent={() => (
+            <>
+              <TransferHeader navigation={navigation} />
+              <View style={{ marginBottom: SIZES.medium }}>
+                <TransferMoneyItem
+                  bgColor={COLORS.lightyellow}
+                  bgIconColor={COLORS.yellow}
+                  iconUrl={icons.wallet}
+                  title="Wallet to Wallet"
+                />
+                <TransferMoneyItem
+                  bgColor={COLORS.lightGreen}
+                  bgIconColor={COLORS.green}
+                  iconUrl={icons.bank}
+                  title="Wallet to Bank"
+                />
+              </View>
+              <Text
+                style={{
+                  ...FONTS.h3,
+                  color: COLORS.black,
+                  marginVertical: SIZES.base,
+                }}
+              >
+                Recent Transaction
+              </Text>
+            </>
+          )}
+          ListFooterComponent={() => (
+            <View style={{ marginVertical: SIZES.font }}>
+              <Text
+                style={{
+                  ...FONTS.h3,
+                  color: COLORS.black,
+                  textAlign: "center",
+                }}
+              >
+                . . .
+              </Text>
             </View>
-          </View>
-        </View>
-      </ScrollView>
+          )}
+        />
+      </View>
     </SafeAreaView>
   );
 };

@@ -10,6 +10,10 @@ const banner = require("../assets/images/banner.png");
 const premiumbanner = require("../assets/images/premiumbanner.png");
 const foodbanner = require("../assets/images/foodbanner.png");
 const gamebanner = require("../assets/images/gamebanner.png");
+const enola = require("../assets/images/enola.png");
+const lestrade = require("../assets/images/lestrade.jpg");
+const mycroft = require("../assets/images/mycroft.jpg");
+const watson = require("../assets/images/watson.jpg");
 
 // Games
 const ageofempires = require("../assets/images/ageofempires.jpg");
@@ -45,6 +49,10 @@ export default {
   premiumbanner,
   foodbanner,
   gamebanner,
+  enola,
+  lestrade,
+  mycroft,
+  watson,
 
   // Dummy
   usFlag,
