@@ -16,7 +16,7 @@ const ProfileHeader = () => {
           ...FONTS.h3,
           color: COLORS.lime,
           marginBottom: SIZES.font,
-          fontFamily: "MSans-ExtraBold",
+          fontFamily: "Rubik-ExtraBold",
         }}
       >
         Account
@@ -67,7 +67,7 @@ const ProfileHeader = () => {
             <Text
               style={{
                 ...FONTS.body4,
-                fontFamily: "MSans-ExtraBold",
+                fontFamily: "Rubik-ExtraBold",
                 color: COLORS.white,
                 marginTop: 3,
               }}

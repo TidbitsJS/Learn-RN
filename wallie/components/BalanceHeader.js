@@ -31,7 +31,7 @@ const BalanceHeader = ({ navigation }) => {
           style={{
             ...FONTS.h3,
             color: COLORS.primary,
-            fontFamily: "MSans-ExtraBold",
+            fontFamily: "Rubik-ExtraBold",
           }}
         >
           Balance
@@ -76,7 +76,7 @@ const BalanceHeader = ({ navigation }) => {
               style={{
                 ...FONTS.h3,
                 color: COLORS.black,
-                fontFamily: "MSans-ExtraBold",
+                fontFamily: "Rubik-ExtraBold",
               }}
             >
               115.00

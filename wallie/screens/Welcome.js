@@ -7,91 +7,102 @@ import {
   Image,
   TouchableOpacity,
 } from "react-native";
-import { COLORS, FONTS, images, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
+import Carousel, { Pagination } from "react-native-snap-carousel";
+import { welcomeCarouselData } from "../data/dummy";
+
+const WelcomeCarouselItem = ({ item }) => (
+  <View
+    style={{
+      flex: 1,
+      justifyContent: "center",
+      alignItems: "center",
+      backgroundColor: COLORS.white,
+      paddingHorizontal: SIZES.medium,
+    }}
+  >
+    <Image source={item.imgUrl} style={{ width: 270, height: 270 }} />
+    <Text style={{ ...FONTS.largeTitle, marginTop: SIZES.medium * 2 }}>
+      Welcome
+    </Text>
+    <Text
+      style={{
+        ...FONTS.body3,
+        color: COLORS.primary,
+        padding: SIZES.medium,
+        textAlign: "center",
+      }}
+    >
+      {item.title}
+    </Text>
+  </View>
+);
 
 const Welcome = ({ navigation }) => {
+  const [index, setIndex] = React.useState(0);
+  const isCarousel = React.useRef(null);
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar backgroundColor={COLORS.white} />
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View
           style={{
             flex: 1,
-            justifyContent: "center",
+            justifyContent: "space-between",
             alignItems: "center",
-            minHeight: SIZES.height,
+            minHeight: 650,
+            paddingVertical: SIZES.medium,
           }}
         >
-          <View style={{ width: "90%", padding: SIZES.font }}>
-            <Image
-              source={images.welcome}
-              style={{ width: "100%", height: 350 }}
-              resizeMode="contain"
-            />
-          </View>
-
-          <View
+          <Carousel
+            ref={isCarousel}
+            data={welcomeCarouselData}
+            renderItem={({ item }) => <WelcomeCarouselItem item={item} />}
+            onSnapToItem={(index) => setIndex(index)}
+            sliderWidth={SIZES.width}
+            itemWidth={SIZES.width}
+          />
+          <Pagination
+            dotsLength={welcomeCarouselData.length}
+            activeDotIndex={index}
+            carouselRef={isCarousel}
+            dotStyle={{
+              width: 10,
+              height: 10,
+              borderRadius: 5,
+              backgroundColor: COLORS.primary,
+            }}
+            inactiveDotOpacity={0.4}
+            inactiveDotScale={0.6}
+            tappableDots={true}
+          />
+          <TouchableOpacity
             style={{
-              flex: 1,
-              width: "100%",
-              justifyContent: "space-between",
-              alignItems: "center",
+              width: "90%",
+              backgroundColor: COLORS.primary,
+              color: COLORS.white,
               padding: SIZES.font,
+              borderRadius: SIZES.medium * 1.5,
+            }}
+            activeOpacity={0.5}
+            onPress={() => {
+              console.log("index", index);
+              index === welcomeCarouselData.length - 1 &&
+                navigation.navigate("Sign Up");
             }}
           >
-            <View>
-              <Text
-                style={{
-                  ...FONTS.largeTitle,
-                  color: COLORS.black,
-                  textAlign: "center",
-                }}
-              >
-                Welcome
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.body4,
-                  color: COLORS.lime,
-                  textAlign: "center",
-                  marginTop: SIZES.base,
-                }}
-              >
-                Let's try Wallie now!
-              </Text>
-              <Text
-                style={{
-                  ...FONTS.body4,
-                  color: COLORS.lime,
-                  textAlign: "center",
-                }}
-              >
-                And get the best solution
-              </Text>
-            </View>
-
-            <TouchableOpacity
+            <Text
               style={{
-                width: "90%",
-                padding: SIZES.font,
-                backgroundColor: COLORS.emerald,
-                marginVertical: SIZES.font,
-                borderRadius: SIZES.radius,
+                ...FONTS.body3,
+                color: COLORS.white,
+                textAlign: "center",
               }}
-              onPress={() => navigation.navigate("Sign Up")}
             >
-              <Text
-                style={{
-                  ...FONTS.body4,
-                  color: COLORS.white,
-                  textAlign: "center",
-                }}
-              >
-                Get Started
-              </Text>
-            </TouchableOpacity>
-          </View>
+              {welcomeCarouselData[index].btnTitle}
+            </Text>
+          </TouchableOpacity>
         </View>
       </ScrollView>
     </SafeAreaView>

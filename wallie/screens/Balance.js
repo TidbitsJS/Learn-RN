@@ -40,7 +40,7 @@ const Balance = ({ navigation }) => {
                   ...FONTS.h4,
                   color: COLORS.primary,
                   textAlign: "center",
-                  fontFamily: "MSans-ExtraBold",
+                  fontFamily: "Rubik-ExtraBold",
                 }}
               >
                 Top Up

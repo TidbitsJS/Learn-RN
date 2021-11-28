@@ -60,36 +60,36 @@ export const SIZES = {
 
 export const FONTS = {
   largeTitle: {
-    fontFamily: "MSans-ExtraBold",
+    fontFamily: "Rubik-ExtraBold",
     fontSize: SIZES.largeTitle,
     lineHeight: 55,
   },
-  h1: { fontFamily: "MSans-Black", fontSize: SIZES.h1, lineHeight: 36 },
-  h2: { fontFamily: "MSans-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: "MSans-Bold", fontSize: SIZES.h3, lineHeight: 26 },
-  h4: { fontFamily: "MSans-Bold", fontSize: SIZES.h4, lineHeight: 22 },
+  h1: { fontFamily: "Rubik-Black", fontSize: SIZES.h1, lineHeight: 36 },
+  h2: { fontFamily: "Rubik-Bold", fontSize: SIZES.h2, lineHeight: 30 },
+  h3: { fontFamily: "Rubik-Bold", fontSize: SIZES.h3, lineHeight: 26 },
+  h4: { fontFamily: "Rubik-Bold", fontSize: SIZES.h4, lineHeight: 22 },
   body1: {
-    fontFamily: "MSans-Regular",
+    fontFamily: "Rubik-Regular",
     fontSize: SIZES.body1,
     lineHeight: 36,
   },
   body2: {
-    fontFamily: "MSans-Regular",
+    fontFamily: "Rubik-Regular",
     fontSize: SIZES.body2,
     lineHeight: 32,
   },
   body3: {
-    fontFamily: "MSans-Regular",
+    fontFamily: "Rubik-Regular",
     fontSize: SIZES.body3,
     lineHeight: 26,
   },
   body4: {
-    fontFamily: "MSans-Regular",
+    fontFamily: "Rubik-Regular",
     fontSize: SIZES.body4,
     lineHeight: 22,
   },
   body5: {
-    fontFamily: "MSans-Regular",
+    fontFamily: "Rubik-Regular",
     fontSize: SIZES.body5,
     lineHeight: 18,
   },

@@ -37,7 +37,7 @@ const TransferHeader = ({ navigation }) => {
           style={{
             ...FONTS.h3,
             color: COLORS.primary,
-            fontFamily: "MSans-ExtraBold",
+            fontFamily: "Rubik-ExtraBold",
           }}
         >
           Transfer
@@ -57,7 +57,7 @@ const TransferHeader = ({ navigation }) => {
             style={{
               ...FONTS.h2,
               color: COLORS.black,
-              fontFamily: "MSans-ExtraBold",
+              fontFamily: "Rubik-ExtraBold",
             }}
           >
             Where
@@ -66,7 +66,7 @@ const TransferHeader = ({ navigation }) => {
             style={{
               ...FONTS.h2,
               color: COLORS.black,
-              fontFamily: "MSans-ExtraBold",
+              fontFamily: "Rubik-ExtraBold",
             }}
           >
             to Send?

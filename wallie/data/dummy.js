@@ -1,5 +1,26 @@
 import { icons, COLORS, images } from "../constants";
 
+export const welcomeCarouselData = [
+  {
+    id: 1,
+    title: "Forgot to bring your wallet \n when you are shopping?",
+    btnTitle: "Continue",
+    imgUrl: images.welcome01,
+  },
+  {
+    id: 2,
+    title: "Don't worry! We got you cover. \n Use Wallie instead of cash!",
+    btnTitle: "Continue",
+    imgUrl: images.welcome02,
+  },
+  {
+    id: 3,
+    title: "Let's try Wallie now! \n And get the best solution",
+    btnTitle: "Get Started",
+    imgUrl: images.welcome03,
+  },
+];
+
 export const featuresData = [
   {
     id: 1,
@@ -500,6 +521,7 @@ export const transactionData = [
 ];
 
 export default {
+  welcomeCarouselData,
   featuresData,
   specialPromoData,
   profileOptions,

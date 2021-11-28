@@ -1,6 +1,5 @@
 const wallieLogo = require("../assets/images/wallie-logo.png");
 const focus = require("../assets/images/focus.png");
-const welcome = require("../assets/images/welcome.png");
 const money = require("../assets/images/money.jpg");
 const burger = require("../assets/images/burger.jpeg");
 const gift = require("../assets/images/gift.jpg");
@@ -14,6 +13,10 @@ const enola = require("../assets/images/enola.png");
 const lestrade = require("../assets/images/lestrade.jpg");
 const mycroft = require("../assets/images/mycroft.jpg");
 const watson = require("../assets/images/watson.jpg");
+const barcode = require("../assets/images/barcode.png");
+const welcome01 = require("../assets/images/welcome01.png");
+const welcome02 = require("../assets/images/welcome02.png");
+const welcome03 = require("../assets/images/welcome03.png");
 
 // Games
 const ageofempires = require("../assets/images/ageofempires.jpg");
@@ -39,7 +42,6 @@ const usFlag = require("../assets/images/us-flag.jpg");
 export default {
   wallieLogo,
   focus,
-  welcome,
   money,
   burger,
   gift,
@@ -53,6 +55,10 @@ export default {
   lestrade,
   mycroft,
   watson,
+  barcode,
+  welcome01,
+  welcome02,
+  welcome03,
 
   // Dummy
   usFlag,

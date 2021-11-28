@@ -38,7 +38,7 @@ const HomeSpecialOffersItem = ({ item }) => (
         borderBottomRightRadius: SIZES.font,
       }}
     >
-      <Text style={{ ...FONTS.body4, fontFamily: "MSans-ExtraBold" }}>
+      <Text style={{ ...FONTS.body4, fontFamily: "Rubik-ExtraBold" }}>
         {item.title}
       </Text>
       <Text style={{ ...FONTS.body5, marginTop: 5 }}>{item.description}</Text>

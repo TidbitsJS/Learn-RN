@@ -25,11 +25,12 @@ const Stack = createStackNavigator();
 
 const App = () => {
   const [loaded] = useFonts({
-    "MSans-ExtraBold": require("./assets/fonts/MerriweatherSans-ExtraBold.ttf"),
-    "MSans-Black": require("./assets/fonts/MerriweatherSans-Bold.ttf"),
-    "MSans-Bold": require("./assets/fonts/MerriweatherSans-Medium.ttf"),
-    "MSans-Regular": require("./assets/fonts/MerriweatherSans-Regular.ttf"),
-    "MSans-Light": require("./assets/fonts/MerriweatherSans-Light.ttf"),
+    "Rubik-Black": require("./assets/fonts/Rubik-Black.ttf"),
+    "Rubik-Bold": require("./assets/fonts/Rubik-Bold.ttf"),
+    "Rubik-ExtraBold": require("./assets/fonts/Rubik-ExtraBold.ttf"),
+    "Rubik-Light": require("./assets/fonts/Rubik-Light.ttf"),
+    "Rubik-Medium": require("./assets/fonts/Rubik-Medium.ttf"),
+    "Rubik-Regular": require("./assets/fonts/Rubik-Regular.ttf"),
   });
 
   if (!loaded) {

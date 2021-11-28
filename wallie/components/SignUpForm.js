@@ -23,7 +23,7 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
             borderBottomWidth: 1,
             color: COLORS.white,
             ...FONTS.body4,
-            fontFamily: "MSans-Light",
+            fontFamily: "Rubik-Light",
           }}
           placeholder="Enter Full Name"
           placeholderTextColor={COLORS.lightGray}
@@ -42,7 +42,7 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
             borderBottomWidth: 1,
             color: COLORS.white,
             ...FONTS.body4,
-            fontFamily: "MSans-Light",
+            fontFamily: "Rubik-Light",
           }}
           placeholder="Enter email address"
           placeholderTextColor={COLORS.lightGray}
@@ -147,7 +147,7 @@ const SignUpForm = ({ selectedArea, setModalVisible }) => {
               flex: 1,
               ...FONTS.body4,
               color: COLORS.white,
-              fontFamily: "MSans-Light",
+              fontFamily: "Rubik-Light",
             }}
             placeholder="Enter Password"
             placeholderTextColor={COLORS.white}

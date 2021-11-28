@@ -30,7 +30,7 @@ const Home = ({ navigation }) => {
         >
           <View style={{ flexDirection: "row", marginVertical: SIZES.font }}>
             <View style={{ flex: 1 }}>
-              <Text style={{ ...FONTS.h3, fontFamily: "MSans-ExtraBold" }}>
+              <Text style={{ ...FONTS.h3, fontFamily: "Rubik-ExtraBold" }}>
                 Hello!
               </Text>
               <Text style={{ ...FONTS.body4, color: COLORS.gray }}>

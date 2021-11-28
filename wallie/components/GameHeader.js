@@ -31,7 +31,7 @@ const GameHeader = ({ navigation }) => {
           style={{
             ...FONTS.h3,
             color: COLORS.primary,
-            fontFamily: "MSans-ExtraBold",
+            fontFamily: "Rubik-ExtraBold",
           }}
         >
           Games
@@ -51,7 +51,7 @@ const GameHeader = ({ navigation }) => {
             style={{
               ...FONTS.h2,
               color: COLORS.black,
-              fontFamily: "MSans-ExtraBold",
+              fontFamily: "Rubik-ExtraBold",
             }}
           >
             Choose
@@ -60,7 +60,7 @@ const GameHeader = ({ navigation }) => {
             style={{
               ...FONTS.h2,
               color: COLORS.black,
-              fontFamily: "MSans-ExtraBold",
+              fontFamily: "Rubik-ExtraBold",
             }}
           >
             Your Game

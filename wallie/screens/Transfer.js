@@ -46,7 +46,7 @@ const TransferMoneyItem = ({ bgColor, bgIconColor, iconUrl, title }) => (
         style={{
           ...FONTS.body5,
           color: COLORS.black,
-          fontFamily: "MSans-Light",
+          fontFamily: "Rubik-Light",
         }}
       >
         Transfer your Money
@@ -55,7 +55,7 @@ const TransferMoneyItem = ({ bgColor, bgIconColor, iconUrl, title }) => (
         style={{
           ...FONTS.h3,
           color: COLORS.black,
-          fontFamily: "MSans-ExtraBold",
+          fontFamily: "Rubik-ExtraBold",
           marginTop: 2,
         }}
       >
@@ -96,7 +96,7 @@ const TransactionProfileItem = ({ item }) => (
         style={{
           ...FONTS.body5,
           color: COLORS.black,
-          fontFamily: "MSans-Light",
+          fontFamily: "Rubik-Light",
           marginTop: 5,
           textAlign: "center",
         }}
@@ -106,7 +106,7 @@ const TransactionProfileItem = ({ item }) => (
       <Text
         style={{
           ...FONTS.h4,
-          fontFamily: "MSans-ExtraBold",
+          fontFamily: "Rubik-ExtraBold",
           color: COLORS.black,
           textAlign: "center",
         }}
