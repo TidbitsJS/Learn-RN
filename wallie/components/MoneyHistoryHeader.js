@@ -31,7 +31,6 @@ const MoneyHistoryHeader = ({ navigation }) => {
           style={{
             ...FONTS.h3,
             color: COLORS.primary,
-            fontFamily: "Rubik-ExtraBold",
           }}
         >
           Money History

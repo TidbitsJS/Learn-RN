@@ -18,6 +18,7 @@ const SignUp = ({ navigation }) => {
   const [areas, setAreas] = React.useState([]);
   const [selectedArea, setSelectedArea] = React.useState(null);
   const [modalVisible, setModalVisible] = React.useState(false);
+  const isMounted = React.useRef(true);
 
   const fetchAreas = async () => {
     const response = await fetch("https://restcountries.com/v2/all");
@@ -32,18 +33,26 @@ const SignUp = ({ navigation }) => {
       };
     });
 
-    setAreas(data);
-    if (data.length > 0) {
-      let defaultData = data.filter((a) => a.code === "US");
+    if (isMounted.current) {
+      setAreas(data);
+      if (data.length > 0) {
+        let defaultData = data.filter((a) => a.code === "US");
 
-      if (defaultData.length > 0) {
-        setSelectedArea(defaultData[0]);
+        if (defaultData.length > 0) {
+          setSelectedArea(defaultData[0]);
+        }
       }
     }
   };
 
   React.useEffect(() => {
+    isMounted.current = true;
+
     fetchAreas();
+
+    return () => {
+      isMounted.current = false;
+    };
   }, []);
 
   return (

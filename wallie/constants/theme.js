@@ -65,9 +65,9 @@ export const FONTS = {
     lineHeight: 55,
   },
   h1: { fontFamily: "Rubik-Black", fontSize: SIZES.h1, lineHeight: 36 },
-  h2: { fontFamily: "Rubik-Bold", fontSize: SIZES.h2, lineHeight: 30 },
-  h3: { fontFamily: "Rubik-Bold", fontSize: SIZES.h3, lineHeight: 26 },
-  h4: { fontFamily: "Rubik-Bold", fontSize: SIZES.h4, lineHeight: 22 },
+  h2: { fontFamily: "Rubik-Medium", fontSize: SIZES.h2, lineHeight: 30 },
+  h3: { fontFamily: "Rubik-Medium", fontSize: SIZES.h3, lineHeight: 26 },
+  h4: { fontFamily: "Rubik-Medium", fontSize: SIZES.h4, lineHeight: 22 },
   body1: {
     fontFamily: "Rubik-Regular",
     fontSize: SIZES.body1,

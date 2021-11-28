@@ -31,7 +31,6 @@ const GameHeader = ({ navigation }) => {
           style={{
             ...FONTS.h3,
             color: COLORS.primary,
-            fontFamily: "Rubik-ExtraBold",
           }}
         >
           Games

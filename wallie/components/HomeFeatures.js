@@ -60,7 +60,7 @@ const HomeFeatures = ({ navigation }) => {
         renderItem={({ item }) => (
           <HomeFeaturesItem item={item} navigation={navigation} />
         )}
-        ListHeaderComponent={<Text style={{ ...FONTS.body3 }}>Features</Text>}
+        ListHeaderComponent={<Text style={{ ...FONTS.h3 }}>Features</Text>}
       />
     </View>
   );

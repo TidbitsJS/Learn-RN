@@ -59,7 +59,7 @@ const HomeSpecialOffers = () => {
         ListHeaderComponent={
           <View style={{ flexDirection: "row", marginBottom: SIZES.padding }}>
             <View style={{ flex: 1 }}>
-              <Text style={{ ...FONTS.body3 }}>Speical Promos</Text>
+              <Text style={{ ...FONTS.h3 }}>Speical Promos</Text>
             </View>
             <TouchableOpacity>
               <Text style={{ color: COLORS.darkgray2, ...FONTS.body4 }}>

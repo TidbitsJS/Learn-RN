@@ -88,9 +88,11 @@ const Welcome = ({ navigation }) => {
             }}
             activeOpacity={0.5}
             onPress={() => {
-              console.log("index", index);
-              index === welcomeCarouselData.length - 1 &&
+              if (index === welcomeCarouselData.length - 1) {
                 navigation.navigate("Sign Up");
+              } else {
+                isCarousel.current.snapToNext();
+              }
             }}
           >
             <Text

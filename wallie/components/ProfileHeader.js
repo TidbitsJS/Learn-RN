@@ -16,7 +16,6 @@ const ProfileHeader = () => {
           ...FONTS.h3,
           color: COLORS.lime,
           marginBottom: SIZES.font,
-          fontFamily: "Rubik-ExtraBold",
         }}
       >
         Account

@@ -48,15 +48,6 @@ const Games = ({ navigation }) => {
             >
               <Text
                 style={{
-                  ...FONTS.body4,
-                  color: COLORS.black,
-                  textAlign: "center",
-                }}
-              >
-                & much more
-              </Text>
-              <Text
-                style={{
                   ...FONTS.h3,
                   color: COLORS.black,
                   textAlign: "center",
