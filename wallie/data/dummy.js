@@ -28,6 +28,7 @@ export const featuresData = [
     color: COLORS.purple,
     backgroundColor: COLORS.lightpurple,
     description: "Top Up",
+    route: "TopUp",
   },
   {
     id: 2,

@@ -6,7 +6,7 @@ import {
   Image,
   ImageBackground,
 } from "react-native";
-import { SIZES, COLORS, FONTS, images, icons } from "../constants";
+import { SIZES, COLORS, FONTS, images, icons } from "../../constants";
 
 const ProfileHeader = () => {
   return (

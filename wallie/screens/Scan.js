@@ -10,7 +10,7 @@ import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { Camera } from "expo-camera";
 import { useIsFocused } from "@react-navigation/core";
-import ScanPaymentMethods from "../components/ScanPaymentMethods";
+import ScanPaymentMethods from "../components/scan/ScanPaymentMethods";
 
 const ScanHeader = ({ navigation }) => (
   <View

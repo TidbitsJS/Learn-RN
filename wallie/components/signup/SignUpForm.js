@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TextInput, TouchableOpacity, Image } from "react-native";
-import { SIZES, COLORS, FONTS, icons } from "../constants";
+import { SIZES, COLORS, FONTS, icons } from "../../constants";
 
 const SignUpForm = ({ selectedArea, setModalVisible }) => {
   const [showPassword, setShowPassword] = React.useState(false);

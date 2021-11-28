@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { SIZES, FONTS, COLORS, icons, SHADOW } from "../constants";
+import { SIZES, FONTS, COLORS, icons, SHADOW } from "../../constants";
 
 const ScanPaymentMethods = () => {
   return (

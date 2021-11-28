@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, FlatList, TouchableOpacity, Image } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
-import { featuresData } from "../data/dummy";
+import { FONTS, SIZES } from "../../constants";
+import { featuresData } from "../../data/dummy";
 
 const HomeFeaturesItem = ({ item, navigation }) => (
   <TouchableOpacity

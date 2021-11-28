@@ -7,8 +7,8 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import HomeFeatures from "../components/HomeFeatures";
-import HomeSpecialOffers from "../components/HomeSpecialOffers";
+import HomeFeatures from "../components/home/HomeFeatures";
+import HomeSpecialOffers from "../components/home/HomeSpecialOffers";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 

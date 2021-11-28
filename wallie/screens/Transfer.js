@@ -8,8 +8,8 @@ import {
   ScrollView,
   FlatList,
 } from "react-native";
-import TransferHeader from "../components/TransferHeader";
-import { COLORS, FONTS, icons, images, SIZES } from "../constants";
+import TransferHeader from "../components/transfer/TransferHeader";
+import { COLORS, FONTS, icons, SIZES } from "../constants";
 import { transactionData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 

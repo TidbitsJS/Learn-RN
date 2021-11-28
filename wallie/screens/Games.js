@@ -1,7 +1,7 @@
 import React from "react";
 import { View, Text, SafeAreaView, FlatList, SectionList } from "react-native";
-import GameHeader from "../components/GameHeader";
-import GamesItem from "../components/GamesItem";
+import GameHeader from "../components/game/GameHeader";
+import GamesItem from "../components/game/GamesItem";
 import { COLORS, FONTS, SIZES } from "../constants";
 import { gamesData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";

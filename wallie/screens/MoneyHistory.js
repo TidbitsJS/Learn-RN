@@ -1,10 +1,10 @@
 import React from "react";
 import { View, SafeAreaView, Text, FlatList } from "react-native";
-import MoneyHistoryHeader from "../components/MoneyHistoryHeader";
+import MoneyHistoryHeader from "../components/money/MoneyHistoryHeader";
 import { COLORS, FONTS, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { balanceData } from "../data/dummy";
-import MoneyBalanceItem from "../components/MoneyBalanceItem";
+import MoneyBalanceItem from "../components/common/MoneyBalanceItem";
 
 const MoneyHistory = ({ navigation }) => {
   return (

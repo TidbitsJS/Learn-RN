@@ -1,14 +1,8 @@
 import React from "react";
-import {
-  View,
-  Text,
-  TouchableOpacity,
-  ImageBackground,
-  Image,
-} from "react-native";
-import { SIZES, FONTS, COLORS, icons, images } from "../constants";
+import { View, Text, TouchableOpacity, Image } from "react-native";
+import { SIZES, COLORS, FONTS, icons, images } from "../../constants";
 
-const TransferHeader = ({ navigation }) => {
+const GameHeader = ({ navigation }) => {
   return (
     <View style={{ marginVertical: SIZES.font }}>
       <View
@@ -39,7 +33,7 @@ const TransferHeader = ({ navigation }) => {
             color: COLORS.primary,
           }}
         >
-          Transfer
+          Games
         </Text>
       </View>
 
@@ -59,7 +53,7 @@ const TransferHeader = ({ navigation }) => {
               fontFamily: "Rubik-ExtraBold",
             }}
           >
-            Where
+            Choose
           </Text>
           <Text
             style={{
@@ -68,30 +62,39 @@ const TransferHeader = ({ navigation }) => {
               fontFamily: "Rubik-ExtraBold",
             }}
           >
-            to Send?
+            Your Game
           </Text>
         </View>
         <TouchableOpacity
-          style={{
-            justifyContent: "flex-end",
-            alignItems: "flex-end",
-            width: 40,
-            height: 40,
-            backgroundColor: COLORS.lightGray,
-            justifyContent: "center",
-            alignItems: "center",
-            borderRadius: SIZES.base,
-          }}
+          style={{ justifyContent: "flex-end", alignItems: "flex-end" }}
         >
           <Image
-            source={icons.code}
-            style={{ width: "60%", height: "60%", tintColor: COLORS.black }}
+            source={icons.search}
+            style={{ width: 25, height: 25 }}
             resizeMode="cover"
           />
         </TouchableOpacity>
+      </View>
+
+      <View
+        style={{
+          height: 150,
+          borderRadius: SIZES.medium,
+          marginTop: SIZES.font,
+        }}
+      >
+        <Image
+          source={images.gamebanner}
+          resizeMode="cover"
+          style={{
+            width: "100%",
+            height: "100%",
+            borderRadius: SIZES.medium,
+          }}
+        />
       </View>
     </View>
   );
 };
 
-export default TransferHeader;
+export default GameHeader;

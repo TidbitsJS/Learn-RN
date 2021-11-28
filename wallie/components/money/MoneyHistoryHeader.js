@@ -1,6 +1,6 @@
 import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
-import { SIZES, COLORS, FONTS, icons, images } from "../constants";
+import { SIZES, COLORS, FONTS, icons, images } from "../../constants";
 
 const MoneyHistoryHeader = ({ navigation }) => {
   return (

@@ -8,7 +8,7 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
-import { COLORS, FONTS, SIZES } from "../constants";
+import { COLORS, FONTS, SIZES } from "../../constants";
 
 const AreadModalItem = ({ item, setSelectArea, setModalVisible }) => (
   <TouchableOpacity

@@ -1,6 +1,6 @@
 import React from "react";
 import { TouchableOpacity, Text, Image } from "react-native";
-import { FONTS, COLORS, SIZES } from "../constants";
+import { FONTS, COLORS, SIZES } from "../../constants";
 
 const GamesItem = ({ item }) => {
   return (

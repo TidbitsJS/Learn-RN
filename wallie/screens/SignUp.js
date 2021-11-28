@@ -5,14 +5,13 @@ import {
   SafeAreaView,
   ScrollView,
   Image,
-  TextInput,
   TouchableOpacity,
 } from "react-native";
 import { LinearGradient } from "expo-linear-gradient";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, FONTS, images, SIZES } from "../constants";
-import SignUpForm from "../components/SignUpForm";
-import AreaModal from "../components/AreaModal";
+import SignUpForm from "../components/signup/SignUpForm";
+import AreaModal from "../components/signup/AreaModal";
 
 const SignUp = ({ navigation }) => {
   const [areas, setAreas] = React.useState([]);

@@ -7,7 +7,7 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import ProfileHeader from "../components/ProfileHeader";
+import ProfileHeader from "../components/profile/ProfileHeader";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import { profileOptions } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";

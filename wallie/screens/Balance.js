@@ -6,8 +6,8 @@ import {
   TouchableOpacity,
   FlatList,
 } from "react-native";
-import BalanceHeader from "../components/BalanceHeader";
-import MoneyBalanceItem from "../components/MoneyBalanceItem";
+import BalanceHeader from "../components/balance/BalanceHeader";
+import MoneyBalanceItem from "../components/common/MoneyBalanceItem";
 import { COLORS, FONTS, SIZES } from "../constants";
 import { balanceData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
