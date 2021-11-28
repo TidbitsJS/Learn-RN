@@ -42,6 +42,7 @@ const theatre = require("../assets/icons/theatre.png");
 const wattpad = require("../assets/icons/wattpad.png");
 const plus = require("../assets/icons/plus.png");
 const search = require("../assets/icons/search.png");
+const code = require("../assets/icons/code.png");
 
 export default {
   back,
@@ -88,4 +89,5 @@ export default {
   wattpad,
   plus,
   search,
+  code,
 };

@@ -14,6 +14,7 @@ export const featuresData = [
     color: COLORS.yellow,
     backgroundColor: COLORS.lightyellow,
     description: "Transfer",
+    route: "Transfer",
   },
   {
     id: 3,
