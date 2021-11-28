@@ -43,6 +43,7 @@ const wattpad = require("../assets/icons/wattpad.png");
 const plus = require("../assets/icons/plus.png");
 const search = require("../assets/icons/search.png");
 const code = require("../assets/icons/code.png");
+const bank = require("../assets/icons/bank.png");
 
 export default {
   back,
@@ -90,4 +91,5 @@ export default {
   plus,
   search,
   code,
+  bank,
 };
