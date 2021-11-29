@@ -8,6 +8,7 @@ import {
   FlatList,
   ScrollView,
 } from "react-native";
+import PaymentModal from "../components/common/PaymentModal";
 import TopUpAmount from "../components/topup/TopUpAmount";
 import TopUpHeader from "../components/topup/TopUpHeader";
 import { COLORS, FONTS, SIZES } from "../constants";
@@ -40,10 +41,13 @@ const TopUp = ({ navigation }) => {
   const [isActive, setIsActive] = React.useState({
     mastercard: false,
   });
+  const [processPayment, setProcessPayment] = React.useState(false);
 
   const handleSelected = (item) => {
     setIsActive({ [item]: true });
   };
+
+  const handleClose = () => setProcessPayment(false);
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -51,6 +55,7 @@ const TopUp = ({ navigation }) => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
+      {processPayment && <PaymentModal handleClose={handleClose} />}
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
           <TopUpHeader navigation={navigation} />
@@ -89,6 +94,7 @@ const TopUp = ({ navigation }) => {
                 padding: SIZES.font,
                 borderRadius: SIZES.medium * 1.25,
               }}
+              onPress={() => setProcessPayment(true)}
             >
               <Text
                 style={{

@@ -42,7 +42,7 @@ const AmountItem = ({ bgColor, amount, handleTokenPress }) => (
 );
 
 const TopUpAmount = () => {
-  const [amount, setAmount] = React.useState(0);
+  const [amount, setAmount] = React.useState(20);
 
   const handleTokenPress = (amount) => setAmount(amount);
 
@@ -87,7 +87,7 @@ const TopUpAmount = () => {
           style={{ width: "100%" }}
           minimumValue={0}
           maximumValue={200}
-          value={100}
+          value={amount}
           onValueChange={(value) => setAmount(value)}
           minimumTrackTintColor={COLORS.lightGreen}
           maximumTrackTintColor={COLORS.gray}
