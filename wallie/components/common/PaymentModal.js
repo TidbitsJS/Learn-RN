@@ -4,7 +4,7 @@ import Dash from "../../utils/Dash";
 import { COLORS, SIZES, FONTS, icons, SHADOW } from "../../constants";
 import * as Animatable from "react-native-animatable";
 
-const PaymentModal = ({ handleClose }) => {
+const PaymentModal = ({ handleClose, handleNavigate }) => {
   return (
     <View
       style={{
@@ -104,6 +104,7 @@ const PaymentModal = ({ handleClose }) => {
             backgroundColor: COLORS.lightGreen,
             borderRadius: SIZES.medium,
           }}
+          onPress={handleNavigate}
         >
           <Text
             style={{

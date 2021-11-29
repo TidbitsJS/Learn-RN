@@ -55,7 +55,15 @@ const TopUp = ({ navigation }) => {
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
-      {processPayment && <PaymentModal handleClose={handleClose} />}
+      {processPayment && (
+        <PaymentModal
+          handleClose={handleClose}
+          handleNavigate={() => {
+            navigation.navigate("PasswordConfirm");
+            setProcessPayment(false);
+          }}
+        />
+      )}
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
           <TopUpHeader navigation={navigation} />

@@ -1538,6 +1538,11 @@
     sudo-prompt "^9.0.0"
     wcwidth "^1.0.1"
 
+"@react-native-community/clipboard@^1.5.1":
+  version "1.5.1"
+  resolved "https://registry.yarnpkg.com/@react-native-community/clipboard/-/clipboard-1.5.1.tgz#32abb3ea2eb91ee3f9c5fb1d32d5783253c9fabe"
+  integrity sha512-AHAmrkLEH5UtPaDiRqoULERHh3oNv7Dgs0bTC0hO5Z2GdNokAMPT5w8ci8aMcRemcwbtdHjxChgtjbeA38GBdA==
+
 "@react-native-community/slider@3.0.3":
   version "3.0.3"
   resolved "https://registry.yarnpkg.com/@react-native-community/slider/-/slider-3.0.3.tgz#830167fd757ba70ac638747ba3169b2dbae60330"
@@ -1592,6 +1597,11 @@
     "@react-navigation/elements" "^1.2.1"
     color "^3.1.3"
     warn-once "^0.1.0"
+
+"@twotalltotems/react-native-otp-input@1.3.7":
+  version "1.3.7"
+  resolved "https://registry.yarnpkg.com/@twotalltotems/react-native-otp-input/-/react-native-otp-input-1.3.7.tgz#9f7a2bfe097e9b85e0ea13ea49c43654d68da0f8"
+  integrity sha512-df4BpFhhwpa+IGWCUUXlL42bFoK0LggDG1hlNFVzjVZYPn4sr7Lwfynv6SV7C7fpfZ+KG6RmNbLLL0RZNjVILg==
 
 "@types/geojson@^7946.0.7":
   version "7946.0.8"
