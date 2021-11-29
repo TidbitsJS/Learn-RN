@@ -22,7 +22,9 @@ const Balance = ({ navigation }) => {
       <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
         <FlatList
           data={balanceData.slice(0, 5)}
-          renderItem={({ item }) => <MoneyBalanceItem item={item} />}
+          renderItem={({ item }) => (
+            <MoneyBalanceItem item={item} navigation={navigation} />
+          )}
           keyExtractor={(item) => `balance-${item.id}`}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={() => <BalanceHeader navigation={navigation} />}

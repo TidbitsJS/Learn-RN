@@ -16,7 +16,9 @@ const MoneyHistory = ({ navigation }) => {
       <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
         <FlatList
           data={balanceData}
-          renderItem={({ item }) => <MoneyBalanceItem item={item} />}
+          renderItem={({ item }) => (
+            <MoneyBalanceItem item={item} navigation={navigation} />
+          )}
           keyExtractor={(item) => `money-${item.id}`}
           showsVerticalScrollIndicator={false}
           ListHeaderComponent={() => (

@@ -2,7 +2,7 @@ import React from "react";
 import { View, Text, TouchableOpacity, Image } from "react-native";
 import { FONTS, COLORS, SIZES, icons } from "../../constants";
 
-const MoneyBalanceItem = ({ item }) => (
+const MoneyBalanceItem = ({ item, navigation }) => (
   <TouchableOpacity
     style={{
       flexDirection: "row",
@@ -10,6 +10,7 @@ const MoneyBalanceItem = ({ item }) => (
       alignItems: "center",
       marginVertical: SIZES.padding2,
     }}
+    onPress={() => navigation.navigate("TransactionDetail", { item })}
   >
     <View style={{ marginRight: SIZES.medium, width: 130 }}>
       <Text style={{ ...FONTS.body4, color: COLORS.primary }} numberOfLines={1}>

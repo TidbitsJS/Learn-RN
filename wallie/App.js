@@ -12,6 +12,7 @@ import Games from "./screens/Games";
 import Transfer from "./screens/Transfer";
 import TopUp from "./screens/TopUp";
 import PasswordConfirm from "./screens/PasswordConfirm";
+import TransactionDetail from "./screens/TransactionDetail";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -56,6 +57,7 @@ const App = () => {
         <Stack.Screen name="Transfer" component={Transfer} />
         <Stack.Screen name="TopUp" component={TopUp} />
         <Stack.Screen name="PasswordConfirm" component={PasswordConfirm} />
+        <Stack.Screen name="TransactionDetail" component={TransactionDetail} />
       </Stack.Navigator>
     </NavigationContainer>
   );
