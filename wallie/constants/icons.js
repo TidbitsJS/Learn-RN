@@ -44,6 +44,10 @@ const plus = require("../assets/icons/plus.png");
 const search = require("../assets/icons/search.png");
 const code = require("../assets/icons/code.png");
 const bank = require("../assets/icons/bank.png");
+const applepay = require("../assets/icons/applepay.png");
+const googlepay = require("../assets/icons/googlepay.png");
+const mastercard = require("../assets/icons/mastercard.png");
+const visa = require("../assets/icons/visa.png");
 
 export default {
   back,
@@ -92,4 +96,8 @@ export default {
   search,
   code,
   bank,
+  applepay,
+  googlepay,
+  mastercard,
+  visa,
 };

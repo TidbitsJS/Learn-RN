@@ -521,6 +521,25 @@ export const transactionData = [
   },
 ];
 
+export const moneyHistoryData = [
+  {
+    imgUrl: icons.mastercard,
+    title: "mastercard",
+  },
+  {
+    imgUrl: icons.visa,
+    title: "visa",
+  },
+  {
+    imgUrl: icons.applepay,
+    title: "applepay",
+  },
+  {
+    imgUrl: icons.googlepay,
+    title: "googlepay",
+  },
+];
+
 export default {
   welcomeCarouselData,
   featuresData,
@@ -529,4 +548,5 @@ export default {
   balanceData,
   gamesData,
   transactionData,
+  moneyHistoryData,
 };
