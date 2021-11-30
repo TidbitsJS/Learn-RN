@@ -48,6 +48,7 @@ const applepay = require("../assets/icons/applepay.png");
 const googlepay = require("../assets/icons/googlepay.png");
 const mastercard = require("../assets/icons/mastercard.png");
 const visa = require("../assets/icons/visa.png");
+const checkmark = require("../assets/icons/checkmark.png");
 
 export default {
   back,
@@ -100,4 +101,5 @@ export default {
   googlepay,
   mastercard,
   visa,
+  checkmark,
 };

@@ -15,7 +15,9 @@ import { useStateContext } from "../context/StateContext";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Home = ({ navigation }) => {
-  const { modalState } = useStateContext();
+  const { statusModal, setStatusModal } = useStateContext();
+
+  const handleClose = () => setStatusModal(false);
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -23,7 +25,7 @@ const Home = ({ navigation }) => {
         barStyle="dark-content"
       />
 
-      {modalState && <SuccessModal />}
+      {statusModal && <SuccessModal handleClose={handleClose} />}
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View

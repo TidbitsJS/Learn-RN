@@ -1,7 +1,7 @@
 import React from "react";
-import { View, Text, TouchableOpacity, Image } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Dash from "../../utils/Dash";
-import { COLORS, SIZES, FONTS, icons } from "../../constants";
+import { COLORS, SIZES, FONTS } from "../../constants";
 import CustomModal from "../CustomModal";
 import { useStateContext } from "../../context/StateContext";
 
@@ -10,24 +10,6 @@ const PaymentModal = ({ handleClose, handleNavigate }) => {
 
   return (
     <CustomModal handleClose={handleClose}>
-      {/* <TouchableOpacity
-        style={{
-          alignItems: "flex-end",
-          marginBottom: SIZES.font,
-        }}
-        onPress={() => {
-          setAnimationType("zoomOut");
-          setTimeout(() => {
-            handleClose();
-          }, 500);
-        }}
-      >
-        <Image
-          source={icons.close}
-          style={{ width: 12, height: 12, tintColor: COLORS.gray }}
-          resizeMode="cover"
-        />
-      </TouchableOpacity> */}
       <Text style={{ ...FONTS.h3, color: COLORS.black, textAlign: "center" }}>
         Payment Confirmation
       </Text>

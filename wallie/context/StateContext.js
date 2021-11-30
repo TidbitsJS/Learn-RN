@@ -3,19 +3,19 @@ import React, { createContext, useContext, useState } from "react";
 const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
-  const [modalState, setModalState] = useState(false);
+  const [statusModal, setStatusModal] = useState(false);
   const [animationType, setAnimationType] = React.useState("zoomIn");
 
   const handleCloseModal = () => {
-    setModalState(false);
+    setStatusModal(false);
   };
 
   return (
     <StateContext.Provider
       value={{
-        modalState,
+        statusModal,
         animationType,
-        setModalState,
+        setStatusModal,
         setAnimationType,
         handleCloseModal,
       }}
