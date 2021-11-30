@@ -15,6 +15,7 @@ import PasswordConfirm from "./screens/PasswordConfirm";
 import TransactionDetail from "./screens/TransactionDetail";
 import { StateContextProvider } from "./context/StateContext";
 import TopUpGame from "./screens/TopUpGame";
+import TransferWallet from "./screens/TransferWallet";
 
 LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
 
@@ -61,6 +62,7 @@ const App = () => {
           <Stack.Screen name="TopUp" component={TopUp} />
           <Stack.Screen name="PasswordConfirm" component={PasswordConfirm} />
           <Stack.Screen name="TopUpGame" component={TopUpGame} />
+          <Stack.Screen name="TransferWallet" component={TransferWallet} />
           <Stack.Screen
             name="TransactionDetail"
             component={TransactionDetail}
