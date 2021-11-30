@@ -13,7 +13,7 @@ import OTPInputView from "@twotalltotems/react-native-otp-input";
 import { useStateContext } from "../context/StateContext";
 
 const PasswordConfirm = ({ navigation }) => {
-  const { setStatusModal, setAnimationType } = useStateContext();
+  const { setStatusModal, setAnimationType, setModalText } = useStateContext();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
@@ -80,6 +80,7 @@ const PasswordConfirm = ({ navigation }) => {
               onCodeFilled={(code) => {
                 console.log(`Code is ${code}, you are good to go!`);
                 setAnimationType("zoomIn");
+                setModalText("Top Up Success");
                 navigation.navigate("Home");
                 setTimeout(() => {
                   setStatusModal(true);

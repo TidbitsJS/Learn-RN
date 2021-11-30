@@ -2,7 +2,7 @@ import React from "react";
 import { TouchableOpacity, Text, Image } from "react-native";
 import { FONTS, COLORS, SIZES } from "../../constants";
 
-const GamesItem = ({ item }) => {
+const GamesItem = ({ item, navigation }) => {
   return (
     <TouchableOpacity
       style={{
@@ -12,6 +12,7 @@ const GamesItem = ({ item }) => {
         alignItems: "center",
         maxWidth: "20.5%",
       }}
+      onPress={() => navigation.navigate("TopUpGame")}
     >
       <Image
         source={item.imgUrl}

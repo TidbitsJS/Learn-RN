@@ -4,6 +4,7 @@ const StateContext = createContext();
 
 export const StateContextProvider = ({ children }) => {
   const [statusModal, setStatusModal] = useState(false);
+  const [modalText, setModalText] = useState("Success");
   const [animationType, setAnimationType] = React.useState("zoomIn");
 
   const handleCloseModal = () => {
@@ -14,7 +15,9 @@ export const StateContextProvider = ({ children }) => {
     <StateContext.Provider
       value={{
         statusModal,
+        modalText,
         animationType,
+        setModalText,
         setStatusModal,
         setAnimationType,
         handleCloseModal,

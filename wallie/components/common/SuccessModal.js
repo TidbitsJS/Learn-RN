@@ -1,9 +1,12 @@
 import React from "react";
 import { View, Text, Image, TouchableOpacity } from "react-native";
 import { COLORS, FONTS, icons, SIZES } from "../../constants";
+import { useStateContext } from "../../context/StateContext";
 import CustomModal from "../CustomModal";
 
 const SuccessModal = ({ handleClose }) => {
+  const { modalText } = useStateContext();
+
   return (
     <CustomModal handleClose={handleClose}>
       <View style={{ marginVertical: SIZES.base }}>
@@ -22,12 +25,11 @@ const SuccessModal = ({ handleClose }) => {
       >
         <Text
           style={{
-            fontSize: SIZES.h3,
-            fontFamily: "Rubik-Bold",
+            ...FONTS.h3,
             color: COLORS.black,
           }}
         >
-          Transfer Success
+          {modalText}
         </Text>
 
         <View
