@@ -540,6 +540,34 @@ export const moneyHistoryData = [
   },
 ];
 
+export const diamondTokens = [
+  {
+    id: 1,
+    title: "diamond20",
+    amount: 20,
+  },
+  {
+    id: 2,
+    title: "diamond50",
+    amount: 50,
+  },
+  {
+    id: 3,
+    title: "diamond100",
+    amount: 100,
+  },
+  {
+    id: 4,
+    title: "diamond200",
+    amount: 200,
+  },
+  {
+    id: 5,
+    title: "diamond500",
+    amount: 500,
+  },
+];
+
 export default {
   welcomeCarouselData,
   featuresData,
@@ -549,4 +577,5 @@ export default {
   gamesData,
   transactionData,
   moneyHistoryData,
+  diamondTokens,
 };
