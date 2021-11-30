@@ -16,6 +16,7 @@ import { diamondTokens } from "../data/dummy";
 import CurrencyBtn from "../components/common/CurrencyBtn";
 import { useStateContext } from "../context/StateContext";
 import PaymentModal from "../components/common/PaymentModal";
+import CustomTextInput from "../components/CustomTextInput";
 
 const DiamondTokenCard = ({ item, active, setActive }) => (
   <TouchableOpacity
@@ -83,9 +84,10 @@ const TopUpGame = ({ navigation }) => {
           title="Top Up Success"
           handleClose={handleClose}
           handleNavigate={handleNavigate}
+          btnTitle="Pay"
         />
       )}
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
           <TopUpGameHeader navigation={navigation} />
 
@@ -96,18 +98,12 @@ const TopUpGame = ({ navigation }) => {
 
             <View style={{ marginVertical: SIZES.medium }}>
               <Text style={{ ...FONTS.h4, color: COLORS.black }}>User Id</Text>
-              <TextInput
-                placeholder="Enter User ID"
+              <CustomTextInput
+                placeholderText="Enter User ID"
+                keyboardType="default"
                 value={user.id}
-                onChangeText={(text) => setUser({ ...user, id: text })}
-                placeholderTextColor={COLORS.darkgray2}
-                style={{
-                  ...FONTS.body4,
-                  color: COLORS.black,
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: COLORS.gray,
-                  paddingVertical: SIZES.base,
-                }}
+                setValue={(text) => setUser({ ...user, id: text })}
+                bottomBorder={true}
               />
             </View>
 
@@ -133,7 +129,6 @@ const TopUpGame = ({ navigation }) => {
 
             <View style={{ marginVertical: SIZES.base }}>
               <Text style={{ ...FONTS.h4, color: COLORS.black }}>Amount</Text>
-
               <View
                 style={{
                   flexDirection: "row",
@@ -143,18 +138,11 @@ const TopUpGame = ({ navigation }) => {
                   borderBottomColor: COLORS.gray,
                 }}
               >
-                <TextInput
-                  placeholder="20.00"
+                <CustomTextInput
+                  placeholderText="20.00"
                   keyboardType="numeric"
-                  value={user.amount.toString()}
-                  onChangeText={(text) => setUser({ ...user, amount: text })}
-                  placeholderTextColor={COLORS.darkgray2}
-                  style={{
-                    ...FONTS.body4,
-                    flex: 1,
-                    color: COLORS.black,
-                    paddingVertical: SIZES.base,
-                  }}
+                  value={user.amount}
+                  setValue={(text) => setUser({ ...user, amount: text })}
                 />
                 <CurrencyBtn />
               </View>

@@ -2,6 +2,7 @@ import React from "react";
 import { View, Text, TextInput, TouchableOpacity } from "react-native";
 import Slider from "@react-native-community/slider";
 import { COLORS, SIZES, FONTS } from "../../constants";
+import CustomTextInput from "../CustomTextInput";
 
 const amountTokens = [
   {
@@ -50,19 +51,12 @@ const TopUpAmount = () => {
     <>
       <View style={{ marginBottom: SIZES.font }}>
         <Text style={{ ...FONTS.h3 }}>Amount</Text>
-        <TextInput
-          placeholder="20.00"
+        <CustomTextInput
+          placeholderText="20.00"
           keyboardType="numeric"
-          value={amount.toString()}
-          onChangeText={(text) => setAmount(text)}
-          placeholderTextColor={COLORS.darkgray2}
-          style={{
-            ...FONTS.body3,
-            color: COLORS.black,
-            borderBottomWidth: 0.5,
-            borderBottomColor: COLORS.gray,
-            paddingVertical: SIZES.base,
-          }}
+          value={amount}
+          setValue={setAmount}
+          bottomBorder={true}
         />
       </View>
 

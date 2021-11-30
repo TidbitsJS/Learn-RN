@@ -67,6 +67,7 @@ const TopUp = ({ navigation }) => {
         <PaymentModal
           handleClose={handleClose}
           handleNavigate={handleNavigate}
+          btnTitle="Pay"
         />
       )}
       <ScrollView showsVerticalScrollIndicator={false}>

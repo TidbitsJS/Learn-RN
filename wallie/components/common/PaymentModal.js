@@ -5,7 +5,7 @@ import { COLORS, SIZES, FONTS } from "../../constants";
 import CustomModal from "../CustomModal";
 import { useStateContext } from "../../context/StateContext";
 
-const PaymentModal = ({ handleClose, handleNavigate }) => {
+const PaymentModal = ({ handleClose, handleNavigate, btnTitle }) => {
   const { setAnimationType } = useStateContext();
 
   return (
@@ -81,7 +81,7 @@ const PaymentModal = ({ handleClose, handleNavigate }) => {
             textAlign: "center",
           }}
         >
-          Pay
+          {btnTitle}
         </Text>
       </TouchableOpacity>
     </CustomModal>
