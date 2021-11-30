@@ -12,6 +12,7 @@ import PaymentModal from "../components/common/PaymentModal";
 import TopUpAmount from "../components/topup/TopUpAmount";
 import TopUpHeader from "../components/topup/TopUpHeader";
 import { COLORS, FONTS, SIZES } from "../constants";
+import { useStateContext } from "../context/StateContext";
 import { moneyHistoryData } from "../data/dummy";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
@@ -41,6 +42,7 @@ const TopUp = ({ navigation }) => {
   const [isActive, setIsActive] = React.useState({
     mastercard: false,
   });
+  const { setAnimationType } = useStateContext();
   const [processPayment, setProcessPayment] = React.useState(false);
 
   const handleSelected = (item) => {
@@ -48,6 +50,10 @@ const TopUp = ({ navigation }) => {
   };
 
   const handleClose = () => setProcessPayment(false);
+  const handleNavigate = () => {
+    navigation.navigate("PasswordConfirm");
+    setProcessPayment(false);
+  };
 
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
@@ -58,10 +64,7 @@ const TopUp = ({ navigation }) => {
       {processPayment && (
         <PaymentModal
           handleClose={handleClose}
-          handleNavigate={() => {
-            navigation.navigate("PasswordConfirm");
-            setProcessPayment(false);
-          }}
+          handleNavigate={handleNavigate}
         />
       )}
       <ScrollView showsVerticalScrollIndicator={false}>
@@ -102,7 +105,10 @@ const TopUp = ({ navigation }) => {
                 padding: SIZES.font,
                 borderRadius: SIZES.medium * 1.25,
               }}
-              onPress={() => setProcessPayment(true)}
+              onPress={() => {
+                setProcessPayment(true);
+                setAnimationType("zoomIn");
+              }}
             >
               <Text
                 style={{

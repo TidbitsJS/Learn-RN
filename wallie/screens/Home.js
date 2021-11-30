@@ -7,18 +7,23 @@ import {
   TouchableOpacity,
   Image,
 } from "react-native";
+import SuccessModal from "../components/common/SuccessModal";
 import HomeFeatures from "../components/home/HomeFeatures";
 import HomeSpecialOffers from "../components/home/HomeSpecialOffers";
 import { COLORS, FONTS, icons, images, SIZES } from "../constants";
+import { useStateContext } from "../context/StateContext";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 
 const Home = ({ navigation }) => {
+  const { modalState } = useStateContext();
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
+
+      {modalState && <SuccessModal />}
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View
