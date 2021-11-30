@@ -53,7 +53,7 @@ const TopUpAmount = () => {
         <TextInput
           placeholder="20.00"
           keyboardType="numeric"
-          value={amount.toFixed(2).toString()}
+          value={amount.toString()}
           onChangeText={(text) => setAmount(text)}
           placeholderTextColor={COLORS.darkgray2}
           style={{

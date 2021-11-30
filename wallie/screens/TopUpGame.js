@@ -14,6 +14,8 @@ import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, SIZES, FONTS, icons } from "../constants";
 import { diamondTokens } from "../data/dummy";
 import CurrencyBtn from "../components/common/CurrencyBtn";
+import { useStateContext } from "../context/StateContext";
+import PaymentModal from "../components/common/PaymentModal";
 
 const DiamondTokenCard = ({ item, active, setActive }) => (
   <TouchableOpacity
@@ -50,6 +52,7 @@ const DiamondTokenCard = ({ item, active, setActive }) => (
 );
 
 const TopUpGame = ({ navigation }) => {
+  const { setAnimationType } = useStateContext();
   const [user, setUser] = React.useState({
     id: "",
     amount: 0,
@@ -59,12 +62,29 @@ const TopUpGame = ({ navigation }) => {
     diamond20: true,
   });
 
+  const [processPayment, setProcessPayment] = React.useState(false);
+
+  const handleClose = () => setProcessPayment(false);
+  const handleNavigate = () => {
+    navigation.navigate("PasswordConfirm", {
+      title: "Top Up Success",
+    });
+    setProcessPayment(false);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
+      {processPayment && (
+        <PaymentModal
+          title="Top Up Success"
+          handleClose={handleClose}
+          handleNavigate={handleNavigate}
+        />
+      )}
       <ScrollView>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
           <TopUpGameHeader navigation={navigation} />
@@ -154,12 +174,21 @@ const TopUpGame = ({ navigation }) => {
             <Text style={{ ...FONTS.body4, color: COLORS.red }}>$ 0.75</Text>
           </View>
 
-          <View style={{ marginVertical: SIZES.medium }}>
+          <View
+            style={{
+              marginTop: SIZES.medium * 2,
+              marginBottom: SIZES.medium,
+            }}
+          >
             <TouchableOpacity
               style={{
                 backgroundColor: COLORS.lightGreen,
                 padding: SIZES.padding2,
                 borderRadius: SIZES.padding2,
+              }}
+              onPress={() => {
+                setProcessPayment(true);
+                setAnimationType("zoomIn");
               }}
             >
               <Text

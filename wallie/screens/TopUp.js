@@ -51,7 +51,9 @@ const TopUp = ({ navigation }) => {
 
   const handleClose = () => setProcessPayment(false);
   const handleNavigate = () => {
-    navigation.navigate("PasswordConfirm");
+    navigation.navigate("PasswordConfirm", {
+      title: "Top Up Success",
+    });
     setProcessPayment(false);
   };
 
