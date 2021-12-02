@@ -50,6 +50,10 @@ const mastercard = require("../assets/icons/mastercard.png");
 const visa = require("../assets/icons/visa.png");
 const checkmark = require("../assets/icons/checkmark.png");
 const diamond = require("../assets/icons/diamond.png");
+const bcabank = require("../assets/icons/bcabank.png");
+const dbsbank = require("../assets/icons/dbsbank.png");
+const rbcbank = require("../assets/icons/rbcbank.png");
+const tdbank = require("../assets/icons/tdbank.png");
 
 export default {
   back,
@@ -104,4 +108,8 @@ export default {
   visa,
   checkmark,
   diamond,
+  bcabank,
+  dbsbank,
+  rbcbank,
+  tdbank,
 };

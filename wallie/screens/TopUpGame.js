@@ -5,7 +5,6 @@ import {
   SafeAreaView,
   FlatList,
   Image,
-  TextInput,
   TouchableOpacity,
   ScrollView,
 } from "react-native";
