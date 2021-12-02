@@ -4,53 +4,15 @@ import {
   Text,
   SafeAreaView,
   ScrollView,
-  Image,
   TouchableOpacity,
 } from "react-native";
-import CurrencyBtn from "../components/common/CurrencyBtn";
 import PaymentModal from "../components/common/PaymentModal";
-import CustomTextInput from "../components/CustomTextInput";
 import TransferToHeader from "../components/transfer/TransfeToHeader";
 import { COLORS, SIZES, FONTS, icons } from "../constants";
 import { useStateContext } from "../context/StateContext";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
-
-const TransferWalletOption = ({ title, iconUrl, bgColor, tintColor }) => (
-  <TouchableOpacity
-    style={{
-      flex: 1,
-      flexDirection: "row",
-      justifyContent: "center",
-      alignItems: "center",
-      margin: SIZES.base,
-    }}
-  >
-    <View
-      style={{
-        width: 40,
-        height: 40,
-        borderRadius: SIZES.padding,
-        backgroundColor: bgColor,
-        justifyContent: "center",
-        alignItems: "center",
-      }}
-    >
-      <Image
-        source={iconUrl}
-        style={{
-          width: "50%",
-          height: "50%",
-          tintColor: tintColor,
-        }}
-      />
-    </View>
-    <Text
-      style={{ ...FONTS.body4, color: COLORS.black, marginLeft: SIZES.base }}
-    >
-      {title}
-    </Text>
-  </TouchableOpacity>
-);
+import TransferToWay from "../components/transfer/TransferToWay";
+import TransferField from "../components/common/TransferField";
 
 const TransferWallet = ({ navigation }) => {
   const { setAnimationType } = useStateContext();
@@ -96,33 +58,31 @@ const TransferWallet = ({ navigation }) => {
               Transfer Detail
             </Text>
 
-            <View style={{ marginVertical: SIZES.medium }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>
-                Wallet Id
-              </Text>
-              <CustomTextInput
-                placeholderText="Enter Wallet ID"
-                keyboardType="default"
-                value={user.id}
-                setValue={(text) => setUser({ ...user, id: text })}
-                bottomBorder={true}
-              />
-            </View>
+            <TransferField
+              title="Wallet Id"
+              placeholderText="Enter Wallet ID"
+              keyboardType="default"
+              value={user.id}
+              setValue={(text) => setUser({ ...user, id: text })}
+              bottomBorder={true}
+              isIcon={false}
+            />
 
             <View
               style={{
                 flexDirection: "row",
                 justifyContent: "space-between",
                 alignItems: "center",
+                marginVertical: SIZES.base,
               }}
             >
-              <TransferWalletOption
+              <TransferToWay
                 title="Phone Number"
                 iconUrl={icons.phone}
                 bgColor={COLORS.lightpurple}
                 tintColor={COLORS.purple}
               />
-              <TransferWalletOption
+              <TransferToWay
                 title="QR Code"
                 iconUrl={icons.qrcode}
                 bgColor={COLORS.lightGreen}
@@ -130,49 +90,32 @@ const TransferWallet = ({ navigation }) => {
               />
             </View>
 
-            <View style={{ marginVertical: SIZES.medium }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>
-                Received Wallet Code
-              </Text>
-              <CustomTextInput
-                placeholderText="Enter Received Wallet Code"
-                keyboardType="numeric"
-                value={user.code}
-                setValue={(text) => setUser({ ...user, code: text })}
-                bottomBorder={true}
-              />
-            </View>
+            <TransferField
+              title="Received Wallet Code"
+              placeholderText="Enter Received Wallet Code"
+              keyboardType="numeric"
+              value={user.code}
+              setValue={(text) => setUser({ ...user, code: text })}
+              bottomBorder={true}
+            />
 
-            <View style={{ marginVertical: SIZES.base }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>Amount</Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: COLORS.gray,
-                }}
-              >
-                <CustomTextInput
-                  placeholderText="20.00"
-                  keyboardType="numeric"
-                  value={user.amount}
-                  setValue={(text) => setUser({ ...user, amount: text })}
-                />
-                <CurrencyBtn />
-              </View>
-            </View>
+            <TransferField
+              title="Amount"
+              placeholderText="20.00"
+              keyboardType="numeric"
+              value={user.amount}
+              setValue={(text) => setUser({ ...user, amount: text })}
+              isIcon={true}
+            />
 
-            <View style={{ marginVertical: SIZES.font }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>Message</Text>
-              <CustomTextInput
-                placeholderText="Enter Messages"
-                value={user.message}
-                setValue={(text) => setUser({ ...user, message: text })}
-                bottomBorder={true}
-              />
-            </View>
+            <TransferField
+              title="Message"
+              placeholderText="Enter Messages"
+              keyboardType="default"
+              value={user.message}
+              setValue={(text) => setUser({ ...user, message: text })}
+              bottomBorder={true}
+            />
           </View>
 
           <View

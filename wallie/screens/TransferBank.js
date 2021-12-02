@@ -12,8 +12,7 @@ import TransferToHeader from "../components/transfer/TransfeToHeader";
 import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import TransferToWay from "../components/transfer/TransferToWay";
-import CustomTextInput from "../components/CustomTextInput";
-import CurrencyBtn from "../components/common/CurrencyBtn";
+import TransferField from "../components/common/TransferField";
 
 const bankOptions = [
   {
@@ -125,51 +124,34 @@ const TransferBank = ({ navigation }) => {
                 />
               </View>
 
-              <View style={{ marginVertical: SIZES.medium }}>
-                <Text style={{ ...FONTS.h4, color: COLORS.black }}>
-                  Account Number
-                </Text>
-                <CustomTextInput
-                  placeholderText="Enter Account Number"
-                  keyboardType="numeric"
-                  value={user.account}
-                  setValue={(text) => setUser({ ...user, account: text })}
-                  bottomBorder={true}
-                />
-              </View>
+              <TransferField
+                title="Account Number"
+                placeholderText="Enter Account Number"
+                keyboardType="numeric"
+                value={user.account}
+                setValue={(text) => setUser({ ...user, account: text })}
+                bottomBorder={true}
+                isIcon={false}
+              />
 
-              <View style={{ marginVertical: SIZES.base }}>
-                <Text style={{ ...FONTS.h4, color: COLORS.black }}>Amount</Text>
-                <View
-                  style={{
-                    flexDirection: "row",
-                    justifyContent: "space-between",
-                    alignItems: "center",
-                    borderBottomWidth: 0.5,
-                    borderBottomColor: COLORS.gray,
-                  }}
-                >
-                  <CustomTextInput
-                    placeholderText="20.00"
-                    keyboardType="numeric"
-                    value={user.amount}
-                    setValue={(text) => setUser({ ...user, amount: text })}
-                  />
-                  <CurrencyBtn />
-                </View>
-              </View>
+              <TransferField
+                title="Amount"
+                placeholderText="20.00"
+                keyboardType="numeric"
+                value={user.amount}
+                setValue={(text) => setUser({ ...user, amount: text })}
+                bottomBorder={false}
+                isIcon={true}
+              />
 
-              <View style={{ marginVertical: SIZES.font }}>
-                <Text style={{ ...FONTS.h4, color: COLORS.black }}>
-                  Message
-                </Text>
-                <CustomTextInput
-                  placeholderText="Enter Messages"
-                  value={user.message}
-                  setValue={(text) => setUser({ ...user, message: text })}
-                  bottomBorder={true}
-                />
-              </View>
+              <TransferField
+                title="Message"
+                placeholderText="Enter Messages"
+                keyboardType="default"
+                value={user.message}
+                setValue={(text) => setUser({ ...user, message: text })}
+                bottomBorder={true}
+              />
             </View>
           </View>
         </View>

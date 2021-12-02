@@ -16,6 +16,7 @@ import CurrencyBtn from "../components/common/CurrencyBtn";
 import { useStateContext } from "../context/StateContext";
 import PaymentModal from "../components/common/PaymentModal";
 import CustomTextInput from "../components/CustomTextInput";
+import TransferField from "../components/common/TransferField";
 
 const DiamondTokenCard = ({ item, active, setActive }) => (
   <TouchableOpacity
@@ -55,7 +56,7 @@ const TopUpGame = ({ navigation }) => {
   const { setAnimationType } = useStateContext();
   const [user, setUser] = React.useState({
     id: "",
-    amount: 0,
+    amount: "",
   });
 
   const [active, setActive] = React.useState({
@@ -95,16 +96,14 @@ const TopUpGame = ({ navigation }) => {
               Top Up Detail
             </Text>
 
-            <View style={{ marginVertical: SIZES.medium }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>User Id</Text>
-              <CustomTextInput
-                placeholderText="Enter User ID"
-                keyboardType="default"
-                value={user.id}
-                setValue={(text) => setUser({ ...user, id: text })}
-                bottomBorder={true}
-              />
-            </View>
+            <TransferField
+              title="User ID"
+              placeholderText="Enter User ID"
+              keyboardType="default"
+              value={user.id}
+              setValue={(text) => setUser({ ...user, id: text })}
+              bottomBorder={true}
+            />
 
             <View style={{ marginVertical: SIZES.base }}>
               <Text style={{ ...FONTS.h4, color: COLORS.black }}>Diamonds</Text>
@@ -126,26 +125,14 @@ const TopUpGame = ({ navigation }) => {
               />
             </View>
 
-            <View style={{ marginVertical: SIZES.base }}>
-              <Text style={{ ...FONTS.h4, color: COLORS.black }}>Amount</Text>
-              <View
-                style={{
-                  flexDirection: "row",
-                  justifyContent: "space-between",
-                  alignItems: "center",
-                  borderBottomWidth: 0.5,
-                  borderBottomColor: COLORS.gray,
-                }}
-              >
-                <CustomTextInput
-                  placeholderText="20.00"
-                  keyboardType="numeric"
-                  value={user.amount}
-                  setValue={(text) => setUser({ ...user, amount: text })}
-                />
-                <CurrencyBtn />
-              </View>
-            </View>
+            <TransferField
+              title="Amount"
+              placeholderText="20.00"
+              keyboardType="numeric"
+              value={user.amount}
+              setValue={(text) => setUser({ ...user, amount: text })}
+              isIcon={true}
+            />
           </View>
           <View
             style={{

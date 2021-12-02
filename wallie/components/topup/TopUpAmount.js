@@ -1,8 +1,8 @@
 import React from "react";
-import { View, Text, TextInput, TouchableOpacity } from "react-native";
+import { View, Text, TouchableOpacity } from "react-native";
 import Slider from "@react-native-community/slider";
 import { COLORS, SIZES, FONTS } from "../../constants";
-import CustomTextInput from "../CustomTextInput";
+import TransferField from "../common/TransferField";
 
 const amountTokens = [
   {
@@ -49,16 +49,14 @@ const TopUpAmount = () => {
 
   return (
     <>
-      <View style={{ marginBottom: SIZES.font }}>
-        <Text style={{ ...FONTS.h3 }}>Amount</Text>
-        <CustomTextInput
-          placeholderText="20.00"
-          keyboardType="numeric"
-          value={amount}
-          setValue={setAmount}
-          bottomBorder={true}
-        />
-      </View>
+      <TransferField
+        title="Amount"
+        placeholderText="20.00"
+        keyboardType="numeric"
+        value={amount}
+        setValue={(text) => setAmount(text)}
+        bottomBorder={true}
+      />
 
       <View
         style={{
