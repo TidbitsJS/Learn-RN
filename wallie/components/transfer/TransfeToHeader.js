@@ -4,13 +4,13 @@ import { SIZES } from "../../constants";
 import BalanceCard from "../common/BalanceCard";
 import HeadTitle from "../common/HeadTitle";
 
-const TransferWalletHeader = ({ navigation }) => {
+const TransferToHeader = ({ title, navigation }) => {
   return (
     <View style={{ marginVertical: SIZES.font }}>
-      <HeadTitle title="transfer to wallet" navigation={navigation} />
+      <HeadTitle title={title} navigation={navigation} />
       <BalanceCard />
     </View>
   );
 };
 
-export default TransferWalletHeader;
+export default TransferToHeader;

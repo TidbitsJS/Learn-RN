@@ -10,7 +10,7 @@ import {
 import CurrencyBtn from "../components/common/CurrencyBtn";
 import PaymentModal from "../components/common/PaymentModal";
 import CustomTextInput from "../components/CustomTextInput";
-import TransferWalletHeader from "../components/transfer/TransferWalletHeader";
+import TransferToHeader from "../components/transfer/TransfeToHeader";
 import { COLORS, SIZES, FONTS, icons } from "../constants";
 import { useStateContext } from "../context/StateContext";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
@@ -84,9 +84,12 @@ const TransferWallet = ({ navigation }) => {
           btnTitle="Transfer"
         />
       )}
-      <ScrollView>
+      <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
-          <TransferWalletHeader navigation={navigation} />
+          <TransferToHeader
+            title="Transfer to wallet"
+            navigation={navigation}
+          />
 
           <View style={{ marginVertical: SIZES.font }}>
             <Text style={{ ...FONTS.h3, color: COLORS.black }}>
@@ -165,7 +168,6 @@ const TransferWallet = ({ navigation }) => {
               <Text style={{ ...FONTS.h4, color: COLORS.black }}>Message</Text>
               <CustomTextInput
                 placeholderText="Enter Messages"
-                keyboardType="numeric"
                 value={user.message}
                 setValue={(text) => setUser({ ...user, message: text })}
                 bottomBorder={true}

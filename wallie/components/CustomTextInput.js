@@ -25,7 +25,7 @@ const CustomTextInput = ({
         },
         bottomBorder && {
           borderBottomWidth: 0.5,
-          borderBottomColor: bottomBorder && COLORS.darkgray2,
+          borderBottomColor: COLORS.gray,
         },
       ]}
     />
