@@ -86,7 +86,7 @@ const PasswordConfirm = ({ route, navigation }) => {
                 navigation.navigate("Home");
                 setTimeout(() => {
                   setStatusModal(true);
-                }, 510);
+                }, 1000);
               }}
             />
           </View>

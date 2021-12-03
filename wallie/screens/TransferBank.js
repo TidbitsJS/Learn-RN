@@ -13,6 +13,8 @@ import { COLORS, FONTS, icons, SIZES } from "../constants";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import TransferToWay from "../components/transfer/TransferToWay";
 import TransferField from "../components/common/TransferField";
+import { useStateContext } from "../context/StateContext";
+import PaymentModal from "../components/common/PaymentModal";
 
 const bankOptions = [
   {
@@ -59,6 +61,7 @@ const BankTag = ({ item, active, setActive }) => (
 );
 
 const TransferBank = ({ navigation }) => {
+  const { setAnimationType } = useStateContext();
   const [active, setActive] = React.useState({
     dbsbank: true,
   });
@@ -69,12 +72,30 @@ const TransferBank = ({ navigation }) => {
     message: "",
   });
 
+  const [processPayment, setProcessPayment] = React.useState(false);
+
+  const handleClose = () => setProcessPayment(false);
+  const handleNavigate = () => {
+    navigation.navigate("PasswordConfirm", {
+      title: "Transfer Success",
+    });
+    setProcessPayment(false);
+  };
+
   return (
     <SafeAreaView style={{ flex: 1, backgroundColor: COLORS.white }}>
       <FocusedStatusBar
         backgroundColor={COLORS.white}
         barStyle="dark-content"
       />
+
+      {processPayment && (
+        <PaymentModal
+          handleClose={handleClose}
+          handleNavigate={handleNavigate}
+          btnTitle="Transfer"
+        />
+      )}
 
       <ScrollView showsVerticalScrollIndicator={false}>
         <View style={{ flex: 1, paddingHorizontal: SIZES.medium }}>
@@ -153,6 +174,34 @@ const TransferBank = ({ navigation }) => {
                 bottomBorder={true}
               />
             </View>
+          </View>
+
+          <View
+            style={{
+              marginVertical: SIZES.medium,
+            }}
+          >
+            <TouchableOpacity
+              style={{
+                backgroundColor: COLORS.lightGreen,
+                padding: SIZES.padding2,
+                borderRadius: SIZES.padding2,
+              }}
+              onPress={() => {
+                setProcessPayment(true);
+                setAnimationType("zoomIn");
+              }}
+            >
+              <Text
+                style={{
+                  ...FONTS.h4,
+                  color: COLORS.green,
+                  textAlign: "center",
+                }}
+              >
+                Continue
+              </Text>
+            </TouchableOpacity>
           </View>
         </View>
       </ScrollView>

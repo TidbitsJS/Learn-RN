@@ -71,7 +71,7 @@ const PaymentModal = ({ handleClose, handleNavigate, btnTitle }) => {
           setAnimationType("zoomOut");
           setTimeout(() => {
             handleNavigate();
-          }, 710);
+          }, 770);
         }}
       >
         <Text
