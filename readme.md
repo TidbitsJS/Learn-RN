@@ -23,7 +23,9 @@ Points:
 
 ### Plants App
 
-An app to show plants categories and information.
+An app to show plants categories and information. o watch it on your device, download the expo app from Google Play Store & open the following link
+
+> Link of Plants App [Open in Expo](https://expo.dev/@tidbit/plants)
 
 Points:
 
@@ -115,3 +117,42 @@ Points:
 ![book02 mockup](./screenshots/books/book02.png)
 
 ![book03 mockup](./screenshots/books/book03.png)
+
+#
+
+### Wallie App
+
+A digital wallet app for paying bills and paying for services. To watch it on your device, download the expo app from Google Play Store & open the following link
+
+> Link of Wallie App [Open in Expo](https://expo.dev/@tidbit/wallie)
+
+Points:
+
+- Tab Navigation ( Custom )
+- Stack Navigation
+- Status bar & styles
+- Animations
+- Lottie Files
+- Expo Camera
+- API Fetching
+- State Context Provider
+- Modals
+- OTP System
+- Fifteen Screens
+  - Welcome
+  - Sign Up
+  - Balance
+  - Home
+  - Games
+  - Money History
+  - Profile
+  - Scan
+  - Top Up
+  - Top Up Game
+  - Transaction Details
+  - Transfer
+  - Transfer Bank
+  - Transfer Wallet
+  - OTP Screen
+
+#
