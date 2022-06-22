@@ -12,7 +12,7 @@ const IconButton = ({ iconUrl }) => {
         style={{
           padding: SIZES.font,
           backgroundColor: COLORS.white,
-          shadowColor: COLORS.white,
+          shadowColor: COLORS.black,
           shadowOffset: {
             width: 0,
             height: 1,

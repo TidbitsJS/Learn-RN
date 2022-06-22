@@ -35,7 +35,7 @@ const CustomTextInput = ({
           fontFamily: "Roboto-Regular",
           borderRadius: 5,
           backgroundColor: COLORS.white,
-          shadowColor: COLORS.white,
+          shadowColor: COLORS.black,
           shadowOffset: {
             width: 0,
             height: 1,

@@ -34,7 +34,7 @@ const AlertSnackBar = ({ onHandleClose, message }) => {
           justifyContent: "space-between",
           alignItems: "center",
           marginVertical: SIZES.font,
-          shadowColor: COLORS.white,
+          shadowColor: COLORS.black,
           shadowOffset: {
             width: 0,
             height: 1,

@@ -3,7 +3,6 @@ import { createStackNavigator } from "@react-navigation/stack";
 import { NavigationContainer, DefaultTheme } from "@react-navigation/native";
 import Tabs from "./navigation/tabs";
 import { useFonts } from "expo-font";
-import { SafeAreaProvider } from "react-native-safe-area-context";
 import PlantDetail from "./screens/PlantDetail";
 import Signup from "./screens/Signup";
 import Login from "./screens/Login";
@@ -34,36 +33,32 @@ const App = () => {
   }
 
   return (
-    <SafeAreaProvider style={{ flex: 1 }}>
-      <NavigationContainer theme={theme}>
-        <Stack.Navigator
-          screenOptions={{
-            headerShown: false,
-          }}
-          initialRouteName={"Login"}
-        >
-          <Stack.Screen name="Signup" component={Signup} />
-          <Stack.Screen name="Login" component={Login} />
-          <Stack.Screen name="Home" component={Tabs} />
-          <Stack.Screen
-            name="PlantDetails"
-            component={PlantDetail}
-            options={{ headerShown: false }}
-          />
-          <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
-          <Stack.Screen name="PaymentStatus" component={PaymentStatus} />
-          <Stack.Screen name="Transactions" component={Transactions} />
-          <Stack.Screen
-            name="Notifications"
-            component={Notifications}
-            options={{ headerShown: false }}
-          />
-        </Stack.Navigator>
-      </NavigationContainer>
-    </SafeAreaProvider>
+    <NavigationContainer theme={theme}>
+      <Stack.Navigator
+        screenOptions={{
+          headerShown: false,
+        }}
+        initialRouteName={"Login"}
+      >
+        <Stack.Screen name="Signup" component={Signup} />
+        <Stack.Screen name="Login" component={Login} />
+        <Stack.Screen name="Home" component={Tabs} />
+        <Stack.Screen
+          name="PlantDetails"
+          component={PlantDetail}
+          options={{ headerShown: false }}
+        />
+        <Stack.Screen name="PaymentMethod" component={PaymentMethod} />
+        <Stack.Screen name="PaymentStatus" component={PaymentStatus} />
+        <Stack.Screen name="Transactions" component={Transactions} />
+        <Stack.Screen
+          name="Notifications"
+          component={Notifications}
+          options={{ headerShown: false }}
+        />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 };
 
-export default () => {
-  return <App />;
-};
+export default App;
