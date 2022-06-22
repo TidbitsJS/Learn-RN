@@ -18,7 +18,7 @@ import TopUpGame from "./screens/TopUpGame";
 import TransferWallet from "./screens/TransferWallet";
 import TransferBank from "./screens/TransferBank";
 
-LogBox.ignoreLogs(["VirtualizedLists should never be nested"]);
+LogBox.ignoreLogs(["VirtualizedLists should never be nested", "ViewPropTypes will be removed from React Native"]);
 
 const theme = {
   ...DefaultTheme,
