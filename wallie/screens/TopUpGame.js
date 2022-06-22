@@ -12,10 +12,8 @@ import TopUpGameHeader from "../components/game/TopUpGameHeader";
 import FocusedStatusBar from "../utils/FocusedStatusBar";
 import { COLORS, SIZES, FONTS, icons } from "../constants";
 import { diamondTokens } from "../data/dummy";
-import CurrencyBtn from "../components/common/CurrencyBtn";
 import { useStateContext } from "../context/StateContext";
 import PaymentModal from "../components/common/PaymentModal";
-import CustomTextInput from "../components/CustomTextInput";
 import TransferField from "../components/common/TransferField";
 
 const DiamondTokenCard = ({ item, active, setActive }) => (

@@ -18,7 +18,12 @@ import TopUpGame from "./screens/TopUpGame";
 import TransferWallet from "./screens/TransferWallet";
 import TransferBank from "./screens/TransferBank";
 
-LogBox.ignoreLogs(["VirtualizedLists should never be nested", "ViewPropTypes will be removed from React Native"]);
+// TODO in future
+LogBox.ignoreLogs([
+  "VirtualizedLists should never be nested",
+  "ViewPropTypes will be removed from React Native",
+  "Clipboard has been extracted from react-native core and will be removed in a future release.",
+]);
 
 const theme = {
   ...DefaultTheme,
